@@ -72,9 +72,12 @@ const Navbar = ({ cities }) => {
               </a>
             </li>
           </ul>
-          <button className="btn btn-danger my-2 my-sm-0 rounded-pill ms-md-3">
-            Call Now
-          </button>
+          <Link
+            href="tel:6476745958"
+            className="btn fw-bold btn-call my-2 my-sm-0 rounded-pill ms-md-3"
+          >
+            Call : 647 527 4970
+          </Link>
         </div>
       </div>
     </nav>

@@ -62,10 +62,16 @@ const Footer = ({ cities }) => {
             <p>8300 Woodbine Ave ste 500,Markham, ON L3R 9Y7</p>
             <p>Office Hours ⋅ 9AM - 6 PM</p>
             <p className="mt-4">
-              <strong>Phone:</strong> <span>(647) 674-5958</span>
+              <strong>Phone: </strong>
+              <Link href="tel:6476745958" className="text-dark">
+                647 527 4970
+              </Link>
             </p>
             <p>
-              <strong>Email:</strong> <span>hello@dolphy.ca</span>
+              <strong>Email: </strong>
+              <Link href="mailto:hello@dolphy.ca" className="text-dark">
+                hello@dolphy.ca
+              </Link>
             </p>
           </div>
         </div>

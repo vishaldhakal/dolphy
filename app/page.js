@@ -43,7 +43,7 @@ export default async function Home() {
           </div>
 
           <p className="text-mine text-center">
-            Search 1000+ Pre construction homes across Canada
+            Townhomes, Detached homes & Condos - Dolphy got you covered!
           </p>
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>

@@ -18,10 +18,13 @@ const Footer = ({ cities }) => {
             </Link>
             <p></p>
             <p>
-              Dolphy, your premier destination for pre-construction condos in
-              Calgary. Discover your dream home before it's even built. Explore
-              our curated listings and find the perfect pre-construction condo
-              for your future.
+              Dolphy.ca, your top destination for pre-construction condos in
+              Canada. 1000+ Pre construction townhomes, detached & condos
+              available at Dolphy.ca. The content of the pages of this website
+              is for your general information, reference only. We are not liable
+              for the use or misuse of the site's information. Prices, sizes,
+              specifications, and promotions of the condos are subject to change
+              by the builder without notice. E&OE
             </p>
             <div className="social-links d-flex mt-4">
               <Link href="#" className="me-2">
@@ -54,15 +57,15 @@ const Footer = ({ cities }) => {
           </div>
 
           <div className="col-lg-3 col-md-12 footer-contact text-start text-md-start">
-            <h4>Contact Us</h4>
-            <p>4 Robert speck parkway,</p>
-            <p>, Mississauga, ONTARIO</p>
-            <p>Calgary</p>
+            <h4>Contact Dolphy</h4>
+            <p>Dolphy Inc.</p>
+            <p>8300 Woodbine Ave ste 500,Markham, ON L3R 9Y7</p>
+            <p>Office Hours ⋅ 9AM - 6 PM</p>
             <p className="mt-4">
-              <strong>Phone:</strong> <span>647 527 4970</span>
+              <strong>Phone:</strong> <span>(647) 674-5958</span>
             </p>
             <p>
-              <strong>Email:</strong> <span>info@dolphy.ca</span>
+              <strong>Email:</strong> <span>hello@dolphy.ca</span>
             </p>
           </div>
         </div>
@@ -70,7 +73,8 @@ const Footer = ({ cities }) => {
 
       <div className="container copyright text-start text-md-center mt-4">
         <p>
-          ©2023 <span>Copyright</span> <strong className="px-1">Dolphy</strong>{" "}
+          ©2023 <span>Copyright</span>{" "}
+          <strong className="px-1">Dolphy Inc.</strong>{" "}
           <span>All Rights Reserved</span>
         </p>
       </div>

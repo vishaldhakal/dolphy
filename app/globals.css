@@ -1090,8 +1090,20 @@ label {
   background-image: linear-gradient(106deg, #171717, #363636);
 }
 
+
+.container-fluid{
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+}
+
 @media screen and (max-width: 768px) {
   .w-mine{
     width: 381px !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container-fluid{
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
   }
 }

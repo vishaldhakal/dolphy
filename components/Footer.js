@@ -10,7 +10,7 @@ const Footer = ({ cities }) => {
   }
   return (
     <footer className="footer mt-5 shadow-lg">
-      <div className="container footer-top">
+      <div className="container-fluid footer-top">
         <div className="row gy-4">
           <div className="col-lg-5 col-md-12 footer-about">
             <Link href="/" className="logo d-flex align-items-center">

@@ -10,7 +10,7 @@ const Navbar = ({ cities }) => {
   }
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
-      <div className="container">
+      <div className="container-fluid">
         <Link href="/" className="logo d-flex align-items-center">
           <img src="/Logo.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>

@@ -12,7 +12,7 @@ export const metadata = {
   alternates: {
     canonical: `https://dolphy.ca/`,
   },
-  title: "Dolphy - Pre Construction Home Developments for Sale in Calgary",
+  title: "🐬 Dolphy - Pre Construction Home Developments for Sale in Calgary",
   description:
     "Find the latest Pre Construction home developments for sale in Calgary with the Calgary's most user-friendly pre construction portal. Search new homes to buy in Calgary.",
   icons: {

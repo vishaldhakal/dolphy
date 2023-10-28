@@ -12,7 +12,7 @@ const Navbar = ({ cities }) => {
     <nav className="navbar navbar-expand-sm navbar-light bg-white shadow-lg py-3">
       <div className="container">
         <Link href="/" className="logo d-flex align-items-center">
-          <span>Dolphy</span>
+          <span>dolphy</span>
         </Link>
         <button
           className="navbar-toggler d-lg-none"

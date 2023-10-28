@@ -14,7 +14,7 @@ const Footer = ({ cities }) => {
         <div className="row gy-4">
           <div className="col-lg-5 col-md-12 footer-about">
             <Link href="/" className="logo d-flex align-items-center">
-              <span>Dolphy</span>
+              <span>dolphy</span>
             </Link>
             <p></p>
             <p>

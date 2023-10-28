@@ -16,9 +16,9 @@ export const metadata = {
   description:
     "Find the latest Pre Construction home developments for sale in Calgary with the Calgary's most user-friendly pre construction portal. Search new homes to buy in Calgary.",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/shortcut-icon.png",
-    apple: "/apple-icon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
   viewport: {
     width: "device-width",

@@ -9,10 +9,10 @@ const Navbar = ({ cities }) => {
     return <></>;
   }
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-white shadow-lg py-3">
+    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
       <div className="container">
         <Link href="/" className="logo d-flex align-items-center">
-          <span>dolphy</span>
+          <img src="/Logo.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
         <button
           className="navbar-toggler d-lg-none"

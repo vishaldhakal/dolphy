@@ -6,7 +6,7 @@ export default async function Home() {
     <>
       <div className="py-3"></div>
       <div className="pt-5">
-        <div className="container">
+        <div className="container-fluid">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
               src="Dolphin.svg"
@@ -228,7 +228,7 @@ export default async function Home() {
           </div>
           <div className="pt-5 mt-5"></div>
           <div className="py-5 my-5" id="mycontact">
-            <div className="container">
+            <div className="container-fluid">
               <div className="row justify-content-center">
                 <img
                   src="/contact-bottom-2.png"

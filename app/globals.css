@@ -1118,3 +1118,15 @@ label {
   padding: 1rem;
   border-radius: 5px;
 }
+.btn-success{
+  color: white !important;
+}
+.btn-success:hover,.btn-success:active, .btn-success:focus{
+  color: white !important;
+}
+.sidebar-nav-link i{
+  color: rgb(0, 0, 0) !important;
+}
+.sidebar-nav-link a{
+  color: rgb(0, 0, 0) !important;
+}

@@ -24,7 +24,7 @@ export default function CondoCard(props) {
 
   return (
     <>
-      <div className="card border-0 shadow-sm rounded-mine my-3 my-md-0">
+      <div className="card border-0 shadow-lg rounded-mine my-3 my-md-0">
         <div className="position-relative is-loading">
           <Link
             href={`/${props.city.slug}/${props.slug}`}
@@ -36,26 +36,27 @@ export default function CondoCard(props) {
                 loading="lazy"
                 src={`https://api.dolphy.ca${props.image[0].image}`}
                 layout="responsive"
-                className="img-fluid condocard-img-top"
+                className="img-fluid condocard-img-top rounded-minet"
                 alt={`${props.project_name} located at ${props.project_address} image`}
               />
             ) : (
               <img
                 loading="lazy"
                 src="/noimage.webp"
-                className="img-fluid condocard-img-top"
+                className="img-fluid condocard-img-top rounded-minet"
                 alt={`no image available for ${props.project_name}`}
               />
             )}
           </Link>
-          <span className="p-1 px-2 abs1">{props.status}</span>
+          <span className="p-1 px-2 abs1">Preconstruction</span>
+          <span class="mmmmm p-1 px-2">{props.status}</span>
           {props.co_op_available && (
             <span className="shadow-lg p-1 px-2 abs2">Co-op Available</span>
           )}
         </div>
         <Link
           href={`/${props.city.slug}/${props.slug}`}
-          className="card-body text-decoration-none text-dark bg-white shadow-lgg"
+          className="card-body text-decoration-none text-dark bg-white shadow-lgg rounded-mine"
           target="_blank"
         >
           <div className="card-content pt-2">

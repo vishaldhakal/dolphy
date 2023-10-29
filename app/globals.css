@@ -796,15 +796,8 @@ label {
 .main-title{
   display: inline-flex;
   line-height: 2rem !important;
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 10px;
-}
-.main-title:before {
-  background-color: #018cc5;
-  width: 10px;
-  height: 33px;
-  margin-right: 0.2em;
-  content: "";
 }
 .text-mine{
   color: rgb(0, 0, 0);
@@ -831,6 +824,9 @@ label {
   max-height: 18rem;
   height: 250px !important;
   object-fit: cover;
+  border-radius: 7px;
+  border-bottom-left-radius: 0!important;
+  border-bottom-right-radius: 0!important;
 }
 
 .cardd-title{
@@ -849,12 +845,24 @@ label {
 }
 .abs1{
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #018cc5;
-  border-bottom-right-radius: 10px;
-  color: white;
+  left: 3%;
+  top: 4%;
+  border-radius: 3px;
+  background: #ff6a5b;
+  background: linear-gradient(90deg,#ff924d 0,#ff6a5b);
+  color: #fff;
   font-size: 0.85rem;
+}
+.mmmmm{
+  position: absolute;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: .7rem;
+  background-color: #fff;
+  color: #000;
+  z-index: 9;
+  left: 3%;
+  bottom: 4%;
 }
 .abs2{
   position: absolute;
@@ -1129,4 +1137,7 @@ label {
 }
 .sidebar-nav-link a{
   color: rgb(0, 0, 0) !important;
+}
+.rounded-mine {
+  border-radius: 7px !important;
 }

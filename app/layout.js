@@ -37,13 +37,25 @@ export const metadata = {
   category: "real estate",
 };
 
+async function getCities() {
+  const res = await fetch("https://api.dolphy.ca/api/all-city", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
 export default async function RootLayout({ children }) {
+  let cities = await getCities();
   return (
     <html lang="en">
       <body className={public_sans.className}>
-        <Navbar></Navbar>
+        <Navbar cities={cities}></Navbar>
         {children}
-        <Footer></Footer>
+        <Footer cities={cities}></Footer>
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

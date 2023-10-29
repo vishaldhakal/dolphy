@@ -27,7 +27,7 @@ const Navbar = ({ cities }) => {
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
-            {/* <li className="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle active fw-bold"
                 href="#"
@@ -36,7 +36,7 @@ const Navbar = ({ cities }) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Popular Cities
+                Cities
               </a>
               <div className="dropdown-menu" aria-labelledby="dropdownId">
                 {cities &&
@@ -50,7 +50,7 @@ const Navbar = ({ cities }) => {
                     </Link>
                   ))}
               </div>
-            </li> */}
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 About

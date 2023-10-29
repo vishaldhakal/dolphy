@@ -43,8 +43,14 @@ export default async function Home() {
           </div>
 
           <p className="text-mine text-center">
-            Townhomes, Detached homes & Condos - Dolphy got you covered!
+            Hi, I am Dolphy. Your friend in real estate.
           </p>
+          {/* <div className="py-3">
+            <h4 className="fw-bold text-center">Popular Cities</h4>
+            <div className="d-flex">
+              <div className="badge-lightblue">Toronto</div>
+            </div>
+          </div> */}
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>
           <h2 className="fw-mine mb-5 accent-line">Popular Cities in Canada</h2>

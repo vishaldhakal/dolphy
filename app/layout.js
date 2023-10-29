@@ -4,9 +4,9 @@ import "./icons.css";
 import "react-quill/dist/quill.snow.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Montserrat } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 
-const montserrat = Montserrat({ subsets: ["cyrillic"] });
+const public_sans = Public_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   alternates: {
@@ -40,7 +40,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={public_sans.className}>
         <Navbar></Navbar>
         {children}
         <Footer></Footer>

@@ -7,6 +7,10 @@ body {
   color: #000000;
 }
 
+/* *{
+  letter-spacing: .01rem !important;
+}
+ */
 a {
   color: #018cc5 !important;
   text-decoration: none !important;
@@ -1106,4 +1110,11 @@ label {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
   }
+}
+
+.badge-lightblue{
+  background-color: #d7f4ff;
+  color: #006c97;
+  padding: 1rem;
+  border-radius: 5px;
 }

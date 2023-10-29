@@ -127,12 +127,12 @@ export default async function Home({ params }) {
                 <div className="screenshot">
                   <div className="row row-cols-1 row-cols-sm-2">
                     <div className="col-sm-12">
-                      <h1 className="side fw-bold">{data.project_name}</h1>
+                      <h1 className="main-title">{data.project_name}</h1>
                       <p className="mb-0">
                         By <strong>{data.developer.name}</strong>
                       </p>
                       <p className="mt-1 mb-0 me-2">Price Starting from</p>
-                      <h2 className="text-mine fs-3 fw-mine3 mt-1 mb-0">
+                      <h2 className="vmain-title fs-3 fw-mine3 mt-1 mb-0">
                         {checkPricing(data.price_starting_from, data.price_to)}
                       </h2>
                       <div className="mb-1 fw-bold">
@@ -140,8 +140,8 @@ export default async function Home({ params }) {
                       </div>
                     </div>
                   </div>
-                  <div className="my-5"></div>
-                  <div id="features">
+                  <div className="my-2"></div>
+                  <div className="features">
                     <div className="mb-5 mt-4">
                       <div className="rounded-mine">
                         <div>
@@ -149,27 +149,9 @@ export default async function Home({ params }) {
                             <span className="me-2 fw-mine2 mb-2 fs-mine3">
                               Project Location:
                             </span>
-                            <span scope="col">{data.city.name}</span>
-                          </div>
-                          <div className="mb-1">
-                            <p className="d-flex align-items-center my-0">
-                              <svg
-                                width="14"
-                                height="20"
-                                viewBox="0 0 16 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 20 7 20C7 20 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z"
-                                  fill="#000000"
-                                />
-                              </svg>
-                              <span className="mx-1"></span>
-                              <span className="text-dark">
-                                {data.project_address}
-                              </span>
-                            </p>
+                            <span scope="col">
+                              {data.project_address}, {data.city.name}
+                            </span>
                           </div>
                           <div className="mb-1">
                             <span className="me-2 fw-mine2 mb-2 fs-mine3">

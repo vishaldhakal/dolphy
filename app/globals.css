@@ -7,10 +7,7 @@ body {
   color: #000000;
 }
 
-/* *{
-  letter-spacing: .01rem !important;
-}
- */
+
 a {
   color: #018cc5 !important;
   text-decoration: none !important;
@@ -1140,4 +1137,16 @@ label {
 }
 .rounded-mine {
   border-radius: 7px !important;
+}
+.vmain-title {
+  font-weight: 800;
+  color: #000000;
+  font-size: 3rem;
+}
+.fw-mine2{
+  font-weight: 700;
+}
+.text-inside {
+  font-size: 1.1rem;
+  line-height: 2.2rem;
 }

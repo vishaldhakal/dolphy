@@ -43,7 +43,7 @@ const Navbar = ({ cities }) => {
                   cities.map((city) => (
                     <Link
                       className="dropdown-item"
-                      href={`/${city.slug}`}
+                      href={`/pre-construction-homes/${city.slug}`}
                       key={city.id}
                     >
                       {city.name}

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://dolphy.ca/${params.city}`,
+      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}`,
     },
     title: data.preconstructions.length + " Preconstruction Condos in " + city,
     description: "Preconstruction Condos in " + city,
@@ -58,7 +58,7 @@ export default async function Home({ params }) {
             </p>
           </div>
           <div className="py-2"></div>
-          <div className="row row-cols-1 row-cols-md-4 gy-4">
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-1">
             {data.preconstructions &&
               data.preconstructions.map((item) => (
                 <div className="col" key={item.id}>
@@ -82,7 +82,7 @@ export default async function Home({ params }) {
                 ?
               </h2>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Don't know where to start ? Contact Condomonk now!
+                Don't know where to start ? Contact Dolphy now!
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-5">
                 <div className="col-md-3"></div>

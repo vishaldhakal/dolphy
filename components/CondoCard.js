@@ -27,7 +27,7 @@ export default function CondoCard(props) {
       <div className="card border-0 shadow-lg rounded-mine my-3 my-md-0">
         <div className="position-relative is-loading">
           <Link
-            href={`/${props.city.slug}/${props.slug}`}
+            href={`/pre-construction-homes/${props.city.slug}/${props.slug}`}
             className="mylinkk"
             target="_blank"
           >
@@ -55,7 +55,7 @@ export default function CondoCard(props) {
           )}
         </div>
         <Link
-          href={`/${props.city.slug}/${props.slug}`}
+          href={`/pre-construction-homes/${props.city.slug}/${props.slug}`}
           className="card-body text-decoration-none text-dark bg-white shadow-lgg rounded-mine"
           target="_blank"
         >

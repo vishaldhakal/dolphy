@@ -34,7 +34,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://dolphy.ca/${params.city}/${params.slug}`,
+      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/${params.slug}`,
     },
     title:
       data.project_name + " in " + data.city.name + "by " + data.developer.name,
@@ -254,7 +254,7 @@ export default async function Home({ params }) {
                 ?
               </h2>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Don't know where to start ? Contact Condomonk now!
+                Don't know where to start ? Contact Dolphy now!
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-5">
                 <div className="col-md-3"></div>
@@ -270,7 +270,7 @@ export default async function Home({ params }) {
           <div>
             <div className="d-flex flex-column">
               <h2 className="main-title">
-                Similar New Construction condos in {data.city.name} ( 2023 )
+                Similar New Construction Homes in {data.city.name} ( 2023 )
               </h2>
             </div>
             <div className="py-2"></div>

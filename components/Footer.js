@@ -47,7 +47,7 @@ const Footer = ({ cities }) => {
             <ul>
               {cities &&
                 cities.map((city) => (
-                  <li key={city.id}>
+                  <li key={city.id} className="footerlinks">
                     <Link href={`/pre-construction-homes/${city.slug}`}>
                       <span>New construction condos in {city.name}</span>
                     </Link>

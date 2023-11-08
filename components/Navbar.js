@@ -27,6 +27,11 @@ const Navbar = ({ cities }) => {
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Latest Projects
+              </a>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle active fw-bold"
@@ -36,7 +41,7 @@ const Navbar = ({ cities }) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Cities
+                Top Cities
               </a>
               <div className="dropdown-menu" aria-labelledby="dropdownId">
                 {cities &&
@@ -53,17 +58,12 @@ const Navbar = ({ cities }) => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                About
+                Builders
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                News
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Events
+                Blogs
               </a>
             </li>
             <li className="nav-item">
@@ -74,7 +74,7 @@ const Navbar = ({ cities }) => {
           </ul>
           <Link
             href="tel:6476745958"
-            className="btn fw-bold btn-call my-2 my-sm-0 rounded-pill ms-md-3"
+            className="btn btn-outline-dark my-2 my-sm-0 ms-md-3"
           >
             Call : 647 527 4970
           </Link>

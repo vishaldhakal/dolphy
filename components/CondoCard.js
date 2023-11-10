@@ -53,9 +53,7 @@ export default function CondoCard(props) {
             <span className="mmmmm bg-yellow p-1 px-2">{props.status}</span>
           )}
           {props.status == "Sold out" && (
-            <span className="mmmmm bg-red text-white p-1 px-2">
-              {props.status}
-            </span>
+            <span className="mmmmm p-1 px-2">{props.status}</span>
           )}
           {props.status == "Selling" && (
             <span className="mmmmm bg-green text-white p-1 px-2">

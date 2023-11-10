@@ -75,9 +75,12 @@ export default async function Home() {
               20+ Current & Past Truman Homes Communities by Calgary’s leading
               developer
             </p>
-            <p className="d-none d-md-inline">
+            <Link
+              href={"/pre-construction-homes/calgary"}
+              className="d-none d-md-inline"
+            >
               See more projects <i className="bi bi-arrow-right"></i>
-            </p>
+            </Link>
           </div>
           <div className="row">
             <div className="col-12 col-md-3 col-xl-3">
@@ -91,8 +94,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Toronto</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Myne Condos</h5>
+                    <p>Starting From Low $319K</p>
                   </div>
                 </div>
               </Link>
@@ -108,8 +111,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Edmonton</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Cornerview Towns</h5>
+                    <p>Starting From Low $489K</p>
                   </div>
                 </div>
               </Link>
@@ -125,8 +128,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Brampton</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Highgate Condos</h5>
+                    <p>Starting From Low $350K</p>
                   </div>
                 </div>
               </Link>
@@ -142,8 +145,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Halifax</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Imperia Condos Calgary</h5>
+                    <p>Starting From Low $450K</p>
                   </div>
                 </div>
               </Link>
@@ -241,8 +244,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Toronto</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Oakpoint Towmhomes</h5>
+                    <p>Currently Selling</p>
                   </div>
                 </div>
               </Link>
@@ -258,8 +261,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Edmonton</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Clocktower at Upper Joshua</h5>
+                    <p>Currently Selling</p>
                   </div>
                 </div>
               </Link>
@@ -275,8 +278,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Brampton</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Nava Oakville Townhomes</h5>
+                    <p>Currently Selling</p>
                   </div>
                 </div>
               </Link>
@@ -292,8 +295,8 @@ export default async function Home() {
                 </div>
                 <div className="overlay">
                   <div className="details">
-                    <h4>Halifax</h4>
-                    <h4>Homes for Sale</h4>
+                    <h5>Oakbrook Towns</h5>
+                    <p>Currently Selling</p>
                   </div>
                 </div>
               </Link>

@@ -1277,22 +1277,6 @@ label {
 }
 }
 
-.dropdown-menu-large > li > ul {
-  padding: 0;
-  margin: 0;
-}
-.dropdown-menu-large > li > ul > li {
-  list-style: none;
-}
-.dropdown-menu-large > li > ul > li > a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.428571429;
-  color: #333333;
-  white-space: normal;
-}
 .condocard a:hover, .condocard a:focus{
   text-decoration: none;
   color: #000000 !important;
@@ -1303,8 +1287,12 @@ label {
   left: 0;
   right: 0;
   padding: 1rem 0;
+  visibility: hidden;
 }
-
+.dropdown-toggle.show:hover + .dropdown-menu,.dropdown-fullwidth{
+  transition: 0ms !important;
+  visibility: visible;
+}
 @media (min-width: 576px){
   .dropdown-fullwidth {
     position: static;

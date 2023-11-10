@@ -1294,3 +1294,7 @@ label {
   color: #333333;
   white-space: normal;
 }
+.condocard a:hover, .condocard a:focus{
+  text-decoration: none;
+  color: #000000 !important;
+}

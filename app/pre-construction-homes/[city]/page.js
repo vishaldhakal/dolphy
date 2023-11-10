@@ -63,10 +63,10 @@ export default async function Home({ params }) {
               New Construction Homes in {CapitalizeFirst(params.city)} ( 2023 )
             </h1>
             <p className="text-dark">
-              {data.preconstructions.length}+ New Preconstruction Condos for
-              sale in {CapitalizeFirst(params.city)} | Check out plans, pricing,
-              availability for pre construction homes in{" "}
-              {CapitalizeFirst(params.city)}
+              {data.preconstructions.length}+ New Preconstruction Townhomes,
+              detached & condos for sale in {CapitalizeFirst(params.city)} |
+              Check out plans, pricing, availability for pre construction homes
+              in {CapitalizeFirst(params.city)}
             </p>
           </div>
         </div>
@@ -76,26 +76,25 @@ export default async function Home({ params }) {
               🐬 Hey Dolphy! I am looking for a
             </span>
             <div className="d-flex">
-              <select className="form-select form-select-sm bg-blue mx-2 p-2 rounded-3">
+              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 <option>Upcoming</option>
                 <option>Selling</option>
                 <option>Sold out</option>
               </select>
-              <select className="form-select form-select-sm bg-blue mx-2 p-2 rounded-3">
+              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 <option>Preconstruction</option>
                 <option>Resale</option>
                 <option>Assignment</option>
               </select>
             </div>
             <div className="d-flex align-items-center">
-              <select className="form-select form-select-sm bg-blue mx-2 p-2 rounded-3">
+              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 <option>Homes</option>
                 <option>Detached Homes</option>
                 <option>Townhomes</option>
                 <option>Condos</option>
               </select>
-              in
-              <select className="form-select form-select-sm bg-blue mx-2 p-2 rounded-3">
+              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 {cities &&
                   cities.map((city) => (
                     <option key={city.slug}>{city.name}</option>

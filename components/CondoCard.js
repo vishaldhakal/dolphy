@@ -48,8 +48,18 @@ export default function CondoCard(props) {
               />
             )}
           </Link>
-          <span className="p-1 px-2 abs1">Preconstruction</span>
-          <span class="mmmmm p-1 px-2">{props.status}</span>
+          {/* <span className="p-1 px-2 abs1">Preconstruction</span> */}
+          {props.status == "Upcoming" && (
+            <span class="mmmmm bg-yellow p-1 px-2">{props.status}</span>
+          )}
+          {props.status == "Sold out" && (
+            <span class="mmmmm bg-red text-white p-1 px-2">{props.status}</span>
+          )}
+          {props.status == "Selling" && (
+            <span class="mmmmm bg-green text-white p-1 px-2">
+              {props.status}
+            </span>
+          )}
           {props.co_op_available && (
             <span className="shadow-lg p-1 px-2 abs2">Co-op Available</span>
           )}

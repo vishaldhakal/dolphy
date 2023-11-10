@@ -836,9 +836,9 @@ label {
 }
 
 .cardd-subtitle{
-  font-size: 1rem;
-  font-weight: 600;
-  color: #00A1FF;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #575757;
 }
 
 .card-address{
@@ -1200,6 +1200,18 @@ label {
 .bg-blue{
   background-color: #E0F4FF !important; 
 }
+.bg-green{
+  background-color: #00A1FF !important; 
+}
+.bg-red{
+  background-color: red !important; 
+}
+.bg-yellow{
+  background-color: yellow !important; 
+}
+.bg-lightyellow{
+  background-color: #fdffe6 !important;
+}
 .side-text{
   position: absolute;
   right: 5%;
@@ -1264,4 +1276,21 @@ label {
 .side-img img{
   height: 280px;
 }
+}
+
+.dropdown-menu-large > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.dropdown-menu-large > li > ul > li {
+  list-style: none;
+}
+.dropdown-menu-large > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: normal;
 }

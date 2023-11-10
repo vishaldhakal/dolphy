@@ -14,15 +14,15 @@ export default async function Home() {
               className="img-fluid icon-img"
             />
             <div className="pb-1 pt-3">
-              <div class="form-floating mb-3">
+              <div className="form-floating mb-3">
                 <input
                   type="email"
-                  class="form-control w-mine"
+                  className="form-control w-mine"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
                 <label
-                  for="floatingInput"
+                  htmlFor="floatingInput"
                   className="d-flex align-items-center"
                 >
                   <svg
@@ -30,7 +30,7 @@ export default async function Home() {
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-search"
+                    className="bi bi-search"
                     viewBox="0 0 16 16"
                   >
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -67,7 +67,7 @@ export default async function Home() {
           <div className="d-flex justify-content-between align-items-center">
             <h2 className="fw-mine ccent-line fs-1">Calgary</h2>
             <p className="d-inline d-md-none">
-              See more projects <i class="bi bi-arrow-right"></i>
+              See more projects <i className="bi bi-arrow-right"></i>
             </p>
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
@@ -76,7 +76,7 @@ export default async function Home() {
               developer
             </p>
             <p className="d-none d-md-inline">
-              See more projects <i class="bi bi-arrow-right"></i>
+              See more projects <i className="bi bi-arrow-right"></i>
             </p>
           </div>
           <div className="row">
@@ -217,7 +217,7 @@ export default async function Home() {
           <div className="d-flex justify-content-between align-items-center">
             <h2 className="fw-mine ccent-line fs-1">Toronto</h2>
             <p className="d-inline d-md-none">
-              See more projects <i class="bi bi-arrow-right"></i>
+              See more projects <i className="bi bi-arrow-right"></i>
             </p>
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
@@ -226,7 +226,7 @@ export default async function Home() {
               communities in Toronto
             </p>
             <p className="d-none d-md-inline">
-              See more projects <i class="bi bi-arrow-right"></i>
+              See more projects <i className="bi bi-arrow-right"></i>
             </p>
           </div>
           <div className="row">

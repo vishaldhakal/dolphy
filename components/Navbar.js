@@ -58,15 +58,14 @@ const Navbar = ({ cities }) => {
             </li> */}
 
             <li className="nav-item dropdown dropdown-fullwidth">
-              <a
+              <button
                 className="nav-link dropdown-toggle"
-                href="#"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="true"
               >
                 Top Cities
-              </a>
+              </button>
               <div
                 className="dropdown-menu dropdown-menu-end"
                 data-bs-popper="static"

@@ -1289,42 +1289,53 @@ label {
   padding: 1rem 0;
   visibility: hidden;
 }
-.dropdown-toggle.show:hover + .dropdown-menu,.dropdown-fullwidth{
+
+.dropdown-fullwidth:hover + .dropdown-menu,.dropdown-fullwidth{
   transition: 0ms !important;
   visibility: visible;
 }
+.dropdown-menu.show{
+  visibility: visible;
+}
+.dropdown-menu[data-bs-popper]{
+  top: 85% !important;
+}
+.dropdown-menu-end[data-bs-popper] {
+  right: 15px !important;
+  left: auto;
+}
 @media (min-width: 576px){
   .dropdown-fullwidth {
-    position: static;
-}
-.dropdown-fullwidth .dropdown-menu {
-    max-width: 86%;
-}
+    position: static !important;
+  }
+  .dropdown-fullwidth .dropdown-menu {
+      max-width: 86% !important;
+  }
 }
 
 @media (min-width: 768px){
   .dropdown-fullwidth {
-    position: static;
+    position: static !important;
 }
 .dropdown-fullwidth .dropdown-menu {
-    max-width: 94%;
+    max-width: 94% !important;
 }
 }
 
 @media (min-width: 992px){
   .dropdown-fullwidth {
-    position: static;
+    position: static !important;
 }
 .dropdown-fullwidth .dropdown-menu {
-    max-width: 94%;
+    max-width: 94% !important;
 }
 }
 @media (min-width: 1200px){
   .dropdown-fullwidth {
-      position: static;
+      position: static !important;
   }
   .dropdown-fullwidth .dropdown-menu {
-    max-width: 900px;
+    max-width: 900px !important;
   }
   }
   

@@ -4,6 +4,7 @@ import "./icons.css";
 import "react-quill/dist/quill.snow.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "./GoogleAnalytics";
 import { Public_Sans } from "next/font/google";
 
 const public_sans = Public_Sans({ subsets: ["latin"] });
@@ -53,6 +54,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={public_sans.className}>
+        <GoogleAnalytics />
         <Navbar cities={cities}></Navbar>
         {children}
         <Footer cities={cities}></Footer>

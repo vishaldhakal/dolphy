@@ -1361,9 +1361,9 @@ label {
 }
 .project-address-card{
   font-size: 0.9rem !important;
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 .text-red{
   color: red;

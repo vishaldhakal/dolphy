@@ -1,10 +1,10 @@
-import CondoCard from "@/components/CondoCard";
+import ListingCardHome from "@/components/ListingCardHome";
 import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 
-async function getData(city) {
+async function getData() {
   const res = await fetch(
-    "https://api.dolphy.ca/api/preconstructions-city/" + city,
+    "https://api.dolphy.ca/api/preconstructions/?page_size=40",
     {
       next: { revalidate: 10 },
     }
@@ -33,14 +33,14 @@ const CapitalizeFirst = (city) => {
 };
 
 export async function generateMetadata({ params }, parent) {
-  let city = CapitalizeFirst(params.city);
-  const data = await getData(params.city);
+  let city = "Calgary, Alberta";
+  const data = await getData();
   return {
     ...parent,
     alternates: {
-      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/`,
+      canonical: `https://dolphy.ca/pre-construction-homes/`,
     },
-    title: data.preconstructions.length + " Preconstruction Homes in " + city,
+    title: data.count + " Preconstruction Homes in " + city,
     description: "Preconstruction Homes in " + city,
     description:
       "Search our selection of pre construction homes for sale in " +
@@ -60,13 +60,12 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="d-flex flex-column">
             <h1 className="main-title">
-              New Construction Homes in {CapitalizeFirst(params.city)} ( 2023 )
+              New Construction Homes in Calgary, Alberta ( 2023 )
             </h1>
             <p className="text-dark">
-              {data.preconstructions.length}+ New Preconstruction Townhomes,
-              detached & condos for sale in {CapitalizeFirst(params.city)} |
-              Check out plans, pricing, availability for pre construction homes
-              in {CapitalizeFirst(params.city)}
+              {data.count}+ New Preconstruction Townhomes, detached & condos for
+              sale in Calgary, Alberta | Check out plans, pricing, availability
+              for pre construction homes in Calgary, Alberta
             </p>
           </div>
         </div>
@@ -102,24 +101,15 @@ export default async function Home({ params }) {
                 <option>$3M</option>
               </select>
             </div>
-            <div className="d-flex align-items-center">
-              expected to be completed by
-              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-                <option>2026</option>
-              </select>
-            </div>
           </div>
         </div>
         <div className="container-fluid">
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.preconstructions &&
-              data.preconstructions.map((item) => (
+            {data.results &&
+              data.results.map((item) => (
                 <div className="col" key={item.id}>
-                  <CondoCard {...item} />
+                  <ListingCardHome {...item} />
                 </div>
               ))}
           </div>
@@ -152,20 +142,6 @@ export default async function Home({ params }) {
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
-          <div className="py-5">
-            {data.city && (
-              <div className="container" id="make-img-responsive">
-                <div className="row row-cols-1">
-                  <div
-                    className="col-12 mt-mine px-3"
-                    dangerouslySetInnerHTML={{
-                      __html: data.city.details,
-                    }}
-                  ></div>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </>

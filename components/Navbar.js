@@ -27,36 +27,6 @@ const Navbar = ({ cities }) => {
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Latest Projects
-              </a>
-            </li>
-            {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle active fw-bold"
-                href="#"
-                id="dropdownId"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Top Cities
-              </a>
-              <div className="dropdown-menu" aria-labelledby="dropdownId">
-                {cities &&
-                  cities.map((city) => (
-                    <Link
-                      className="dropdown-item"
-                      href={`/pre-construction-homes/${city.slug}`}
-                      key={city.id}
-                    >
-                      {city.name}
-                    </Link>
-                  ))}
-              </div>
-            </li> */}
-
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
                 className="nav-link dropdown-toggle"
@@ -64,13 +34,16 @@ const Navbar = ({ cities }) => {
                 aria-haspopup="true"
                 aria-expanded="true"
               >
-                Top Cities
+                Latest Projects
               </button>
               <div
-                className="dropdown-menu dropdown-menu-end"
+                className="dropdown-menu dropdown-menu-end border-0 show"
                 data-bs-popper="static"
               >
-                <div className="row p-4">
+                <h5 className="fw-bold text-center top-text mt-3">
+                  NEW CONSTRUCTION HOMES CURRENTLY SELLING
+                </h5>
+                <div className="row p-4 dopp">
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
                     <h6 className="mb-2 fw-mine fs-4">Toronto</h6>
                     <ul className="list-unstyled">

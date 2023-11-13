@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Nformatter from "./Nformatter";
 
-export default function CondoCard(props) {
+export default function ListingCardHome(props) {
   function checkPricing(price) {
     if (parseInt(price) > 0) {
       return `Starting from low $${Nformatter(price, 2)}`;
@@ -27,33 +27,33 @@ export default function CondoCard(props) {
       <div className="card border-0 shadow-lg rounded-mine my-3 my-md-0 condocard">
         <div className="position-relative is-loading">
           <Link
-            href={`/pre-construction-homes/${props.city.slug}/${props.slug}`}
+            href={`/${props.city.slug}/${props.slug}`}
             className="mylinkk"
             target="_blank"
           >
             {props.image.length > 0 ? (
               <img
                 loading="lazy"
-                src={`https://api.dolphy.ca${props.image[0].image}`}
+                src={`${props.image[0].image}`}
                 layout="responsive"
-                className="img-fluid condocard-img-top rounded-minet"
+                className="img-fluid condocard-img-top"
                 alt={`${props.project_name} located at ${props.project_address} image`}
               />
             ) : (
               <img
                 loading="lazy"
                 src="/noimage.webp"
-                className="img-fluid condocard-img-top rounded-minet"
+                className="img-fluid condocard-img-top"
                 alt={`no image available for ${props.project_name}`}
               />
             )}
           </Link>
           {/* <span className="p-1 px-2 abs1">Preconstruction</span> */}
           {props.status == "Upcoming" && (
-            <span className="mmmmm p-1 px-2">{props.status}</span>
+            <span className="mmmmm bg-yellow p-1 px-2">{props.status}</span>
           )}
           {props.status == "Sold out" && (
-            <span className="mmmmm outline-red p-1 px-2">Past Communities</span>
+            <span className="mmmmm p-1 px-2">Past Communities</span>
           )}
           {props.status == "Selling" && (
             <span className="mmmmm bg-green text-white p-1 px-2">

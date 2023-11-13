@@ -1,7 +1,12 @@
 import Nformatter from "@/components/Nformatter";
 import CondoCard from "@/components/CondoCard";
 import BottomContactForm from "@/components/BottomContactForm";
+import Accordion from "@/components/Accordion";
+import SideContactForm from "@/components/SideContactForm";
 import { notFound } from "next/navigation";
+import Gallery from "@/components/Gallery";
+import Breadcrumb from "@/components/Breadcrumb";
+
 async function getData(slug) {
   const res = await fetch(
     "https://api.dolphy.ca/api/preconstructions-detail/" + slug,
@@ -54,20 +59,6 @@ export default async function Home({ params }) {
   const data = await getData(params.slug);
   const related = await getRelatedData(params.city);
 
-  const newImages = (images) => {
-    let neImgs = images;
-    neImgs.forEach((image) => {
-      image.image = "https://api.dolphy.ca" + image.image;
-    });
-    for (let i = images.length; i < 7; i++) {
-      neImgs.push({
-        id: 0,
-        image: "https://dolphy.ca/noimage.webp",
-      });
-    }
-    return neImgs;
-  };
-
   const convDash = (add) => {
     var result = add.split(" ").join("-");
     var newresult = result.split(",").join("-");
@@ -92,51 +83,96 @@ export default async function Home({ params }) {
     if (parseInt(prii) == 0) {
       return `Pricing not available`;
     } else {
-      return doTOcheck2(prii) + doTOcheck(priito);
+      return "Starting from " + doTOcheck2(prii);
     }
   }
+
+  const accordionData = [
+    {
+      title: "Who is the builder for " + data.project_name + " ?",
+      content: (
+        <strong>
+          {data.project_name} is developed by {data.developer.name}
+        </strong>
+      ),
+    },
+    {
+      title: "Where is " + data.project_name + " located ?",
+      content: (
+        <strong>
+          {data.project_name} is located in {data.project_address}
+        </strong>
+      ),
+    },
+    {
+      title:
+        "What is the starting price for the homes or unit in " +
+        data.project_name +
+        " ?",
+      content: (
+        <strong>
+          The price of the homes or unit could change. Please contact the real
+          estate agent{" "}
+          <a
+            href="#mycontact"
+            className="text-primary text-decoration-underline"
+          >
+            here
+          </a>{" "}
+          to get more information
+        </strong>
+      ),
+    },
+  ];
 
   return (
     <>
       <div className="pt-1">
         <div className="container">
-          <div className="my-3 grid-cont">
-            {newImages(data.image)
-              ?.slice(0, 7)
-              .map((image, no) => (
-                <a
-                  href="#"
-                  className={
-                    "position-relative g-item grid-item" + parseInt(no + 1)
-                  }
-                  key={no}
+          <Breadcrumb
+            homeElement={"Home"}
+            separator={
+              <span>
+                {" "}
+                <svg
+                  className="svg minearr"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <img
-                    alt={`${data.project_name} located at ${
-                      data.project_address
-                    } image ${no + 1}`}
-                    className="img-fluid w-100 h-100 rounded-mine"
-                    src={`${image.image}`}
-                  />
-                </a>
-              ))}
-          </div>
+                  <path
+                    d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
+                    fill={"#869099"}
+                  ></path>
+                </svg>{" "}
+              </span>
+            }
+            activeClasses="text-dark"
+            containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
+            listClasses="mx-1"
+            capitalizeLinks
+          />
+          <Gallery
+            images={data.image}
+            project_name={data.project_name}
+            project_address={data.project_address}
+          ></Gallery>
           <div className="container px-0 px-sm-3 pt-3">
             <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 justify-content-center">
               <div className="col col-md-6">
                 <div className="screenshot">
                   <div className="row row-cols-1 row-cols-sm-2">
                     <div className="col-sm-12">
-                      <h1 className="main-title">{data.project_name}</h1>
+                      <h1 className="main-title text-red fw-mine">
+                        {data.project_name}
+                      </h1>
                       <p className="mb-0">
                         By <strong>{data.developer.name}</strong>
                       </p>
-                      <p className="mt-1 mb-0 me-2">Price Starting from</p>
                       <h2 className="vmain-title fs-3 fw-mine3 mt-1 mb-0">
                         {checkPricing(data.price_starting_from, data.price_to)}
                       </h2>
-                      <div className="mb-1 fw-bold">
-                        <span scope="col">{data.status}</span>
+                      <div className="mb-1">
+                        <span scope="col">Project status : {data.status}</span>
                       </div>
                     </div>
                   </div>
@@ -215,8 +251,39 @@ export default async function Home({ params }) {
               </div>
               <div className="col col-md-4 ps-md-2 pt-5 pt-md-0">
                 <div className="py-4 py-md-0"></div>
-                <div className="myps3 mt-mine pe-0" id="mycontact">
-                  <div className="text-center"></div>
+                <div className="side-fix-contact mt-mine pe-0" id="mycontact">
+                  <div className="text-center">
+                    <img
+                      alt="Register Now Text Design"
+                      src="/reg.webp"
+                      className="img-fluid mb-3 side-contact-img"
+                    />
+                  </div>
+                  <div className="m-1 p-4 py-3 shadow-lg rounded-mine bordt">
+                    <div className="row row-cols-2 align-items-start">
+                      <div className="col-4">
+                        <img
+                          src="/contact-image.png"
+                          alt="contact image"
+                          className="agent-img"
+                        />
+                      </div>
+                      <div className="col-8">
+                        <h5 className="fw-bold text-center linem fs-4  mb-0">
+                          Receive a Call
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="my-4"></div>
+                    <SideContactForm
+                      projects_name={data.project_name}
+                      defaultmessage={
+                        "Please send me additional information about " +
+                        data.project_name +
+                        ".  Thank you"
+                      }
+                    ></SideContactForm>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,6 +315,22 @@ export default async function Home({ params }) {
             </div>
           </div>
           <div className="pt-5 mt-5"></div>
+          <div className="container-fluid px-md-4 pt-md-5 mt-4">
+            <section>
+              <div className="d-flex flex-column justify-content-center align-items-center pb-md-4">
+                <h3 className="main-title mb-3 mt-2 mb-md-5 text-center">
+                  Frequently Asked Questions About{" "}
+                  <u className="ms-2">{data.project_name}</u>
+                </h3>
+                <div className="col-12 col-md-7">
+                  <Accordion accdata={accordionData}></Accordion>
+                </div>
+              </div>
+
+              <div className="my-3"></div>
+            </section>
+            <div className="py-4"></div>
+          </div>
           <div className="py-5 my-5"></div>
           <div>
             <div className="d-flex flex-column">

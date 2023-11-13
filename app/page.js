@@ -17,7 +17,7 @@ export default async function Home() {
               <div className="form-floating mb-3">
                 <input
                   type="email"
-                  className="form-control w-mine"
+                  className="form-control search-bar w-mine"
                   id="floatingInput"
                   placeholder="name@example.com"
                 />
@@ -48,19 +48,19 @@ export default async function Home() {
             A platform for everyone, no matter where you come from
           </p>
           <div className="py-1 py-md-3 d-flex justify-content-center">
-            <h2 className="fw-bold fs-1 city-title position-relative">
+            <Link
+              href={"/pre-construction-homes/calgary/"}
+              className="fw-bold fs-1 city-title position-relative mb-0"
+            >
               Calgary
-            </h2>
-            <p className="fw-bold fs-2 mx-2">
-              <img
-                src="/bottom-line.svg"
-                alt="bottom design line"
-                className="img-fluid"
-              />
-            </p>
-            <h2 className="fw-bold fs-1 city-title position-relative">
+            </Link>
+            <p className="fw-bold fs-2 mx-2 mt-1">|</p>
+            <Link
+              href={"/"}
+              className="fw-bold fs-1 city-title position-relative mb-0"
+            >
               Toronto
-            </h2>
+            </Link>
           </div>
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>

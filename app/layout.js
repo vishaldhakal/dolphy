@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "./GoogleAnalytics";
 import { Public_Sans } from "next/font/google";
-
+import NextTopLoader from "nextjs-toploader";
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
 export const metadata = {
@@ -54,6 +54,17 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={public_sans.className}>
+        <NextTopLoader
+          color="#FF385C"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={true}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #FF385C,0 0 5px #FF385C"
+        />
         <GoogleAnalytics />
         <Navbar cities={cities}></Navbar>
         {children}

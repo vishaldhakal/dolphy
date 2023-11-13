@@ -272,6 +272,8 @@ export default async function Home({ params }) {
                         <h5 className="fw-bold text-center linem fs-4  mb-0">
                           Receive a Call
                         </h5>
+                        <p className="mb-0 text-center">hello@dolphy.ca</p>
+                        <p className="mb-0 text-center"> 647 527 4970</p>
                       </div>
                     </div>
                     <div className="my-4"></div>

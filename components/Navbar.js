@@ -1,19 +1,52 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
+import SearchBar from "./SearchBar";
 
 const Navbar = ({ cities }) => {
   const pathname = usePathname();
+  const [cityname, setCityname] = useState("");
 
   if (pathname.startsWith("/admin")) {
     return <></>;
   }
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
+    <nav
+      className={
+        pathname.startsWith("/pre-construction-homes")
+          ? "navbar navbar-expand-sm navbar-light bg-white py-3 border-navbar"
+          : "navbar navbar-expand-sm navbar-light bg-white py-3"
+      }
+    >
       <div className="container-fluid">
-        <Link href="/" className="logo d-flex align-items-center">
+        <Link href="/" className="logo">
           <img src="/Logo.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
+        <div className="input-group input-group-search">
+          <SearchBar changeCity={setCityname} cities={cities} />
+          <Link href={"/pre-construction-homes/" + cityname.toLowerCase()}>
+            <button
+              className="input-group-text btn bg-light2 bg-lh mybtn d-block py-search"
+              type="button"
+              aria-label="Search Button"
+            >
+              <svg
+                aria-hidden="true"
+                className="svg"
+                viewBox="0 0 30 30"
+                xmlns="http://www.w3.org/2000/svg"
+                height="25"
+                width="25"
+              >
+                <path
+                  d="M20.756 18.876l6.155 6.154-1.88 1.881-6.155-6.155A9.269 9.269 0 0 1 13.3 22.61a9.31 9.31 0 1 1 9.31-9.31c0 2.091-.69 4.021-1.854 5.576zM13.3 19.95a6.65 6.65 0 1 0 0-13.3 6.65 6.65 0 0 0 0 13.3z"
+                  fill="#000000"
+                ></path>
+              </svg>
+            </button>
+          </Link>
+        </div>
         <button
           className="navbar-toggler d-lg-none"
           type="button"
@@ -40,8 +73,9 @@ const Navbar = ({ cities }) => {
                 className="dropdown-menu dropdown-menu-end border-0 show"
                 data-bs-popper="static"
               >
-                <h5 className="fw-bold text-center top-text mt-3">
-                  NEW CONSTRUCTION HOMES CURRENTLY SELLING
+                <h5 className="fw-bold px-4 mt-1 pb-3 border-bottom">
+                  New Construction Homes Currently{" "}
+                  <span className="text-mine">Selling</span>
                 </h5>
                 <div className="row p-4 dopp">
                   <div className="col-12 col-sm-6 col-md-3 mb-3">

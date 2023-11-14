@@ -22,7 +22,7 @@ export default async function Home() {
   const data = await getData();
   return (
     <>
-      <div className="py-5"></div>
+      <div className="py-5 my-4"></div>
       <div className="pt-5">
         <div className="container-fluid">
           <div className="d-flex flex-column align-items-center justify-content-center">
@@ -64,17 +64,23 @@ export default async function Home() {
           <p className="text-center fs-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
-          <div className="py-1 py-md-3 d-flex justify-content-center">
+          <div className="py-1 py-md-3 d-flex justify-content-center align-items-center">
             <Link
               href={"/pre-construction-homes/calgary/"}
-              className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
+              className="fw-bold fs-top city-title position-relative mb-0"
             >
               Calgary
             </Link>
-            <p className="fw-bold fs-line mx-2 mt-1 mb-0">|</p>
+            <p className="mb-0 mx-2">
+              <img
+                src="/bottom-line.svg"
+                alt="bottom design line"
+                className="img-fluid"
+              />
+            </p>
             <Link
               href={"/"}
-              className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
+              className="fw-bold fs-top city-title position-relative mb-0"
             >
               Toronto
             </Link>

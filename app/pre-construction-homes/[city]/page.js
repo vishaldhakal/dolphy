@@ -46,7 +46,7 @@ export default async function Home({ params }) {
     <>
       <div className="pt-4 position-relative">
         <div className="container-fluid"></div>
-        <div className="bg-white py-2 pb-3 p-sticky-top">
+        <div className="bg-white py-2 pb-3 p-sticky-top ">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
             <span className="fs-4 fw-bold text-mine me-2">
               Hey Dolphy! I am looking for
@@ -88,13 +88,13 @@ export default async function Home({ params }) {
               </select>
             </div>
           </div>
+          <p className="text-dark container-fluid mt-3">
+            {data.preconstructions.length}+ New Preconstruction Townhomes,
+            detached & condos for sale in {CapitalizeFirst(params.city)} | Check
+            out plans, pricing, availability for pre construction homes in{" "}
+            {CapitalizeFirst(params.city)}
+          </p>
         </div>
-        <p className="text-dark container-fluid">
-          {data.preconstructions.length}+ New Preconstruction Townhomes,
-          detached & condos for sale in {CapitalizeFirst(params.city)} | Check
-          out plans, pricing, availability for pre construction homes in{" "}
-          {CapitalizeFirst(params.city)}
-        </p>
         <div className="container-fluid">
           <div className="pt-5 d-flex justify-content-center">
             <h1 className="main-title">

@@ -57,7 +57,7 @@ export default async function Home({ params }) {
   return (
     <>
       <div className="pt-4 position-relative">
-        <div className="bg-white py-2 pb-3 sticky-top ">
+        <div className="bg-white py-2 pb-3 p-sticky-top ">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
             <span className="fs-4 fw-bold text-mine me-2">
               Hey Dolphy! I am looking for
@@ -99,12 +99,12 @@ export default async function Home({ params }) {
               </select>
             </div>
           </div>
+          <p className="text-dark container-fluid mt-3">
+            {data.count}+ New Preconstruction Townhomes, detached & condos for
+            sale in Calgary, Alberta | Check out plans, pricing, availability
+            for pre construction homes in Calgary, Alberta
+          </p>
         </div>
-        <p className="text-dark container-fluid">
-          {data.count}+ New Preconstruction Townhomes, detached & condos for
-          sale in Calgary, Alberta | Check out plans, pricing, availability for
-          pre construction homes in Calgary, Alberta
-        </p>
         <div className="container-fluid">
           <div className="pt-5 d-flex justify-content-center">
             <h1 className="main-title">
@@ -131,12 +131,6 @@ export default async function Home({ params }) {
                   className="img-fluid w-25 w-smm-50 mb-3"
                 />
               </div>
-              <h2 className="fw-mine text-center px-md-4 fs-2">
-                Buying Preconstruction Home First Time ?
-              </h2>
-              <h2 className=" text-center px-md-4 fs-4">
-                Don't know where to start ? Contact Dolphy now!
-              </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-5">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">

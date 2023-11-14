@@ -1340,8 +1340,10 @@ color: #6e6e6e;
   left: 0;
   right: 0;
   padding: 1rem 0;
+  z-index: 99999999 !important;
 }
 .dropdown-menu{
+  z-index: 99999999 !important;
   visibility: hidden;
   position: absolute !important;
 }

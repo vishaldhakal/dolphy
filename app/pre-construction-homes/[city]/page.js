@@ -45,20 +45,26 @@ export default async function Home({ params }) {
   return (
     <>
       <div className="pt-4 position-relative">
-        <div className="container-fluid"></div>
+        <div className="container-fluid">
+          <div className="pb-5 d-flex justify-content-start">
+            <h1 className="main-title">
+              New Construction Homes in {CapitalizeFirst(params.city)} ( 2023 )
+            </h1>
+          </div>
+        </div>
         <div className="bg-white py-2 pb-3 p-sticky-top ">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
-            <span className="fs-4 fw-bold text-mine me-2">
+            <span className="fs-4 fw-bold text-mine">
               Hey Dolphy! I am looking for
             </span>
             <div className="d-flex">
-              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
+              <select className="form-select form-select-sm bg-lightyellow p-2 rounded-3">
                 <option>All</option>
                 <option>Upcoming</option>
                 <option>Selling</option>
                 <option>Sold out</option>
               </select>
-              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
+              <select className="form-select form-select-sm bg-lightyellow p-2 rounded-3 ms-1">
                 <option>Home Types</option>
                 <option>Duplex</option>
                 <option>Townhomes</option>
@@ -66,8 +72,8 @@ export default async function Home({ params }) {
               </select>
             </div>
             <div className="d-flex align-items-center">
-              under
-              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
+              <span className="mx-1">under</span>
+              <select className="form-select form-select-sm bg-lightyellow p-2 rounded-3">
                 <option>All price range</option>
                 <option>$400k</option>
                 <option>$500k</option>
@@ -77,11 +83,11 @@ export default async function Home({ params }) {
                 <option>$2M</option>
                 <option>$3M</option>
               </select>
-              expected to be
+              <span className="ms-1">expected to be</span>
             </div>
             <div className="d-flex align-items-center">
-              completed by
-              <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
+              <span className="me-1">completed by</span>
+              <select className="form-select form-select-sm bg-lightyellow p-2 rounded-3">
                 <option>2023</option>
                 <option>2024</option>
                 <option>2025</option>
@@ -90,18 +96,13 @@ export default async function Home({ params }) {
             </div>
           </div>
           <p className="text-dark container-fluid mt-3">
-            {data.preconstructions.length}+ New Preconstruction Townhomes,
-            detached & condos for sale in {CapitalizeFirst(params.city)} | Check
-            out plans, pricing, availability for pre construction homes in{" "}
+            {data.preconstructions.length} New Pre construction Detached,
+            Townhomes, or Condos for sale in {CapitalizeFirst(params.city)} |
+            Check out plans, pricing, availability for preconstruction homes in{" "}
             {CapitalizeFirst(params.city)}
           </p>
         </div>
         <div className="container-fluid">
-          <div className="pt-5 d-flex justify-content-center">
-            <h1 className="main-title">
-              New Construction Homes in {CapitalizeFirst(params.city)} ( 2023 )
-            </h1>
-          </div>
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&

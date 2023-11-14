@@ -107,7 +107,7 @@ export default async function Home({ params }) {
           </p>
         </div>
         <div className="container-fluid">
-          <div className="pt-5 d-flex justify-content-center">
+          <div className="pt-5 d-flex justify-content-start">
             <h1 className="main-title">
               New Construction Homes in Calgary, Alberta ( 2023 )
             </h1>

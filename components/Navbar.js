@@ -12,13 +12,7 @@ const Navbar = ({ cities }) => {
     return <></>;
   }
   return (
-    <nav
-      className={
-        pathname.startsWith("/pre-construction-homes")
-          ? "navbar navbar-expand-sm navbar-light bg-white py-3 border-navbar"
-          : "navbar navbar-expand-sm navbar-light bg-white py-3"
-      }
-    >
+    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
       <div className="container-fluid">
         <Link href="/" className="logo">
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />

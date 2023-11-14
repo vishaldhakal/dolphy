@@ -287,7 +287,7 @@ const Navbar = ({ cities }) => {
                   className="d-flex flex-column justify-content-start utility__phone-msg"
                   id="utility__phone-msg"
                 >
-                  <b id="utility__phone-number text-dark">1-437-317-8029</b>
+                  <b id="utility__phone-number text-dark">(587) 887-2572</b>
                   <span className="d-block travel__expert fs-vsmall">
                     Speak to a travel expert
                   </span>

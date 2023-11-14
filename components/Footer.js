@@ -27,17 +27,25 @@ const Footer = ({ cities }) => {
               by the builder without notice. E&OE
             </p>
             <div className="social-links d-flex mt-4">
-              <Link href="#" className="me-2">
+              <Link href="#" className="me-2" target="_blank">
                 <i className="bi bi-twitter"></i>
               </Link>
-              <Link href="#" className="me-2">
+              <Link href="#" className="me-2" target="_blank">
                 <i className="bi bi-facebook"></i>
               </Link>
-              <Link href="#" className="me-2">
+              <Link
+                href="https://www.instagram.com/dolphy_ca/"
+                className="me-2"
+                target="_blank"
+              >
                 <i className="bi bi-instagram"></i>
               </Link>
-              <Link href="#" className="me-2">
-                <i className="bi bi-linkedin"></i>
+              <Link
+                href="https://www.tiktok.com/@dolphy.ca"
+                className="me-2"
+                target="_blank"
+              >
+                <i className="bi bi-tiktok"></i>
               </Link>
             </div>
           </div>
@@ -49,7 +57,7 @@ const Footer = ({ cities }) => {
                 cities.map((city) => (
                   <li key={city.id} className="footerlinks">
                     <Link href={`/pre-construction-homes/${city.slug}`}>
-                      <span>New construction condos in {city.name}</span>
+                      <span>New construction homes in {city.name}</span>
                     </Link>
                   </li>
                 ))}
@@ -63,8 +71,8 @@ const Footer = ({ cities }) => {
             <p>Office Hours ⋅ 9AM - 6 PM</p>
             <p className="mt-4">
               <strong>Phone: </strong>
-              <Link href="tel:6476745958" className="text-dark">
-                647 527 4970
+              <Link href="tel:(587) 887-2572" className="text-dark">
+                (587) 887-2572
               </Link>
             </p>
             <p>

@@ -114,7 +114,7 @@ export default async function Home({ params }) {
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
           <div className="py-5 my-5" id="mycontact">
-            <div className="container">
+            <div className="container-fluid">
               <div className="row justify-content-center">
                 <img
                   src="/contact-bottom-2.png"
@@ -122,13 +122,10 @@ export default async function Home({ params }) {
                   className="img-fluid w-25 w-smm-50 mb-3"
                 />
               </div>
-              <h2 className="fw-mine text-center px-md-4 fs-2">
-                Buying Preconstruction Home First Time ?
+              <h2 className="fw-mine text-center px-md-4 fs-4">
+                Contact Dolphy for New Construction Homes
               </h2>
-              <h2 className=" text-center px-md-4 fs-4">
-                Looking for a pre construction homes? Contact Dolphy now!
-              </h2>
-              <div className="row row-cols-1 row-cols-md-3 mt-5">
+              <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
                   <BottomContactForm></BottomContactForm>

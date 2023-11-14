@@ -36,32 +36,34 @@ export default function CondoCard(props) {
                 loading="lazy"
                 src={`https://api.dolphy.ca${props.image[0].image}`}
                 layout="responsive"
-                className="img-fluid condocard-img-top rounded-minet"
+                className="img-fluid condocard-img-top"
                 alt={`${props.project_name} located at ${props.project_address} image`}
               />
             ) : (
               <img
                 loading="lazy"
                 src="/noimage.webp"
-                className="img-fluid condocard-img-top rounded-minet"
+                className="img-fluid condocard-img-top"
                 alt={`no image available for ${props.project_name}`}
               />
             )}
           </Link>
           {/* <span className="p-1 px-2 abs1">Preconstruction</span> */}
           {props.status == "Upcoming" && (
-            <span className="mmmmm p-1 px-2">{props.status}</span>
+            <span className="mmmmm bg-yellow p-1 px-2">{props.status}</span>
           )}
           {props.status == "Sold out" && (
-            <span className="mmmmm outline-red p-1 px-2">Past Communities</span>
+            <span className="mmmmm p-1 px-2">Past Communities</span>
           )}
           {props.status == "Selling" && (
             <span className="mmmmm bg-green text-white p-1 px-2">
               Selling Now
             </span>
           )}
-          {props.co_op_available && (
-            <span className="shadow-lg p-1 px-2 abs2">Co-op Available</span>
+          {props.occupancy && (
+            <span className="shadow-lg p-1 px-2 abs2">
+              Completion {props.occupancy}
+            </span>
           )}
         </div>
         <Link

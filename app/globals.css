@@ -807,6 +807,10 @@ label {
 .icon-img{
   height: 250px !important;
 }
+.text-lightt{
+  font-weight: 300 !important;
+  color: #8d8d8d !important;
+}
 .w-mine{
   width: 650px !important;
   border: 1.5px solid black !important;

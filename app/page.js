@@ -28,7 +28,7 @@ export default async function Home() {
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
               src="dolphin.png"
-              alt="dolphin icon"
+              alt="dolphy logo icon"
               className="img-fluid icon-img"
             />
             <div className="pb-1">
@@ -41,7 +41,7 @@ export default async function Home() {
                 />
                 <label
                   htmlFor="floatingInput"
-                  className="d-flex align-items-center"
+                  className="d-flex align-items-center text-lightt"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,13 +53,13 @@ export default async function Home() {
                   >
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>
-                  <span className="mx-2"></span>
+                  <span className="mx-2">Search by city or project name</span>
                 </label>
               </div>
             </div>
           </div>
           <h4 className="text-center fs-2 fs-md-4 fw-bold mb-0">
-            Canada’s Leading New Homes Platform
+            Canada’s Leading New Homes Advisor
           </h4>
           <p className="text-center fs-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
@@ -345,12 +345,9 @@ export default async function Home() {
                 />
               </div>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Looking for a pre construction homes?
+                Contact Dolphy for New Construction Homes
               </h2>
-              <h2 className="fw-mine text-center px-md-4 fs-4">
-                Contact Dolphy now!
-              </h2>
-              <div className="row row-cols-1 row-cols-md-3 mt-5">
+              <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
                   <BottomContactForm></BottomContactForm>

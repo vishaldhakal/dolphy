@@ -25,7 +25,10 @@ const Navbar = ({ cities }) => {
         </Link>
         <div className="input-group input-group-search">
           <SearchBar changeCity={setCityname} cities={cities} />
-          <Link href={"/pre-construction-homes/" + cityname.toLowerCase()}>
+          <Link
+            href={"/pre-construction-homes/" + cityname.toLowerCase()}
+            className="d-none d-md-inline"
+          >
             <button
               className="input-group-text btn bg-light2 bg-lh mybtn d-block py-search"
               type="button"

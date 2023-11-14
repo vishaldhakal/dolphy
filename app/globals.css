@@ -1556,6 +1556,16 @@ label {
 }
 
 @media (max-width: 800px){
+  .fs-top{
+    font-size: 2rem;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 0 !important;
+    scale: 1;
+    text-shadow: none;
+  }
+  .fs-line{
+    font-size: 2rem;
+  }
   .agent-img {
     max-height: 68px !important;
   }

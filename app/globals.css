@@ -1554,8 +1554,14 @@ label {
 .fs-line{
   font-size: 4rem;
 }
-
+.p-sticky-top{
+  position: sticky;
+  top: 0;
+}
 @media (max-width: 800px){
+  .p-sticky-top{
+    position: relative;
+  }
   .fs-top{
     font-size: 2rem;
     border-bottom: 2px solid #000000;

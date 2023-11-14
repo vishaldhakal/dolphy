@@ -46,7 +46,7 @@ export default async function Home({ params }) {
     <>
       <div className="pt-4 position-relative">
         <div className="container-fluid"></div>
-        <div className="bg-white py-2 pb-3 sticky-top ">
+        <div className="bg-white py-2 pb-3 p-sticky-top">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
             <span className="fs-4 fw-bold text-mine me-2">
               Hey Dolphy! I am looking for

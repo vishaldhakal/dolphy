@@ -1210,6 +1210,21 @@ color: #6e6e6e;
   font-size: 0.9rem !important;
   color: #003274;
 }
+.fs-vsmall{
+  font-size: 0.8rem !important;
+  color: #003274;
+}
+.utility__phone-msg b {
+  font-size: 1.1rem;
+  color: #313541;
+}
+.utility__phone-msg .travel__expert {
+  font-weight: 400;
+  font-size: 12px;
+  color: #313541;
+  line-height: 14px;
+  text-align: left;
+}
 .bg-lightblue{
   background-color: #E0F4FF !important;
   color: black;
@@ -1562,6 +1577,17 @@ color: #6e6e6e;
   position: sticky;
   top: 0;
   z-index: 9999999;
+}
+.img-call-height{
+  width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    position: static;
+}
+.utility__phone .utility__phone-msg {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 @media (max-width: 800px){
   .p-sticky-top{

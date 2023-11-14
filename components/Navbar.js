@@ -62,7 +62,7 @@ const Navbar = ({ cities }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
                 className="nav-link dropdown-toggle"
@@ -276,9 +276,22 @@ const Navbar = ({ cities }) => {
             <li className="nav-item d-flex flex-column">
               <Link
                 href="tel:6476745958"
-                className="btn btn-outline-dark my-2 my-sm-0 ms-md-3"
+                className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark align-items-center gap-1"
               >
-                <i class="bi bi-telephone"></i> 647 527 4970
+                <img
+                  src="COA-agent-pic.png"
+                  alt="agent pic"
+                  className="img-fluid img-call-height"
+                />
+                <span
+                  className="d-flex flex-column justify-content-start utility__phone-msg"
+                  id="utility__phone-msg"
+                >
+                  <b id="utility__phone-number text-dark">1-437-317-8029</b>
+                  <span className="d-block travel__expert fs-vsmall">
+                    Speak to a travel expert
+                  </span>
+                </span>
               </Link>
             </li>
           </ul>

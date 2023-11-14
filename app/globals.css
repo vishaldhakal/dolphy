@@ -1447,7 +1447,12 @@ color: #6e6e6e;
 .border-navbar{
   border-bottom: 1px solid #ddd;
 }
-
+.link-black{
+  color: black !important;
+}
+.link-black:hover{
+  color: black !important;
+}
 .input-group-search {
   width: unset;
 }

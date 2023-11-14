@@ -88,7 +88,14 @@ export default async function Home() {
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>
           <div className="d-flex justify-content-between align-items-center">
-            <h2 className="fw-mine ccent-line fs-1">Calgary</h2>
+            <h2 className="fw-mine ccent-line fs-1">
+              <Link
+                href={"/pre-construction-homes/calgary"}
+                className="link-black"
+              >
+                Calgary
+              </Link>
+            </h2>
             <p className="d-inline d-md-none">
               See more projects <i className="bi bi-arrow-right"></i>
             </p>
@@ -102,7 +109,7 @@ export default async function Home() {
               href={"/pre-construction-homes/calgary"}
               className="d-none d-md-inline"
             >
-              See more projects <i className="bi bi-arrow-right"></i>
+              More communities in Calgary <i className="bi bi-arrow-right"></i>
             </Link>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
@@ -190,7 +197,7 @@ export default async function Home() {
               communities in Toronto
             </p>
             <p className="d-none d-md-inline">
-              See more projects <i className="bi bi-arrow-right"></i>
+              More developments in Toronto <i className="bi bi-arrow-right"></i>
             </p>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">

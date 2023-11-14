@@ -58,14 +58,14 @@ export default async function Home({ params }) {
                 <option>Selling</option>
                 <option>Sold out</option>
               </select>
-            </div>
-            <div className="d-flex align-items-center">
               <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 <option>Home Types</option>
                 <option>Duplex</option>
                 <option>Townhomes</option>
                 <option>Condos</option>
               </select>
+            </div>
+            <div className="d-flex align-items-center">
               under
               <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 <option>All price range</option>
@@ -77,9 +77,10 @@ export default async function Home({ params }) {
                 <option>$2M</option>
                 <option>$3M</option>
               </select>
+              expected to be
             </div>
             <div className="d-flex align-items-center">
-              expected to be completed by
+              completed by
               <select className="form-select form-select-sm bg-lightyellow mx-2 p-2 rounded-3">
                 <option>2023</option>
                 <option>2024</option>

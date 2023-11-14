@@ -27,7 +27,7 @@ export default async function Home() {
         <div className="container-fluid">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
-              src="Dolphin.svg"
+              src="Dolphin.jpg"
               alt="dolphin icon"
               className="img-fluid icon-img"
             />

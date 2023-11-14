@@ -289,7 +289,7 @@ const Navbar = ({ cities }) => {
                 >
                   <b id="utility__phone-number text-dark">(587) 887-2572</b>
                   <span className="d-block travel__expert fs-vsmall">
-                    Speak to a travel expert
+                    Speak to a home expert
                   </span>
                 </span>
               </Link>

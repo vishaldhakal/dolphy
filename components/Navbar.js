@@ -21,7 +21,7 @@ const Navbar = ({ cities }) => {
     >
       <div className="container-fluid">
         <Link href="/" className="logo">
-          <img src="/logo1.svg" alt="Dolphy logo" className="img-fluid" />
+          <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
         <div className="input-group input-group-search">
           <SearchBar changeCity={setCityname} cities={cities} />
@@ -280,7 +280,6 @@ const Navbar = ({ cities }) => {
               >
                 <i class="bi bi-telephone"></i> 647 527 4970
               </Link>
-              <p className="mb-0 text-center text-small">Calgary Hotline</p>
             </li>
           </ul>
         </div>

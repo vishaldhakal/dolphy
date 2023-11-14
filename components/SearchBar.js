@@ -73,7 +73,7 @@ const SearchBar = (props) => {
 
   // Option props
   const inputProps = {
-    placeholder: "Type a city",
+    placeholder: "Search by city or project name",
     value,
     onChange,
   };

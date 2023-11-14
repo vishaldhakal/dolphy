@@ -872,11 +872,12 @@ color: #6e6e6e;
 }
 .abs2{
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  left: 5px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
   background-color: white;
-  font-size: 0.85rem;
-  border-bottom-left-radius: 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
 }
 
 
@@ -1384,9 +1385,9 @@ color: #6e6e6e;
 }
 .project-address-card{
   font-size: 0.9rem !important;
-  /* white-space: nowrap;
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 .text-red{
   color: red;

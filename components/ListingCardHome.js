@@ -60,8 +60,10 @@ export default function ListingCardHome(props) {
               Selling Now
             </span>
           )}
-          {props.co_op_available && (
-            <span className="shadow-lg p-1 px-2 abs2">Co-op Available</span>
+          {props.occupancy && (
+            <span className="shadow-lg p-1 px-2 abs2">
+              Completion {props.occupancy}
+            </span>
           )}
         </div>
         <Link
@@ -74,9 +76,7 @@ export default function ListingCardHome(props) {
             <h4 className="mb-2 cardd-subtitle">
               {checkPricing(props.price_starting_from)}
             </h4>
-            <p className="mb-0 project-address-card text-limit">
-              {props.project_address}
-            </p>
+            <p className="mb-0 project-address-card">{props.project_address}</p>
             <p className="card-secondary-title mb-0">
               {props.project_type} in {props.city.name} | Updated{" "}
               {daysCount(props.last_updated)}

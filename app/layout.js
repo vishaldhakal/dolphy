@@ -53,7 +53,7 @@ export default async function RootLayout({ children }) {
   let cities = await getCities();
   return (
     <html lang="en">
-      <body className={public_sans.className}>
+      <body /* className={public_sans.className} */>
         <NextTopLoader
           color="#00A1FF"
           initialPosition={0.08}

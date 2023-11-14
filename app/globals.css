@@ -1500,6 +1500,21 @@ label {
   background-color: rgb(241, 241, 241);
   font-weight: 500;
 }
+.react-autosuggest__section-container {
+  border-top: 1px dashed #ccc;
+}
+
+.react-autosuggest__section-container--first {
+  border-top: 0;
+}
+
+.react-autosuggest__section-title {
+  padding: 10px 0 0 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+
 .bg-light2 {
   background-color: #f5f5f5;
 }
@@ -1522,6 +1537,22 @@ label {
 
 .react-autosuggest__container {
   position: relative;
+}
+.fs-top{
+  font-size: 4rem;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 0 !important;
+  scale: 1;
+  text-shadow: none;
+}
+.fs-top:hover{
+  /* border transition */
+  transition: all 0.2s ease-in-out;
+  text-shadow: 1px 1px 1px #04324c;
+}
+
+.fs-line{
+  font-size: 4rem;
 }
 
 @media (max-width: 800px){

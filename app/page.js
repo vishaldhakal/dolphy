@@ -1,7 +1,25 @@
 import Link from "next/link";
 import BottomContactForm from "@/components/BottomContactForm";
+import ListingCardHome from "@/components/ListingCardHome";
+import { notFound } from "next/navigation";
+
+async function getData() {
+  const res = await fetch(
+    "https://api.dolphy.ca/api/preconstructions/?page_size=10",
+    {
+      next: { revalidate: 10 },
+    }
+  );
+
+  if (!res.ok) {
+    notFound();
+  }
+
+  return res.json();
+}
 
 export default async function Home() {
+  const data = await getData();
   return (
     <>
       <div className="py-3"></div>
@@ -41,23 +59,23 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <h4 className="text-center fs-5 fs-md-4 fw-bold mb-0">
+          <h4 className="text-center fs-1 fs-md-4 fw-bold mb-0">
             Canada’s Leading New Homes Platform
           </h4>
-          <p className="text-small text-center mt-2 mt-md-0">
+          <p className="text-center fs-5 fw-normal mt-2 mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
           <div className="py-1 py-md-3 d-flex justify-content-center">
             <Link
               href={"/pre-construction-homes/calgary/"}
-              className="fw-bold fs-1 city-title position-relative mb-0"
+              className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
             >
               Calgary
             </Link>
-            <p className="fw-bold fs-2 mx-2 mt-1">|</p>
+            <p className="fw-bold fs-line city-title mx-2 mt-1 mb-0">|</p>
             <Link
               href={"/"}
-              className="fw-bold fs-1 city-title position-relative mb-0"
+              className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
             >
               Toronto
             </Link>
@@ -82,75 +100,13 @@ export default async function Home() {
               See more projects <i className="bi bi-arrow-right"></i>
             </Link>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/toronto.jpg"
-                    alt="toronto"
-                    className="img-fluid"
-                  />
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+            {data.results &&
+              data.results.slice(0, 5).map((item) => (
+                <div className="col" key={item.id}>
+                  <ListingCardHome {...item} />
                 </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Myne Condos</h5>
-                    <p>Starting From Low $319K</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/edmonton.jpeg"
-                    alt="edmonton"
-                    className="img-fluid"
-                  />
-                </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Cornerview Towns</h5>
-                    <p>Starting From Low $489K</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/brampton.jpg"
-                    alt="brampton"
-                    className="img-fluid"
-                  />
-                </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Highgate Condos</h5>
-                    <p>Starting From Low $350K</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/halifax.jpeg"
-                    alt="halifax"
-                    className="img-fluid"
-                  />
-                </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Imperia Condos Calgary</h5>
-                    <p>Starting From Low $450K</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
+              ))}
           </div>
           <div className="pt-5 mt-5"></div>
           <div>
@@ -232,75 +188,13 @@ export default async function Home() {
               See more projects <i className="bi bi-arrow-right"></i>
             </p>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/toronto.jpg"
-                    alt="toronto"
-                    className="img-fluid"
-                  />
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+            {data.results &&
+              data.results.slice(5, 10).map((item) => (
+                <div className="col" key={item.id}>
+                  <ListingCardHome {...item} />
                 </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Oakpoint Towmhomes</h5>
-                    <p>Currently Selling</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/edmonton.jpeg"
-                    alt="edmonton"
-                    className="img-fluid"
-                  />
-                </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Clocktower at Upper Joshua</h5>
-                    <p>Currently Selling</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/brampton.jpg"
-                    alt="brampton"
-                    className="img-fluid"
-                  />
-                </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Nava Oakville Townhomes</h5>
-                    <p>Currently Selling</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="col-12 col-md-3 col-xl-3">
-              <Link className="d-block properti_city" href="/">
-                <div className="thumb">
-                  <img
-                    src="/cities/halifax.jpeg"
-                    alt="halifax"
-                    className="img-fluid"
-                  />
-                </div>
-                <div className="overlay">
-                  <div className="details">
-                    <h5>Oakbrook Towns</h5>
-                    <p>Currently Selling</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
+              ))}
           </div>
           <div className="pt-5"></div>
           <div>

@@ -291,7 +291,7 @@ export default async function Home({ params }) {
             </div>
           </div>
           <div className="pt-5 mt-5"></div>
-          <div className="py-5 my-5" id="mycontact">
+          <div className="py-5 my-5 d-none d-md-block" id="mycontact">
             <div className="container">
               <div className="row justify-content-center">
                 <img
@@ -300,11 +300,10 @@ export default async function Home({ params }) {
                   className="img-fluid w-25 w-smm-50 mb-3"
                 />
               </div>
-              <h2 className="fw-bolder fw-boldie text-center px-md-4 fs-3">
-                Are you looking to buy a preconstruction home for the first time
-                ?
+              <h2 className="fw-mine text-center px-md-4 fs-2">
+                Buying Preconstruction Home First Time ?
               </h2>
-              <h2 className="fw-mine text-center px-md-4 fs-4">
+              <h2 className=" text-center px-md-4 fs-4">
                 Don't know where to start ? Contact Dolphy now!
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-5">
@@ -320,7 +319,7 @@ export default async function Home({ params }) {
           <div className="container-fluid px-md-4 pt-md-5 mt-4">
             <section>
               <div className="d-flex flex-column justify-content-center align-items-center pb-md-4">
-                <h3 className="main-title mb-3 mt-2 mb-md-5 text-center">
+                <h3 className="main-title mb-3 mt-2 mb-md-5 text-center d-flex flex-column d-md-block">
                   Frequently Asked Questions About{" "}
                   <u className="ms-2">{data.project_name}</u>
                 </h3>

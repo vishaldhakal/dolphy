@@ -31,7 +31,7 @@ export default function SideContactForm(props) {
       onSubmit={(e) => handleFormSubmit(e)}
       id="contactForm"
     >
-      <div className="row me-0 row-cols-2 g-4 me-0">
+      <div className="row me-0 row-cols-2 g-1 me-0">
         <div className="col mb-3">
           <input
             type="text"

@@ -21,7 +21,7 @@ const Navbar = ({ cities }) => {
     >
       <div className="container-fluid">
         <Link href="/" className="logo">
-          <img src="/Logo.svg" alt="Dolphy logo" className="img-fluid" />
+          <img src="/logo1.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
         <div className="input-group input-group-search">
           <SearchBar changeCity={setCityname} cities={cities} />
@@ -270,13 +270,16 @@ const Navbar = ({ cities }) => {
                 Contact
               </a>
             </li>
+            <li className="nav-item d-flex flex-column">
+              <Link
+                href="tel:6476745958"
+                className="btn btn-outline-dark my-2 my-sm-0 ms-md-3"
+              >
+                <i class="bi bi-telephone"></i> 647 527 4970
+              </Link>
+              <p className="mb-0 text-center text-small">Calgary Hotline</p>
+            </li>
           </ul>
-          <Link
-            href="tel:6476745958"
-            className="btn btn-outline-dark my-2 my-sm-0 ms-md-3"
-          >
-            Call : 647 527 4970
-          </Link>
         </div>
       </div>
     </nav>

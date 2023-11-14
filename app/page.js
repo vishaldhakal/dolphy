@@ -23,15 +23,15 @@ export default async function Home() {
   return (
     <>
       <div className="py-5"></div>
-      <div className="pt-5">
+      <div className="pt-3">
         <div className="container-fluid">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
-              src="Dolphin.jpg"
+              src="dolphin.png"
               alt="dolphin icon"
               className="img-fluid icon-img"
             />
-            <div className="pb-1 pt-3">
+            <div className="pb-1">
               <div className="form-floating mb-3">
                 <input
                   type="email"
@@ -345,7 +345,7 @@ export default async function Home() {
                 />
               </div>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Don't know where to start ?
+                Looking for a pre construction homes?
               </h2>
               <h2 className="fw-mine text-center px-md-4 fs-4">
                 Contact Dolphy now!

@@ -304,7 +304,7 @@ export default async function Home({ params }) {
                 Buying Preconstruction Home First Time ?
               </h2>
               <h2 className=" text-center px-md-4 fs-4">
-                Don't know where to start ? Contact Dolphy now!
+                Looking for a pre construction homes? Contact Dolphy now!
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-5">
                 <div className="col-md-3"></div>

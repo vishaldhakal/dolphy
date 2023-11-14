@@ -22,7 +22,7 @@ export default async function Home() {
   const data = await getData();
   return (
     <>
-      <div className="py-3"></div>
+      <div className="py-5"></div>
       <div className="pt-5">
         <div className="container-fluid">
           <div className="d-flex flex-column align-items-center justify-content-center">
@@ -54,15 +54,14 @@ export default async function Home() {
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>
                   <span className="mx-2"></span>
-                  Type a city
                 </label>
               </div>
             </div>
           </div>
-          <h4 className="text-center fs-1 fs-md-4 fw-bold mb-0">
+          <h4 className="text-center fs-2 fs-md-4 fw-bold mb-0">
             Canada’s Leading New Homes Platform
           </h4>
-          <p className="text-center fs-5 fw-normal mt-2 mt-md-0">
+          <p className="text-center fs-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
           <div className="py-1 py-md-3 d-flex justify-content-center">
@@ -72,7 +71,7 @@ export default async function Home() {
             >
               Calgary
             </Link>
-            <p className="fw-bold fs-line city-title mx-2 mt-1 mb-0">|</p>
+            <p className="fw-bold fs-line mx-2 mt-1 mb-0">|</p>
             <Link
               href={"/"}
               className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"

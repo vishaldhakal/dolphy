@@ -808,8 +808,13 @@ label {
   height: 190px !important;
 }
 .w-mine{
-  width: 550px !important;
+  width: 650px !important;
   border: 1.5px solid black !important;
+}
+.fw-less{
+font-weight: 300;
+font-size: 1.2rem !important;
+color: #6e6e6e;
 }
 .mylist li{
   margin-bottom: 0.3rem;
@@ -1027,7 +1032,7 @@ label {
 }
 .navbar-nav .nav-item .nav-link{
   font-weight: 300;
-  color: black !important;
+  color: #585858 !important;
 }
 
 .fields {
@@ -1540,7 +1545,6 @@ label {
 }
 .fs-top{
   font-size: 4rem;
-  border-bottom: 2px solid #000000;
   padding-bottom: 0 !important;
   scale: 1;
   text-shadow: none;
@@ -1552,7 +1556,7 @@ label {
 }
 
 .fs-line{
-  font-size: 4rem;
+  font-size: 3.4rem;
 }
 .p-sticky-top{
   position: sticky;
@@ -1565,7 +1569,6 @@ label {
   }
   .fs-top{
     font-size: 2rem;
-    border-bottom: 2px solid #000000;
     padding-bottom: 0 !important;
     scale: 1;
     text-shadow: none;

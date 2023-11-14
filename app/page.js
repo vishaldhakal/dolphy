@@ -94,9 +94,9 @@ export default async function Home() {
             </p>
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <p className="fs-5 fs-vsmall">
-              20+ Current & Past Truman Homes Communities by Calgary’s leading
-              developer
+            <p className="fs-5">
+              Explore 20+ current & past new homes communities from Truman homes
+              in Calgary
             </p>
             <Link
               href={"/pre-construction-homes/calgary"}
@@ -185,7 +185,7 @@ export default async function Home() {
             </p>
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <p className="fs-5 fs-vsmall">
+            <p className="fs-5">
               Explore 100+ currently selling & upcoming pre-construction
               communities in Toronto
             </p>

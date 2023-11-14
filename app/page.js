@@ -67,7 +67,7 @@ export default async function Home() {
           <div className="py-1 py-md-3 d-flex justify-content-center">
             <Link
               href={"/pre-construction-homes/calgary/"}
-              className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
+              className="fw-bold fs-top city-title position-relative mb-4 p-0"
             >
               Calgary
             </Link>

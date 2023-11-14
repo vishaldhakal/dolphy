@@ -71,7 +71,13 @@ export default async function Home() {
             >
               Calgary
             </Link>
-            <p className="fw-bold fs-line mx-2 mt-1 mb-0">|</p>
+            <p className="fw-bold fs-line mx-2 mt-1 mb-0">
+              <img
+                src="mapleleaf.svg"
+                alt="maple leaf divider"
+                className="img-fluid maple-leaf"
+              />
+            </p>
             <Link
               href={"/"}
               className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"

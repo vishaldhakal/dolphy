@@ -72,7 +72,7 @@ export default async function Home({ params }) {
               </select>
             </div>
             <div className="d-flex align-items-center">
-              <span className="mx-1">under</span>
+              <span className="mx-2">under</span>
               <select className="form-select form-select-sm bg-lightyellow p-2 rounded-3">
                 <option>All price range</option>
                 <option>$400k</option>
@@ -83,10 +83,10 @@ export default async function Home({ params }) {
                 <option>$2M</option>
                 <option>$3M</option>
               </select>
-              <span className="ms-1">expected to be</span>
+              <span className="ms-2">expected to be</span>
             </div>
             <div className="d-flex align-items-center">
-              <span className="me-1">completed by</span>
+              <span className="me-2">completed by</span>
               <select className="form-select form-select-sm bg-lightyellow p-2 rounded-3">
                 <option>2023</option>
                 <option>2024</option>

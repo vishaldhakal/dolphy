@@ -841,9 +841,9 @@ color: #6e6e6e;
 }
 
 .cardd-subtitle{
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: #575757;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #00b5d6;
 }
 
 .card-address{
@@ -1596,6 +1596,7 @@ color: #6e6e6e;
   flex-direction: column;
   padding: 0;
 }
+
 @media (max-width: 800px){
   .p-sticky-top{
     position: relative;

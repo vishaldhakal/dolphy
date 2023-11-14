@@ -1610,7 +1610,8 @@ label {
     height: 320px;
   }
   .react-autosuggest__input {
-    width: 130px !important;
+    width: 160px !important;
+    border-radius: 7px !important;
   }
 }
 

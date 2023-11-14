@@ -76,7 +76,7 @@ const Navbar = ({ cities }) => {
                 className="dropdown-menu dropdown-menu-end border-0 show"
                 data-bs-popper="static"
               >
-                <h5 className="fw-bold px-4 mt-1 pb-3 border-bottom">
+                <h5 className="fw-bold px-4 mt-1 pb-3">
                   New Construction Homes Currently{" "}
                   <span className="text-mine">Selling</span>
                 </h5>
@@ -141,11 +141,6 @@ const Navbar = ({ cities }) => {
                       <li>
                         <a className="dropdown-item" href="#">
                           Highgate Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Metroside Condos
                         </a>
                       </li>
                       <li>

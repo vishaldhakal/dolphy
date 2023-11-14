@@ -329,11 +329,6 @@ export default async function Home() {
             </h3>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <img
-                src="/bottom-line.svg"
-                alt="bottom design line"
-                className="img-fluid underline-svg"
-              />
-              <img
                 src="/builders.png"
                 alt="builders in dolphy"
                 className="img-fluid mt-3 w-100 w-md-75"

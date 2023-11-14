@@ -3,7 +3,7 @@ import { useState } from "react";
 import ContactFormSubmit from "./ContactFormSubmit";
 
 export default function BottomContactForm(props) {
-  const [submitbtn, setSubmitbtn] = useState("Contact now");
+  const [submitbtn, setSubmitbtn] = useState("Send a message");
   const [credentials, setCredentials] = useState({
     name: "",
     phone: "",
@@ -109,12 +109,14 @@ export default function BottomContactForm(props) {
           ></textarea>
         </div>
       </div>
-      <input
-        type="submit"
-        value={submitbtn}
-        className="btn btn-call btn-lg w-100 mb-2"
-        id="subbtn"
-      />
+      <div className="d-flex justify-content-center">
+        <input
+          type="submit"
+          value={submitbtn}
+          className="btn btn-call btn-lg mb-2"
+          id="subbtn"
+        />
+      </div>
     </form>
   );
 }

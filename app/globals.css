@@ -1351,7 +1351,7 @@ color: #6e6e6e;
 }
 
 .dropdown-toggle:hover{
-  box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
+  /* box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15); */
   border-radius: 7px;
   padding-left: 8px;
   padding-right: 8px;
@@ -1377,7 +1377,7 @@ color: #6e6e6e;
   visibility: visible;
 } */
 .dropdown-menu[data-bs-popper]{
-  top: 80% !important;
+  top: 75% !important;
 }
 .dropdown-menu-end[data-bs-popper] {
   right: 15px !important;

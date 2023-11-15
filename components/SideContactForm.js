@@ -77,11 +77,11 @@ export default function SideContactForm(props) {
       <div className="row me-0 row-cols-1">
         <div className="col">
           <div className="mb-3">
-            <div class="form-floating">
+            <div className="form-floating">
               <select
-                class="form-select"
+                className="form-select"
                 id="realtor"
-                ariaLabel="Floating label select example"
+                aira-label="Floating label select example"
                 value={credentials.realtor}
                 onChange={(e) => handleChange(e)}
                 required

@@ -110,7 +110,7 @@ export default async function Home() {
               className="d-none d-md-inline link-black"
             >
               More communities in Calgary{" "}
-              <i class="bi bi-arrow-right-short"></i>
+              <i className="bi bi-arrow-right-short"></i>
             </Link>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
@@ -199,7 +199,7 @@ export default async function Home() {
             </p>
             <p className="d-none d-md-inline">
               More developments in Toronto{" "}
-              <i class="bi bi-arrow-right-short"></i>
+              <i className="bi bi-arrow-right-short"></i>
             </p>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">

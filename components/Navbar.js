@@ -268,7 +268,7 @@ const Navbar = ({ cities }) => {
                 className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark align-items-center gap-1"
               >
                 <img
-                  src="COA-agent-pic.png"
+                  src="COA-agent-pic.jpg"
                   alt="agent pic"
                   className="img-fluid img-call-height"
                 />

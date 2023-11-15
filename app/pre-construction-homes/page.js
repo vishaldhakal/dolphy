@@ -57,7 +57,20 @@ export default async function Home({ params }) {
   return (
     <>
       <div className="pt-4 position-relative">
-        <div className="bg-white py-2 pb-3 p-sticky-top ">
+        <div className="container-fluid">
+          <div className="pb-4">
+            <h1 className="main-title">
+              New Construction Homes in Calgary, Alberta ( 2023 )
+            </h1>
+
+            <p className="text-dark">
+              {data.count}+ New Preconstruction Townhomes, detached & condos for
+              sale in Calgary, Alberta | Check out plans, pricing, availability
+              for pre construction homes in Calgary, Alberta
+            </p>
+          </div>
+        </div>
+        <div className="bg-white py-2 pb-4 p-sticky-top ">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
             <span className="fs-4 fw-bold text-mine me-2">
               Hey Dolphy! I am looking for
@@ -100,18 +113,8 @@ export default async function Home({ params }) {
               </select>
             </div>
           </div>
-          <p className="text-dark container-fluid mt-3">
-            {data.count}+ New Preconstruction Townhomes, detached & condos for
-            sale in Calgary, Alberta | Check out plans, pricing, availability
-            for pre construction homes in Calgary, Alberta
-          </p>
         </div>
         <div className="container-fluid">
-          <div className="pt-5 d-flex justify-content-start">
-            <h1 className="main-title">
-              New Construction Homes in Calgary, Alberta ( 2023 )
-            </h1>
-          </div>
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.results &&

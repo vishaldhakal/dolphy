@@ -1590,7 +1590,7 @@ color: #6e6e6e;
 .p-sticky-top{
   position: sticky;
   top: 0;
-  z-index: 9999999;
+  z-index: 99;
 }
 .img-call-height{
   width: 2.6rem;

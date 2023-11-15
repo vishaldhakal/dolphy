@@ -1,8 +1,12 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+
+//COMPONENT
 import SearchBar from "./SearchBar";
+
+//LIB
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = ({ cities }) => {
   const pathname = usePathname();
@@ -253,9 +257,9 @@ const Navbar = ({ cities }) => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" href="/blogs">
                 Blogs
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
@@ -268,7 +272,7 @@ const Navbar = ({ cities }) => {
                 className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark align-items-center gap-1"
               >
                 <img
-                  src="COA-agent-pic.jpg"
+                  src="COA-agent-pic.png"
                   alt="agent pic"
                   className="img-fluid img-call-height"
                 />

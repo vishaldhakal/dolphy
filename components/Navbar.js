@@ -217,17 +217,17 @@ const Navbar = ({ cities }) => {
                               Call us at
                               <Link
                                 href={"telto:(587) 887-2572"}
-                                className="mx-2"
+                                className="me-2 ms-1"
                               >
                                 (587) 887-2572
                               </Link>
-                              and get assistance 24/7.
+                              to speak with our friendly new homes advisor.
                             </p>
                           </div>
                         </div>
                       </div>
                       <Link
-                        className="btn btn-call"
+                        className="btn btn-white link-black"
                         href={"/pre-construction-homes/"}
                       >
                         Explore all projects

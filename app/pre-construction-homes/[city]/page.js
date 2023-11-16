@@ -2,6 +2,7 @@ import CondoCard from "@/components/CondoCard";
 import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import DolphyAdvantage from "@/components/DolphyAdvantage";
 
 async function getData(city) {
   const res = await fetch(
@@ -57,7 +58,7 @@ export default async function Home({ params }) {
               className="img-fluid img-call-height"
             />
             <span className="d-flex flex-column justify-content-start">
-              <b id="text-dark">Speak to a home expert</b>
+              <b id="text-dark">Send a message</b>
             </span>
           </Link>
         </div>
@@ -131,6 +132,7 @@ export default async function Home({ params }) {
               ))}
           </div>
           <div className="pt-5 mt-5"></div>
+          <DolphyAdvantage></DolphyAdvantage>
           <div className="pt-5 mt-5"></div>
           <div className="py-5 my-5" id="mycontact">
             <div className="container-fluid">

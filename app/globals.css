@@ -1628,6 +1628,7 @@ button:focus:not(:focus-visible) {
   font-size: 4rem;
   scale: 1;
   text-shadow: none;
+  text-shadow: 1px 1px 1px #04324c;
 }
 .fs-top:hover{
   /* border transition */

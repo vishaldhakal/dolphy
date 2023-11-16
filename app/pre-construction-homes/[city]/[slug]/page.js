@@ -140,7 +140,7 @@ export default async function Home({ params }) {
               className="img-fluid img-call-height"
             />
             <span className="d-flex flex-column justify-content-start">
-              <b id="text-dark">Speak to a home expert</b>
+              <b id="text-dark">Send a message</b>
             </span>
           </Link>
         </div>

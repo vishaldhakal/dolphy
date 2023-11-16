@@ -2,6 +2,7 @@ import Link from "next/link";
 import BottomContactForm from "@/components/BottomContactForm";
 import ListingCardHome from "@/components/ListingCardHome";
 import { notFound } from "next/navigation";
+import DolphyAdvantage from "@/components/DolphyAdvantage";
 
 async function getData() {
   const res = await fetch(
@@ -79,7 +80,7 @@ export default async function Home() {
               />
             </p>
             <Link
-              href={"/"}
+              href={"/pre-construction-homes/toronto/"}
               className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
             >
               Toronto
@@ -87,7 +88,7 @@ export default async function Home() {
           </div>
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex align-items-center justify-content-center">
             <h2 className="fw-mine ccent-line fs-1">
               <Link
                 href={"/pre-construction-homes/calgary"}
@@ -96,18 +97,15 @@ export default async function Home() {
                 Calgary
               </Link>
             </h2>
-            <p className="d-inline d-md-none">
-              See more projects <i className="bi bi-arrow-right"></i>
-            </p>
           </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <p className="fs-5">
+          <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">
+            <p className="fs-5 mb-0">
               Explore 20+ current & past new homes communities from Truman homes
               in Calgary
             </p>
             <Link
               href={"/pre-construction-homes/calgary"}
-              className="d-none d-md-inline link-black"
+              className="mt-1 text-mine"
             >
               More communities in Calgary{" "}
               <i className="bi bi-arrow-right-short"></i>
@@ -186,21 +184,28 @@ export default async function Home() {
           <div className="pt-5"></div>
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>
-          <div className="d-flex justify-content-between align-items-center">
-            <h2 className="fw-mine ccent-line fs-1">Toronto</h2>
-            <p className="d-inline d-md-none">
-              See more projects <i className="bi bi-arrow-right"></i>
-            </p>
+          <div className="d-flex align-items-center justify-content-center">
+            <h2 className="fw-mine ccent-line fs-1">
+              <Link
+                href={"/pre-construction-homes/toronto"}
+                className="link-black"
+              >
+                Toronto
+              </Link>
+            </h2>
           </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <p className="fs-5">
+          <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">
+            <p className="fs-5 mb-0">
               Explore 100+ currently selling & upcoming pre-construction
               communities in Toronto
             </p>
-            <p className="d-none d-md-inline">
+            <Link
+              href={"/pre-construction-homes/toronto"}
+              className="mt-1 text-mine"
+            >
               More developments in Toronto{" "}
               <i className="bi bi-arrow-right-short"></i>
-            </p>
+            </Link>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.results &&
@@ -219,7 +224,12 @@ export default async function Home() {
               <div className="row row-cols-2 row-cols-md-6 gy-3">
                 <div className="col d-none d-md-block"></div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Toronto</h4>
+                  <Link
+                    href={"/pre-construction-homes/toronto/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Toronto</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -227,7 +237,12 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Mississauga</h4>
+                  <Link
+                    href={"/pre-construction-homes/mississauga/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Mississauga</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -235,7 +250,12 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Pickering</h4>
+                  <Link
+                    href={"/pre-construction-homes/pickering/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Pickering</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -244,7 +264,26 @@ export default async function Home() {
                 </div>
                 <div className="col">
                   <h4 className="fs-m fw-bold text-center">
-                    Cambridge / Kitchener / Waterloo
+                    <Link
+                      href={"/pre-construction-homes/cambridge/"}
+                      className="link-black"
+                    >
+                      Cambridge
+                    </Link>{" "}
+                    /{" "}
+                    <Link
+                      href={"/pre-construction-homes/kitchener/"}
+                      className="link-black"
+                    >
+                      Kitchener
+                    </Link>{" "}
+                    /{" "}
+                    <Link
+                      href={"/pre-construction-homes/waterloo/"}
+                      className="link-black"
+                    >
+                      Waterloo
+                    </Link>
                   </h4>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
@@ -255,7 +294,12 @@ export default async function Home() {
                 <div className="col d-none d-md-block"></div>
                 <div className="col d-none d-md-block"></div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Milton</h4>
+                  <Link
+                    href={"/pre-construction-homes/milton/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Milton</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -263,7 +307,12 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Burlington</h4>
+                  <Link
+                    href={"/pre-construction-homes/burlington/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Burlington</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -271,7 +320,12 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Oakville</h4>
+                  <Link
+                    href={"/pre-construction-homes/oakville/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Oakville</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -279,7 +333,12 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="col">
-                  <h4 className="fs-m fw-bold text-center">Hamilton</h4>
+                  <Link
+                    href={"/pre-construction-homes/hamilton/"}
+                    className="link-black"
+                  >
+                    <h4 className="fs-m fw-bold text-center">Hamilton</h4>
+                  </Link>
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <p className="mb-0 fs-small">West District</p>
                     <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
@@ -313,28 +372,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="container-fluid">
-          <div className="py-md-5">
-            <h3 className="fs-2">
-              <strong>The Dolphy Advantage</strong> - Always people at heart
-            </h3>
-            <p>
-              Working with leading home & condos developers & industry partners
-            </p>
-            <img src="/team.png" alt="dolphy team" className="img-fluid" />
-          </div>
-          <div className="py-md-5"></div>
-          <div className="py-5">
-            <h3 className="fs-2 text-mine fw-bold text-center mb-0">
-              We bring you home from credible builders
-            </h3>
-            <div className="d-flex flex-column align-items-center justify-content-center">
-              <img
-                src="/builders.png"
-                alt="builders in dolphy"
-                className="img-fluid mt-3 w-100 w-md-75"
-              />
-            </div>
-          </div>
+          <DolphyAdvantage></DolphyAdvantage>
           <div className="py-5 my-5" id="mycontact">
             <div className="container-fluid">
               <div className="row justify-content-center">

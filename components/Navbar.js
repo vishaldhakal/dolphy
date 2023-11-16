@@ -64,19 +64,20 @@ const Navbar = ({ cities }) => {
                 aria-haspopup="true"
                 aria-expanded="true"
               >
-                Latest Projects
+                New Projects
               </button>
               <div
                 className="dropdown-menu dropdown-menu-end border-0 show"
                 data-bs-popper="static"
               >
-                <h5 className="fw-bold px-4 mt-1 pb-3">
-                  New Construction Homes Currently{" "}
-                  <span className="text-mine">Selling</span>
-                </h5>
-                <div className="row p-4 dopp">
+                <div className="row p-3 pt-2 dopp">
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Toronto</h6>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/toronto/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Toronto</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -103,19 +104,10 @@ const Navbar = ({ cities }) => {
                           400 Front Street Condos
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Calgary</h6>
+                    <h5 className="mb-2 fw-mine fs-4">Calgary</h5>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -137,19 +129,10 @@ const Navbar = ({ cities }) => {
                           Highgate Condos
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Brampton</h6>
+                    <h5 className="mb-2 fw-mine fs-4">Brampton</h5>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -176,19 +159,10 @@ const Navbar = ({ cities }) => {
                           Boutin Tower
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Mississauga</h6>
+                    <h5 className="mb-2 fw-mine fs-4">Mississauga</h5>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -215,15 +189,6 @@ const Navbar = ({ cities }) => {
                           Canopy Towers 2
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12">
@@ -232,16 +197,36 @@ const Navbar = ({ cities }) => {
                       role="alert"
                     >
                       <div>
-                        Top Featured : Niagara Joy Towns Coming Soon
-                        <a href="#" className="text-dark fw-bld ms-3">
-                          Join Event Now
-                          <span className="ms-2"></span>
-                          <i className="bi bi-arrow-right"></i>
-                        </a>
+                        <div className="my-2 my-sm-0 d-flex text-dark align-items-center gap-2">
+                          <img
+                            src="COA-agent-pic.jpg"
+                            alt="agent pic"
+                            className="img-fluid img-call-height-dropdown"
+                          />
+                          <div className="d-flex flex-column justify-content-start align-items-start">
+                            <p className="mb-0 fw-bold">
+                              Looking for New Construction Homes in Calgary ?
+                            </p>
+                            <p className="fs-small mb-0">
+                              Call us at
+                              <Link
+                                href={"telto:(587) 887-2572"}
+                                className="mx-2"
+                              >
+                                (587) 887-2572
+                              </Link>
+                              and get assistance 24/7.
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <button className="btn btn-call">
-                        Explore all cities
-                      </button>
+                      <Link
+                        className="btn btn-call"
+                        href={"/pre-construction-homes/"}
+                      >
+                        Explore all projects
+                        <i className="bi bi-arrow-right-short"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>

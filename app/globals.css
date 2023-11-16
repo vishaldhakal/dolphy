@@ -1110,6 +1110,7 @@ color: #6e6e6e;
 
 .btn-call:hover {
   background-image: black !important;
+  color: white !important;
 }
 
 .btn-submit {
@@ -1383,7 +1384,7 @@ color: #6e6e6e;
   visibility: visible;
 } */
 .dropdown-menu[data-bs-popper]{
-  top: 75% !important;
+  top: 72% !important;
 }
 .dropdown-menu-end[data-bs-popper] {
   right: 15px !important;
@@ -1597,6 +1598,12 @@ color: #6e6e6e;
     height: 2.6rem;
     border-radius: 50%;
     position: static;
+}
+.img-call-height-dropdown{
+  width:3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: static;
 }
 .utility__phone .utility__phone-msg {
   display: flex;

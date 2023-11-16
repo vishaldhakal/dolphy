@@ -53,10 +53,16 @@ const Navbar = ({ cities }) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <img
+            loading="lazy"
+            src="https://img.icons8.com/material-two-tone/24/000000/menu.png"
+            width="24px"
+            height="24px"
+            alt="Navbar toggler icon"
+          />
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
+          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-start align-items-md-center">
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
                 className="nav-link dropdown-toggle"
@@ -199,7 +205,7 @@ const Navbar = ({ cities }) => {
                       <div>
                         <div className="my-2 my-sm-0 d-flex text-dark align-items-center gap-2">
                           <img
-                            src="COA-agent-pic.jpg"
+                            src="/COA-agent-pic.jpg"
                             alt="agent pic"
                             className="img-fluid img-call-height-dropdown"
                           />
@@ -253,7 +259,7 @@ const Navbar = ({ cities }) => {
                 className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark align-items-center gap-1"
               >
                 <img
-                  src="COA-agent-pic.jpg"
+                  src="/COA-agent-pic.jpg"
                   alt="agent pic"
                   className="img-fluid img-call-height"
                 />

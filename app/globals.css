@@ -1602,6 +1602,28 @@ color: #6e6e6e;
 .react-autosuggest__container {
   position: relative;
 }
+.navbar-toggler {
+  border: none!important;
+  padding: 0!important;
+}
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+.fixcontact{
+  display: none;
+}
+@media only screen and (max-width: 768px){
+.fixcontact {
+    bottom: 12px;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 9px;
+    position: fixed;
+    z-index: 9999;
+    display: block;
+}
+}
 .fs-top{
   font-size: 4rem;
   scale: 1;

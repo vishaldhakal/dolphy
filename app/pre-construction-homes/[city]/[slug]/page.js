@@ -291,7 +291,14 @@ export default async function Home({ params }) {
                           Receive a Call
                         </h5>
                         <p className="mb-0 text-center">hello@dolphy.ca</p>
-                        <p className="mb-0 text-center"> 647 527 4970</p>
+                        <p className="mb-0 text-center">
+                          <Link
+                            href="telto:(587) 887-2572"
+                            className="link-black"
+                          >
+                            (587) 887-2572
+                          </Link>
+                        </p>
                       </div>
                     </div>
                     <div className="my-4"></div>

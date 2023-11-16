@@ -60,13 +60,12 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="pb-4">
             <h1 className="main-title">
-              New Construction Homes in Calgary, Alberta ( 2023 )
+              {`New Construction Homes in Alberta ( 2023 )`}
             </h1>
-
             <p className="text-dark">
-              {data.count}+ New Preconstruction Townhomes, detached & condos for
-              sale in Calgary, Alberta | Check out plans, pricing, availability
-              for pre construction homes in Calgary, Alberta
+              {`${data.count}+ New Preconstruction Townhomes, detached & condos for
+              sale in Alberta | Check out plans, pricing, availability
+              for pre construction homes in Alberta`}
             </p>
           </div>
         </div>

@@ -72,10 +72,10 @@ export default async function Home({ params }) {
               )} ( 2023 )`}
             </h1>
             <p className="text-dark">
-              {data.preconstructions.length} New Pre construction Detached,
-              Townhomes and Condos for sale in {CapitalizeFirst(params.city)} |
+              {`${data.preconstructions.length} New Pre construction Detached,
+              Townhomes and Condos for sale in ${CapitalizeFirst(params.city)} |
               Check out plans, pricing, availability for preconstruction homes
-              in {CapitalizeFirst(params.city)}
+              in ${CapitalizeFirst(params.city)}`}
             </p>
           </div>
         </div>

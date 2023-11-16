@@ -3,6 +3,7 @@ import BottomContactForm from "@/components/BottomContactForm";
 import ListingCardHome from "@/components/ListingCardHome";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
+import SearchBar from "@/components/SearchBar";
 
 async function getData() {
   const res = await fetch(
@@ -19,8 +20,20 @@ async function getData() {
   return res.json();
 }
 
+async function getCities() {
+  const res = await fetch("https://api.dolphy.ca/api/all-city", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
 export default async function Home() {
   const data = await getData();
+  let cities = await getCities();
   return (
     <>
       <div className="py-5"></div>
@@ -32,31 +45,8 @@ export default async function Home() {
               alt="dolphy logo icon"
               className="img-fluid icon-img"
             />
-            <div className="pb-1">
-              <div className="form-floating mb-3">
-                <input
-                  type="email"
-                  className="form-control search-bar w-mine"
-                  id="floatingInput"
-                  placeholder="name@example.com"
-                />
-                <label
-                  htmlFor="floatingInput"
-                  className="d-flex align-items-center text-lightt"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-search"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                  </svg>
-                  <span className="mx-2">Search by city or project name</span>
-                </label>
-              </div>
+            <div className="pb-1 ww">
+              <SearchBar cities={cities} />
             </div>
           </div>
           <h4 className="text-center fs-2 fs-md-4 fw-bold mb-0">
@@ -99,7 +89,7 @@ export default async function Home() {
             </h2>
           </div>
           <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">
-            <p className="fs-5 mb-0">
+            <p className="fs-5 mb-0 text-center">
               Explore 20+ current & past new homes communities from Truman homes
               in Calgary
             </p>
@@ -195,7 +185,7 @@ export default async function Home() {
             </h2>
           </div>
           <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">
-            <p className="fs-5 mb-0">
+            <p className="fs-5 mb-0 text-center">
               Explore 100+ currently selling & upcoming pre-construction
               communities in Toronto
             </p>

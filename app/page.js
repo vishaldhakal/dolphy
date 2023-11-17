@@ -49,10 +49,10 @@ export default async function Home() {
               <SearchBar cities={cities} />
             </div>
           </div>
-          <h4 className="text-center fs-2 fs-md-4 fw-bold mb-0">
+          <h4 className="text-center fs-5 fs-md-2 fw-bold mb-0">
             Canada’s Leading New Homes Advisor
           </h4>
-          <p className="text-center fs-5 mt-2 fw-less mt-md-0">
+          <p className="text-center fs-small fs-md-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
           <div className="py-1 py-md-3 d-flex justify-content-center">

@@ -13,11 +13,11 @@ const Navbar = ({ cities }) => {
   }
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
-      <div className="container-fluid">
+      <div className="container-fluid justify-content-start">
         <Link href="/" className="logo">
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
-        <div className="input-group input-group-search">
+        <div className="input-group input-group-search me-2 me-md-0">
           <SearchBar changeCity={setCityname} cities={cities} />
           <Link
             href={"/pre-construction-homes/" + cityname.toLowerCase()}

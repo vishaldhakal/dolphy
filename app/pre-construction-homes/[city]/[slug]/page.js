@@ -184,6 +184,10 @@ export default async function Home({ params }) {
                         {data.project_name}
                       </h1>
                       <p className="mb-0">
+                        <Link
+                          className="link-black"
+                          href={`/pre-construction-homes/builders/${data.developer.slug}/`}
+                        ></Link>
                         By <strong>{data.developer.name}</strong>
                       </p>
                       <h2 className="vmain-title fs-3 fw-mine3 mt-1 mb-0">

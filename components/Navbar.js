@@ -272,14 +272,14 @@ const Navbar = ({ cities }) => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="#mycontact" className="nav-link">
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="nav-item d-flex flex-column">
               <Link
                 href="tel:6476745958"
-                className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark align-items-center gap-1"
+                className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark gap-1"
               >
                 <img
                   src="/COA-agent-pic.jpg"

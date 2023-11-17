@@ -30,7 +30,6 @@ export async function generateMetadata({ params }, parent) {
       canonical: `https://dolphy.ca/pre-construction-homes/builders/`,
     },
     title: data.count + " Preconstruction Homes Builders in Dolphy",
-    description: "Preconstruction Homes Builders in Dlphy",
     description:
       "Search our selection of pre construction home builders in Dolphy. Our ever-changing portfolio of pre constructions brings you closer to your ideal homes",
   };

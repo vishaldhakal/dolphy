@@ -1668,9 +1668,10 @@ button:focus:not(:focus-visible) {
   top: 0;
   z-index: 99;
 }
+
 .img-call-height{
-  width: 2.6rem;
-    height: 2.6rem;
+  width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     position: static;
 }
@@ -1691,7 +1692,12 @@ button:focus:not(:focus-visible) {
 .border-bottom2{
   text-shadow: 0 0 10px #cccccc;
 }
-
+.dolphy-advantage-image img{
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+}
 @media (max-width: 800px){
   .p-sticky-top{
     position: relative;

@@ -3,6 +3,7 @@ import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
+import PreconSchema from "@/components/PreconSchema";
 
 async function getData(city) {
   const res = await fetch(
@@ -32,7 +33,6 @@ export async function generateMetadata({ params }, parent) {
       canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/`,
     },
     title: data.preconstructions.length + " Preconstruction Homes in " + city,
-    description: "Preconstruction Homes in " + city,
     description:
       "Search our selection of pre construction homes for sale in " +
       city +
@@ -43,6 +43,10 @@ export async function generateMetadata({ params }, parent) {
 
 export default async function Home({ params }) {
   const data = await getData(params.city);
+
+  const filteredprojects = (value) => {
+    return data.preconstructions.filter((item) => item.status == value);
+  };
 
   return (
     <>
@@ -79,7 +83,7 @@ export default async function Home({ params }) {
             </p>
           </div>
         </div>
-        <div className="bg-white pt-3 pb-3 p-sticky-top ">
+        <div className="bg-white pt-3 pb-3 p-sticky-top">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
             <h4 className="fs-6 fw-bold text-mine">
               Hey Dolphy! I am looking for
@@ -124,12 +128,60 @@ export default async function Home({ params }) {
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              data.preconstructions.map((item) => (
+              filteredprojects("Selling").map((item) => (
                 <div className="col" key={item.id}>
+                  <script
+                    key={item.slug}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify(PreconSchema(item)),
+                    }}
+                  />
                   <CondoCard {...item} />
                 </div>
               ))}
           </div>
+          <div className="pt-5 mt-5"></div>
+          <h2 className="fw-bold fs-3 mb-4">
+            Upcoming New Construction Projects in{" "}
+            {CapitalizeFirst(data.city.name)}
+          </h2>
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+            {data.preconstructions &&
+              filteredprojects("Upcoming").map((item) => (
+                <div className="col" key={item.id}>
+                  <script
+                    key={item.slug}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify(PreconSchema(item)),
+                    }}
+                  />
+                  <CondoCard {...item} />
+                </div>
+              ))}
+          </div>
+          <div className="pt-5 mt-5"></div>
+          <h2 className="fw-bold fs-3 mb-4">
+            New Construction Past Communities in{" "}
+            {CapitalizeFirst(data.city.name)}
+          </h2>
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+            {data.preconstructions &&
+              filteredprojects("Sold out").map((item) => (
+                <div className="col" key={item.id}>
+                  <script
+                    key={item.slug}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify(PreconSchema(item)),
+                    }}
+                  />
+                  <CondoCard {...item} />
+                </div>
+              ))}
+          </div>
+          <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
           <DolphyAdvantage></DolphyAdvantage>
           <div className="pt-5 mt-5"></div>

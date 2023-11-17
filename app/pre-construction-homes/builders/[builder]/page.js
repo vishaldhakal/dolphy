@@ -3,6 +3,7 @@ import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import DeveloperCardDetail from "@/components/DeveloperCardDetail";
+import PreconSchema from "@/components/PreconSchema";
 
 async function getData(developer) {
   const res = await fetch(
@@ -32,7 +33,6 @@ export async function generateMetadata({ params }, parent) {
     },
     title:
       city + "- New home developer and builder | Communities & Developments",
-    description: "Preconstruction Homes by " + city,
     description:
       "Search our selection of pre construction homes for sale by " +
       city +
@@ -95,6 +95,13 @@ export default async function BuilderSingle({ params }) {
                 {data &&
                   data.map((item) => (
                     <div className="col" key={item.id}>
+                      <script
+                        key={item.slug}
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                          __html: JSON.stringify(PreconSchema(item)),
+                        }}
+                      />
                       <CondoCard {...item} />
                     </div>
                   ))}

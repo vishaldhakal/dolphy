@@ -8,7 +8,7 @@ import PreconSchema from "@/components/PreconSchema";
 
 async function getData() {
   const res = await fetch(
-    "https://api.dolphy.ca/api/preconstructions/?page_size=10",
+    "https://api.dolphy.ca/api/preconstructions/?page_size=20",
     {
       next: { revalidate: 10 },
     }
@@ -32,6 +32,19 @@ async function getCities() {
   return res.json();
 }
 
+export async function generateMetadata({ params }, parent) {
+  let city = "Greater Toronto Area";
+  return {
+    ...parent,
+    alternates: {
+      canonical: `https://dolphy.ca/greater-toronto-area/`,
+    },
+    title: "Looking for a Preconstruction Homes in Greater Toronto Area ?",
+    description:
+      "Search our selection of pre construction homes for sale in Greater Toronto Area. Our ever-changing portfolio of pre constructions brings you closer to your ideal homes in the growing area of Toronto.",
+  };
+}
+
 export default async function Home() {
   const data = await getData();
   let cities = await getCities();
@@ -51,7 +64,7 @@ export default async function Home() {
             </div>
           </div>
           <h4 className="text-center fs-md-2 fw-bold mb-0">
-            Canada’s Leading New Homes Advisor
+            GTA Leading New Homes Advisor
           </h4>
           <p className="text-center fs-small fs-md-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
@@ -77,109 +90,6 @@ export default async function Home() {
               Toronto
             </Link>
           </div>
-          <div className="py-2"></div>
-          <div className="py-2 py-md-5 my-2"></div>
-          <div className="d-flex align-items-center justify-content-center">
-            <h2 className="fw-mine ccent-line fs-1">
-              <Link
-                href={"/pre-construction-homes/calgary"}
-                className="link-black"
-              >
-                Calgary
-              </Link>
-            </h2>
-          </div>
-          <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">
-            <p className="fs-5 mb-0 text-center">
-              Explore 20+ current & past new homes communities from Truman homes
-              in Calgary
-            </p>
-            <Link
-              href={"/pre-construction-homes/calgary"}
-              className="mt-1 text-mine"
-            >
-              More communities in Calgary{" "}
-              <i className="bi bi-arrow-right-short"></i>
-            </Link>
-          </div>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.results &&
-              data.results.slice(0, 5).map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <ListingCardHome {...item} />
-                </div>
-              ))}
-          </div>
-          <div className="pt-5 mt-5"></div>
-          <div>
-            <div className="text-center fw-bold fs-3 text-mine">
-              Calgary Communities
-            </div>
-            <div className="py-3">
-              <div className="row row-cols-2 row-cols-md-6 gy-5">
-                <div className="col d-none d-md-block"></div>
-                <div className="col">
-                  <h4 className="fs-m fw-bold text-center">
-                    North West, Calgary
-                  </h4>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <h4 className="fs-m fw-bold text-center">
-                    South West, Calgary
-                  </h4>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <h4 className="fs-m fw-bold text-center">
-                    North East,Calgary
-                  </h4>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <h4 className="fs-m fw-bold text-center">
-                    South East, Calgary
-                  </h4>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col d-none d-md-block"></div>
-              </div>
-            </div>
-          </div>
-          <div className="py-3">
-            <div className="d-flex flex-column flex-md-row align-items-center justify-content-center align-items-center">
-              <img src="/Calgary.png" alt="Calgary map" className="img-fluid" />
-              <img
-                src="/Calgary2.png"
-                alt="Calgary map"
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="pt-5"></div>
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>
           <div className="d-flex align-items-center justify-content-center">
@@ -207,7 +117,7 @@ export default async function Home() {
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.results &&
-              data.results.slice(5, 10).map((item) => (
+              data.results.slice(10, 15).map((item) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}

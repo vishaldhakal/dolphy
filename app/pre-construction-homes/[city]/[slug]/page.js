@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import PreconSchema from "@/components/PreconSchema";
 
 async function getData(slug) {
   const res = await fetch(
@@ -128,6 +129,12 @@ export default async function Home({ params }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(PreconSchema(data)),
+        }}
+      />
       <div class="floating fixcontact">
         <div className="bg-white text-dark shadow-lg rounded-mine">
           <Link
@@ -245,9 +252,33 @@ export default async function Home({ params }) {
                 </div>
                 <div className="py-3 my-5">
                   <h2 className="fw-bold fs-4 pb-3">
+                    {data.floorplan.length > 0
+                      ? `See Available Floor Plans for ${data.project_name}`
+                      : `Floor Plans Coming Soon`}
+                  </h2>
+                  <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3">
+                    {data.floorplan &&
+                      data.floorplan.length > 0 &&
+                      data.floorplan.map(
+                        (item, index) =>
+                          item.image !== null && (
+                            <div className="col" key={index}>
+                              <div className="card shadow-sm">
+                                <img
+                                  src={`https://api.dolphy.ca${item.floorplan}`}
+                                  className="img-fluid rounded-mine"
+                                  alt="floor plan"
+                                />
+                              </div>
+                            </div>
+                          )
+                      )}
+                  </div>
+                </div>
+                <div className="py-3 my-5">
+                  <h2 className="fw-bold fs-4 pb-3">
                     Walk Score for {data.project_name}
                   </h2>
-
                   <div>
                     <div className="p-1">
                       <div className="walkscore-container mt-2 p-1 rounded-mine">

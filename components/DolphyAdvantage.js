@@ -9,7 +9,36 @@ export default function DolphyAdvantage() {
           Working hand in hand with leading Pre construction Homes, Condos
           Developers & Industry Partners
         </p>
-        <img src="/team.png" alt="dolphy team" className="img-fluid" />
+        <div className="row row-cols-2 row-cols-md-4">
+          <div className="col col-md-2 dolphy-advantage-image">
+            <img
+              src="/dolphyadvantage/1.jpg"
+              alt="Dolphy Advantage image 1"
+              className="img-fluid"
+            />
+          </div>
+          <div className="col col-md-4 dolphy-advantage-image">
+            <img
+              src="/dolphyadvantage/2.jpg"
+              alt="Dolphy Advantage image 2"
+              className="img-fluid"
+            />
+          </div>
+          <div className="col col-md-2 dolphy-advantage-image">
+            <img
+              src="/dolphyadvantage/3.jpg"
+              alt="Dolphy Advantage image 3"
+              className="img-fluid"
+            />
+          </div>
+          <div className="col col-md-4 dolphy-advantage-image">
+            <img
+              src="/dolphyadvantage/4.jpg"
+              alt="Dolphy Advantage image 4"
+              className="img-fluid"
+            />
+          </div>
+        </div>
       </div>
     </>
   );

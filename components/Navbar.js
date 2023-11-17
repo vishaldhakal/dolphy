@@ -65,12 +65,17 @@ const Navbar = ({ cities }) => {
           <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-start align-items-md-center">
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle align-items-center d-flex"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="true"
               >
                 New Projects
+                <img
+                  src="/dropdown.png"
+                  alt="dropdown icon"
+                  className="img-fluid dropdown-nav-icon ms-1"
+                />
               </button>
               <div
                 className="dropdown-menu dropdown-menu-end border-0 show"
@@ -113,7 +118,12 @@ const Navbar = ({ cities }) => {
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h5 className="mb-2 fw-mine fs-4">Calgary</h5>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/calgary/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Calgary</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -138,7 +148,12 @@ const Navbar = ({ cities }) => {
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h5 className="mb-2 fw-mine fs-4">Brampton</h5>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/brampton/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Brampton</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -168,7 +183,12 @@ const Navbar = ({ cities }) => {
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h5 className="mb-2 fw-mine fs-4">Mississauga</h5>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/mississauga/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Mississauga</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -239,9 +259,12 @@ const Navbar = ({ cities }) => {
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link
+                href={"/pre-construction-homes/builders/"}
+                className="nav-link"
+              >
                 Builders
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">

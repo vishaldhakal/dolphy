@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function DeveloperCard(props) {
   return (
     <>
-      <div className="card border-0 shadow-lg rounded-mine my-3 my-md-0 condocard">
+      <div className="card border-0 rounded-mine my-3 my-md-0 condocard">
         <div className="position-relative is-loading">
           <Link
             href={`/pre-construction-homes/builders/${props.slug}`}
@@ -16,14 +16,14 @@ export default function DeveloperCard(props) {
                 src={`${props.image}`}
                 layout="responsive"
                 className="img-fluid condocard-img-top"
-                alt={`${props.project_name} located at ${props.project_address} image`}
+                alt={`${props.name} builder's logo`}
               />
             ) : (
               <img
                 loading="lazy"
                 src="/noimage.webp"
                 className="img-fluid condocard-img-top"
-                alt={`no image available for ${props.project_name}`}
+                alt={`no image available for ${props.name}`}
               />
             )}
           </Link>

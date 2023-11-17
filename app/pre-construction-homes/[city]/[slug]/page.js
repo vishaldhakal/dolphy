@@ -129,7 +129,7 @@ export default async function Home({ params }) {
   return (
     <>
       <div class="floating fixcontact">
-        <div className="bg-white text-dark shadow-lg rounded-mine d-flex flex-column">
+        <div className="bg-white text-dark shadow-lg rounded-mine">
           <Link
             href="#mycontact"
             className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark link-black align-items-center gap-2"
@@ -139,13 +139,13 @@ export default async function Home({ params }) {
               alt="agent pic"
               className="img-fluid img-call-height"
             />
-            <span className="d-flex flex-column justify-content-start">
+            <span className="d-flex flex-column justify-content-start fs-5">
               <b id="text-dark">Send a message</b>
             </span>
           </Link>
         </div>
       </div>
-      <div className="pt-1">
+      <div className="pt-md-1">
         <div className="container">
           <Breadcrumb
             homeElement={"Home"}
@@ -290,15 +290,15 @@ export default async function Home({ params }) {
                         <h5 className="fw-bold text-center linem fs-4  mb-0">
                           Receive a Call
                         </h5>
-                        <p className="mb-0 text-center">hello@dolphy.ca</p>
                         <p className="mb-0 text-center">
                           <Link
                             href="telto:(587) 887-2572"
                             className="link-black"
                           >
-                            (587) 887-2572
+                            <i class="bi bi-telephone"></i> (587) 887-2572
                           </Link>
                         </p>
+                        <p className="mb-0 text-center">hello@dolphy.ca</p>
                       </div>
                     </div>
                     <div className="my-4"></div>

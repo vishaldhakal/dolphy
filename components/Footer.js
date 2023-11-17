@@ -13,7 +13,7 @@ const Footer = ({ cities }) => {
       <div className="container-fluid footer-top">
         <div className="row gy-4">
           <div className="col-lg-5 col-md-12 footer-about">
-            <Link href="/" className="logo d-flex align-items-center">
+            <Link href="/" className="footer-logo d-flex align-items-center">
               <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
             </Link>
             <p></p>
@@ -66,10 +66,12 @@ const Footer = ({ cities }) => {
 
           <div className="col-lg-3 col-md-12 footer-contact text-start text-md-start">
             <h4>Contact Dolphy</h4>
-            <p>Dolphy Inc.</p>
-            <p>8300 Woodbine Ave ste 500,Markham, ON L3R 9Y7</p>
-            <p>Office Hours ⋅ 9AM - 6 PM</p>
-            <p className="mt-4">
+            <p className="mb-1">Dolphy Inc.</p>
+            <p className="mb-1">
+              8300 Woodbine Ave ste 500,Markham, ON L3R 9Y7
+            </p>
+            <p className="mb-1">Office Hours ⋅ 9AM - 6 PM</p>
+            <p className="mt-1 mb-1">
               <strong>Phone: </strong>
               <Link href="tel:(587) 887-2572" className="text-dark">
                 (587) 887-2572

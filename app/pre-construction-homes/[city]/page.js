@@ -65,7 +65,7 @@ export default async function Home({ params }) {
       </div>
       <div className="pt-2 position-relative">
         <div className="container-fluid">
-          <div className="pb-2">
+          <div className="pb-1">
             <h1 className="main-title">
               {`New Construction Homes in ${CapitalizeFirst(
                 params.city
@@ -79,48 +79,45 @@ export default async function Home({ params }) {
             </p>
           </div>
         </div>
-        <div className="bg-white py-0 pb-4 p-sticky-top ">
+        <div className="bg-white pt-3 pb-3 p-sticky-top ">
           <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
-            <span className="fs-4 fw-bold text-mine">
+            <h4 className="fs-6 fw-bold text-mine">
               Hey Dolphy! I am looking for
-            </span>
-            <div className="d-flex">
-              <select className="bg-lightyellow p-2 rounded-3">
-                <option>All</option>
-                <option>Upcoming</option>
-                <option>Selling</option>
-                <option>Sold out</option>
-              </select>
-              <select className="bg-lightyellow p-2 rounded-3 ms-1">
-                <option>Home Types</option>
-                <option>Duplex</option>
-                <option>Townhomes</option>
-                <option>Condos</option>
-              </select>
-            </div>
-            <div className="d-flex align-items-center">
-              <span className="mx-2">under</span>
-              <select className="bg-lightyellow p-2 rounded-3">
-                <option>All price range</option>
-                <option>$400k</option>
-                <option>$500k</option>
-                <option>$700k</option>
-                <option>$900k</option>
-                <option>$1M</option>
-                <option>$2M</option>
-                <option>$3M</option>
-              </select>
-              <span className="ms-2">expected to be</span>
-            </div>
-            <div className="d-flex align-items-center">
-              <span className="me-2">completed by</span>
-              <select className="bg-lightyellow p-2 rounded-3">
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-                <option>2026</option>
-              </select>
-            </div>
+            </h4>
+            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+              All
+              <img
+                src="/dropdown.png"
+                alt="dropdown icon"
+                className="img-fluid dropdown-icon ms-1"
+              />
+            </h4>
+            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+              Home Types
+              <img
+                src="/dropdown.png"
+                alt="dropdown icon"
+                className="img-fluid dropdown-icon ms-1"
+              />
+            </h4>
+            <h4 className="fs-6 fw-bold text-mine">under</h4>
+            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+              All price range
+              <img
+                src="/dropdown.png"
+                alt="dropdown icon"
+                className="img-fluid dropdown-icon ms-1"
+              />
+            </h4>
+            <h4 className="fs-6 fw-bold text-mine">completed by</h4>
+            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+              All
+              <img
+                src="/dropdown.png"
+                alt="dropdown icon"
+                className="img-fluid dropdown-icon ms-1"
+              />
+            </h4>
           </div>
         </div>
         <div className="container-fluid">

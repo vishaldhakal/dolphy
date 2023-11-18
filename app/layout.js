@@ -13,9 +13,9 @@ export const metadata = {
   alternates: {
     canonical: `https://dolphy.ca/`,
   },
-  title: "Dolphy - Pre Construction Home Developments for Sale in Calgary",
+  title: "Dolphy - Leading New Construction  Homes Platform in Canada",
   description:
-    "Find the latest Pre Construction home developments for sale in Calgary with the Calgary's most user-friendly pre construction portal. Search new homes to buy in Calgary.",
+    "Dolphy is your top destination for pre-construction condos in Canada. 1000+ Pre construction townhomes, detached & condos available at Dolphy.ca.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",

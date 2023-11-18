@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
 import SearchBar from "@/components/SearchBar";
 import PreconSchema from "@/components/PreconSchema";
+import FixedContactButton from "@/components/FixedContactButton";
 
 async function getData() {
   const res = await fetch(
@@ -37,6 +38,7 @@ export default async function Home() {
   let cities = await getCities();
   return (
     <>
+      <FixedContactButton></FixedContactButton>
       <div className="py-5"></div>
       <div className="pt-3">
         <div className="container-fluid">

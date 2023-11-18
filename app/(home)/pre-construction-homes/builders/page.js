@@ -1,6 +1,7 @@
 import DeveloperCard from "@/components/DeveloperCard";
 import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
+import FixedContactButton from "@/components/FixedContactButton";
 
 async function getData() {
   const res = await fetch(
@@ -39,6 +40,7 @@ export default async function Builders() {
   const data = await getData();
   return (
     <>
+      <FixedContactButton></FixedContactButton>
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="py-4 pt-5 text-center">

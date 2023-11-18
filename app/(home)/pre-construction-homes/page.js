@@ -3,6 +3,7 @@ import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
 import PreconSchema from "@/components/PreconSchema";
+import FixedContactButton from "@/components/FixedContactButton";
 
 async function getData() {
   const res = await fetch(
@@ -61,6 +62,7 @@ export default async function Home({ params }) {
 
   return (
     <>
+      <FixedContactButton></FixedContactButton>
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="pb-4">

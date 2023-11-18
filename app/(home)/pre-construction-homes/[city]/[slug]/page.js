@@ -8,6 +8,7 @@ import Gallery from "@/components/Gallery";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import PreconSchema from "@/components/PreconSchema";
+import FixedContactButton from "@/components/FixedContactButton";
 
 async function getData(slug) {
   const res = await fetch(
@@ -135,23 +136,7 @@ export default async function Home({ params }) {
           __html: JSON.stringify(PreconSchema(data)),
         }}
       />
-      <div class="floating fixcontact">
-        <div className="bg-white text-dark shadow-lg rounded-mine">
-          <Link
-            href="#mycontact"
-            className="btn my-sm-0 ms-md-3 d-flex text-dark link-black align-items-center gap-2"
-          >
-            <img
-              src="/COA-agent-pic.jpg"
-              alt="agent pic"
-              className="img-fluid img-call-height"
-            />
-            <span className="d-flex flex-column justify-content-start fs-5">
-              <b id="text-dark">Send a message</b>
-            </span>
-          </Link>
-        </div>
-      </div>
+      <FixedContactButton></FixedContactButton>
       <div className="pt-md-1">
         <div className="container">
           <Breadcrumb

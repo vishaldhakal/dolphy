@@ -84,7 +84,7 @@ export default async function Home({ params }) {
           </div>
         </div>
         <div className="bg-white pt-3 pb-3 p-sticky-top">
-          <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
+          <div className="container-fluid d-flex gap-2 flex-md-row justify-content-md-start align-items-md-center fw-normal">
             <h4 className="fs-6 fw-bold text-mine">
               Hey Dolphy! I am looking for
             </h4>

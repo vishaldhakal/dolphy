@@ -1,16 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
 import SearchBar from "./SearchBar";
 
 const Navbar = ({ cities }) => {
-  const pathname = usePathname();
   const [cityname, setCityname] = useState("");
 
-  if (pathname.startsWith("/admin")) {
-    return <></>;
-  }
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
       <div className="container-fluid justify-content-start">

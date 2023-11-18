@@ -2,8 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import "./icons.css";
 import "react-quill/dist/quill.snow.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Script from "next/script";
 import GoogleAnalytics from "./GoogleAnalytics";
 import { Public_Sans } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
@@ -66,14 +65,12 @@ export default async function RootLayout({ children }) {
           shadow="0 0 10px #00A1FF,0 0 5px #00A1FF"
         />
         <GoogleAnalytics />
-        <Navbar cities={cities}></Navbar>
         {children}
-        <Footer cities={cities}></Footer>
-        <script
+        <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossOrigin="anonymous"
-        ></script>
+        ></Script>
       </body>
     </html>
   );

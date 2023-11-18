@@ -1699,9 +1699,9 @@ button:focus:not(:focus-visible) {
   border-radius: 7px;
 }
 @media (max-width: 800px){
-  .p-sticky-top{
+  /* .p-sticky-top{
     position: relative;
-  }
+  } */
   .fs-top{
     font-size: 2rem;
     padding-bottom: 0 !important;

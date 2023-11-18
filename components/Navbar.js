@@ -40,7 +40,7 @@ const Navbar = ({ cities }) => {
           </Link>
         </div>
         <button
-          className="navbar-toggler d-lg-none"
+          className="navbar-toggler d-lg-none ms-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapsibleNavId"

@@ -54,7 +54,7 @@ export default async function Home({ params }) {
         <div className="bg-white text-dark shadow-lg rounded-mine d-flex flex-column">
           <Link
             href="#mycontact"
-            className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark link-black align-items-center gap-2"
+            className="btn my-sm-0 ms-md-3 d-flex text-dark link-black align-items-center gap-2"
           >
             <img
               src="/COA-agent-pic.jpg"
@@ -84,44 +84,50 @@ export default async function Home({ params }) {
           </div>
         </div>
         <div className="bg-white pt-3 pb-3 p-sticky-top">
-          <div className="container-fluid d-flex gap-2 flex-md-row justify-content-md-start align-items-md-center fw-normal">
-            <h4 className="fs-6 fw-bold text-mine">
-              Hey Dolphy! I am looking for
-            </h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              All
-              <img
-                src="/dropdown.png"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              Home Types
-              <img
-                src="/dropdown.png"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-            <h4 className="fs-6 fw-bold text-mine">under</h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              All price range
-              <img
-                src="/dropdown.png"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-            <h4 className="fs-6 fw-bold text-mine">completed by</h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              All
-              <img
-                src="/dropdown.png"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
+          <div className="container-fluid d-flex gap-2 flex-column align-items-center flex-md-row justify-content-md-start align-items-md-center fw-normal">
+            <div className="d-flex">
+              <h4 className="fs-6 fw-bold text-mine">
+                Hey Dolphy! I am looking for
+              </h4>
+              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+                All
+                <img
+                  src="/dropdown.png"
+                  alt="dropdown icon"
+                  className="img-fluid dropdown-icon ms-1"
+                />
+              </h4>
+            </div>
+            <div className="d-flex">
+              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+                Home Types
+                <img
+                  src="/dropdown.png"
+                  alt="dropdown icon"
+                  className="img-fluid dropdown-icon ms-1"
+                />
+              </h4>
+              <h4 className="fs-6 fw-bold text-mine">under</h4>
+              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+                All price range
+                <img
+                  src="/dropdown.png"
+                  alt="dropdown icon"
+                  className="img-fluid dropdown-icon ms-1"
+                />
+              </h4>
+            </div>
+            <div className="d-flex">
+              <h4 className="fs-6 fw-bold text-mine">completed by</h4>
+              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
+                All
+                <img
+                  src="/dropdown.png"
+                  alt="dropdown icon"
+                  className="img-fluid dropdown-icon ms-1"
+                />
+              </h4>
+            </div>
           </div>
         </div>
         <div className="container-fluid">

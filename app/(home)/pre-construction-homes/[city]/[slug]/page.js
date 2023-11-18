@@ -139,7 +139,7 @@ export default async function Home({ params }) {
         <div className="bg-white text-dark shadow-lg rounded-mine">
           <Link
             href="#mycontact"
-            className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark link-black align-items-center gap-2"
+            className="btn my-sm-0 ms-md-3 d-flex text-dark link-black align-items-center gap-2"
           >
             <img
               src="/COA-agent-pic.jpg"

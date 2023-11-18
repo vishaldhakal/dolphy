@@ -1751,7 +1751,7 @@ button:focus:not(:focus-visible) {
     height: 320px;
   }
   .react-autosuggest__input {
-    width: 200px !important;
+    width: 170px !important;
     border-radius: 7px !important;
   }
   .ww .react-autosuggest__input {

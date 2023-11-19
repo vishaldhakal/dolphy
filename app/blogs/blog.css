@@ -46,3 +46,38 @@
 .tag p {
   margin: 0px;
 }
+
+.banner-image {
+  /* border-bottom-left-radius: 40%; */
+  /* border-bottom-right-radius: 40%; */
+  overflow: hidden;
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.image_border__fake {
+  position: absolute;
+  width: 100%;
+  bottom: -7px;
+  display: block;
+  background: transparent;
+  z-index: 10;
+}
+
+.banner-image > img {
+  filter: brightness(70%);
+}
+
+.blog-title {
+  top: 50%;
+}
+
+.swoop {
+  display: block;
+  /* position: relative; */
+  /* bottom: -10px; */
+  fill: rgb(255, 255, 255);
+}

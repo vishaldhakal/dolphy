@@ -18,14 +18,20 @@ import "./blog.css";
 const Blogs = async () => {
   const data = await fetchAllBlogPosts();
 
+  console.log(data);
   return (
     <Container>
-      <div className="blogs">
-        <div className="row  g-4" style={{ width: "18rem" }}>
-          <div className="col">
-            {data.results.map((blog, index) => {
-              return (
-                <div className="card border-0 shadow-lg rounded-mine my-3 my-md-0 blog-container">
+      <div className="blogs container">
+        <div className="row  g-4">
+          {data.results.map((blog, index) => {
+            const descLength = blog.news_description.length;
+
+            return (
+              <div className="col-md-6 col-sm-12">
+                <div
+                  className="card border-0 shadow-lg rounded-mine my-3 my-md-0 blog-container"
+                  key={index}
+                >
                   <div className="image-container w-100">
                     <img
                       loading="lazy"
@@ -41,7 +47,9 @@ const Blogs = async () => {
                     <div className="card-text">
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: blog.news_description,
+                          __html: `${blog.news_description.slice(0, 150)}${
+                            descLength > 150 ? " ..." : ""
+                          }`,
                         }}
                       />
                     </div>
@@ -51,6 +59,9 @@ const Blogs = async () => {
                         <p>{blog.city.name}</p>
                       </div>
                     </div>
+                  </div>
+
+                  <div className="card-footer">
                     <Link href={`/blogs/${blog.id}`}>
                       <div className="readmore__text d-flex align-items-baseline mt-2">
                         <p>read article</p>
@@ -61,9 +72,9 @@ const Blogs = async () => {
                     </Link>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </Container>

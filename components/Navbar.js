@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-
-//COMPONENT
 import SearchBar from "./SearchBar";
 
 //LIB
@@ -9,19 +7,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Navbar = ({ cities }) => {
-  const pathname = usePathname();
   const [cityname, setCityname] = useState("");
 
-  if (pathname.startsWith("/admin")) {
-    return <></>;
-  }
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
-      <div className="container-fluid">
+      <div className="container-fluid justify-content-start">
         <Link href="/" className="logo">
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
-        <div className="input-group input-group-search">
+        <div className="input-group input-group-search me-2 me-md-0">
           <SearchBar changeCity={setCityname} cities={cities} />
           <Link
             href={"/pre-construction-homes/" + cityname.toLowerCase()}
@@ -49,7 +43,7 @@ const Navbar = ({ cities }) => {
           </Link>
         </div>
         <button
-          className="navbar-toggler d-lg-none"
+          className="navbar-toggler d-lg-none ms-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapsibleNavId"
@@ -57,30 +51,42 @@ const Navbar = ({ cities }) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <img
+            loading="lazy"
+            src="https://img.icons8.com/material-two-tone/24/000000/menu.png"
+            width="24px"
+            height="24px"
+            alt="Navbar toggler icon"
+          />
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center">
+          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-start align-items-md-center">
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle align-items-center d-flex"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="true"
               >
-                Latest Projects
+                New Projects
+                <img
+                  src="/dropdown.png"
+                  alt="dropdown icon"
+                  className="img-fluid dropdown-nav-icon ms-1"
+                />
               </button>
               <div
                 className="dropdown-menu dropdown-menu-end border-0 show"
                 data-bs-popper="static"
               >
-                <h5 className="fw-bold px-4 mt-1 pb-3">
-                  New Construction Homes Currently{" "}
-                  <span className="text-mine">Selling</span>
-                </h5>
-                <div className="row p-4 dopp">
+                <div className="row p-3 pt-2 dopp">
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Toronto</h6>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/toronto/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Toronto</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -107,19 +113,15 @@ const Navbar = ({ cities }) => {
                           400 Front Street Condos
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Calgary</h6>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/calgary/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Calgary</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -141,19 +143,15 @@ const Navbar = ({ cities }) => {
                           Highgate Condos
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Brampton</h6>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/brampton/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Brampton</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -180,19 +178,15 @@ const Navbar = ({ cities }) => {
                           Boutin Tower
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <h6 className="mb-2 fw-mine fs-4">Mississauga</h6>
+                    <Link
+                      className="link-black"
+                      href={"/pre-construction-homes/mississauga/"}
+                    >
+                      <h5 className="mb-2 fw-mine fs-4">Mississauga</h5>
+                    </Link>
                     <ul className="list-unstyled">
                       <li>
                         <a className="dropdown-item" href="#">
@@ -219,15 +213,6 @@ const Navbar = ({ cities }) => {
                           Canopy Towers 2
                         </a>
                       </li>
-                      <li>
-                        <a
-                          className="dropdown-item d-flex align-items-center mt-4"
-                          href="#"
-                        >
-                          View All
-                          <i className="bi bi-arrow-right ms-1"></i>
-                        </a>
-                      </li>
                     </ul>
                   </div>
                   <div className="col-12">
@@ -236,25 +221,48 @@ const Navbar = ({ cities }) => {
                       role="alert"
                     >
                       <div>
-                        Top Featured : Niagara Joy Towns Coming Soon
-                        <a href="#" className="text-dark fw-bld ms-3">
-                          Join Event Now
-                          <span className="ms-2"></span>
-                          <i className="bi bi-arrow-right"></i>
-                        </a>
+                        <div className="my-2 my-sm-0 d-flex text-dark align-items-center gap-2">
+                          <img
+                            src="/COA-agent-pic.jpg"
+                            alt="agent pic"
+                            className="img-fluid img-call-height-dropdown"
+                          />
+                          <div className="d-flex flex-column justify-content-start align-items-start">
+                            <p className="mb-0 fw-bold">
+                              Looking for New Construction Homes in Calgary ?
+                            </p>
+                            <p className="fs-small mb-0">
+                              Call us at
+                              <Link
+                                href={"telto:(587) 887-2572"}
+                                className="me-2 ms-1"
+                              >
+                                (587) 887-2572
+                              </Link>
+                              to speak with our friendly new homes advisor.
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <button className="btn btn-call">
-                        Explore all cities
-                      </button>
+                      <Link
+                        className="btn btn-white link-black"
+                        href={"/pre-construction-homes/"}
+                      >
+                        Explore all projects
+                        <i className="bi bi-arrow-right-short"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link
+                href={"/pre-construction-homes/builders/"}
+                className="nav-link"
+              >
                 Builders
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/blogs">
@@ -262,17 +270,17 @@ const Navbar = ({ cities }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link href="#mycontact" className="nav-link">
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="nav-item d-flex flex-column">
               <Link
                 href="tel:6476745958"
-                className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark align-items-center gap-1"
+                className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark gap-1"
               >
                 <img
-                  src="COA-agent-pic.png"
+                  src="/COA-agent-pic.jpg"
                   alt="agent pic"
                   className="img-fluid img-call-height"
                 />

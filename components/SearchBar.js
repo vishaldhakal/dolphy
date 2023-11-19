@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Autosuggest from "react-autosuggest";
@@ -53,7 +54,9 @@ const SearchBar = (props) => {
   // OnChange event handler
   const onChange = (event, { newValue }) => {
     setValue(newValue);
-    props.changeCity(newValue);
+    if (props.changeCity) {
+      props.changeCity(newValue);
+    }
   };
 
   // Suggestion rerender when user types
@@ -68,7 +71,9 @@ const SearchBar = (props) => {
 
   useEffect(() => {
     setValue(props.defaultVal || "");
-    props.changeCity(props.defaultVal || "");
+    if (props.changeCity) {
+      props.changeCity(props.defaultVal || "");
+    }
   }, [props.defaultVal]);
 
   // Option props

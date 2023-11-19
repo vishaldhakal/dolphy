@@ -6,6 +6,9 @@ import SideContactForm from "@/components/SideContactForm";
 import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
 import Breadcrumb from "@/components/Breadcrumb";
+import Link from "next/link";
+import PreconSchema from "@/components/PreconSchema";
+import FixedContactButton from "@/components/FixedContactButton";
 
 async function getData(slug) {
   const res = await fetch(
@@ -127,7 +130,14 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <div className="pt-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(PreconSchema(data)),
+        }}
+      />
+      <FixedContactButton></FixedContactButton>
+      <div className="pt-md-1">
         <div className="container">
           <Breadcrumb
             homeElement={"Home"}
@@ -166,6 +176,10 @@ export default async function Home({ params }) {
                         {data.project_name}
                       </h1>
                       <p className="mb-0">
+                        <Link
+                          className="link-black"
+                          href={`/pre-construction-homes/builders/${data.developer.slug}/`}
+                        ></Link>
                         By <strong>{data.developer.name}</strong>
                       </p>
                       <h2 className="vmain-title fs-3 fw-mine3 mt-1 mb-0">
@@ -223,9 +237,33 @@ export default async function Home({ params }) {
                 </div>
                 <div className="py-3 my-5">
                   <h2 className="fw-bold fs-4 pb-3">
+                    {data.floorplan.length > 0
+                      ? `See Available Floor Plans for ${data.project_name}`
+                      : `Floor Plans Coming Soon`}
+                  </h2>
+                  <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3">
+                    {data.floorplan &&
+                      data.floorplan.length > 0 &&
+                      data.floorplan.map(
+                        (item, index) =>
+                          item.image !== null && (
+                            <div className="col" key={index}>
+                              <div className="card shadow-sm">
+                                <img
+                                  src={`https://api.dolphy.ca${item.floorplan}`}
+                                  className="img-fluid rounded-mine"
+                                  alt="floor plan"
+                                />
+                              </div>
+                            </div>
+                          )
+                      )}
+                  </div>
+                </div>
+                <div className="py-3 my-5">
+                  <h2 className="fw-bold fs-4 pb-3">
                     Walk Score for {data.project_name}
                   </h2>
-
                   <div>
                     <div className="p-1">
                       <div className="walkscore-container mt-2 p-1 rounded-mine">
@@ -272,8 +310,15 @@ export default async function Home({ params }) {
                         <h5 className="fw-bold text-center linem fs-4  mb-0">
                           Receive a Call
                         </h5>
+                        <p className="mb-0 text-center">
+                          <Link
+                            href="telto:(587) 887-2572"
+                            className="link-black"
+                          >
+                            <i class="bi bi-telephone"></i> (587) 887-2572
+                          </Link>
+                        </p>
                         <p className="mb-0 text-center">hello@dolphy.ca</p>
-                        <p className="mb-0 text-center"> 647 527 4970</p>
                       </div>
                     </div>
                     <div className="my-4"></div>
@@ -291,7 +336,7 @@ export default async function Home({ params }) {
             </div>
           </div>
           <div className="pt-5 mt-5"></div>
-          <div className="py-5 my-5 d-none d-md-block" id="mycontact">
+          <div className="py-5 my-5 d-none d-md-block">
             <div className="container-fluid">
               <div className="row justify-content-center">
                 <img

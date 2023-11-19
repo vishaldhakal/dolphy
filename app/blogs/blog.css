@@ -1,0 +1,48 @@
+.blog-container {
+  max-width: 29.688em;
+  margin: auto;
+  height: 100%;
+}
+
+.image-container {
+  width: 100%;
+  height: 17em;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 0.5em;
+}
+
+.readmore__text {
+  color: #00729e;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  gap: 10px;
+  transition: all 0.2s linear;
+}
+
+.readmore__text:hover {
+  color: #00b5d6 !important;
+  text-decoration: underline !important;
+  gap: 14px;
+}
+
+.tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5eff1;
+  height: 30px;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.tag p {
+  margin: 0px;
+}

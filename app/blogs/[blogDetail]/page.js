@@ -6,6 +6,9 @@ import { fetchBlogPostById } from "@/api/blogs";
 //COMPONENTS
 import Container from "@/components/container";
 
+//STYLES
+import "../blog.css";
+
 const BlogDetails = async ({ params }) => {
   const blogId = params?.blogDetail;
 
@@ -31,6 +34,13 @@ const BlogDetails = async ({ params }) => {
             }}
           />
         </article>
+
+        <div className="tags-container d-flex align-items-baseline">
+          <div className="fw-bold">Tags</div>
+          <div className="tag ms-5">
+            <p>{blog.city.name}</p>
+          </div>
+        </div>
       </section>
     </Container>
   );

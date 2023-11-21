@@ -152,7 +152,7 @@ export default async function Home({ params }) {
               ))}
           </div>
           <div className="pt-5 mt-5"></div>
-          <h2 className="fw-bold fs-3 mb-4">
+          <h2 className="fw-bold fs-3 mb-4 text-red">
             New Construction Past Communities in{" "}
             {CapitalizeFirst(data.city.name)}
           </h2>

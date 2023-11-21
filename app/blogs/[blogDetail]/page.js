@@ -13,6 +13,7 @@ const BlogDetails = async ({ params }) => {
   const blogId = params?.blogDetail;
 
   const blog = await fetchBlogPostById(blogId);
+  console.log(blog);
   return (
     <>
       <section className="banner__container position-relative">

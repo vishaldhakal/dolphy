@@ -1,7 +1,10 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+
+//LIB
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = ({ cities }) => {
   const [cityname, setCityname] = useState("");
@@ -262,9 +265,9 @@ const Navbar = ({ cities }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" href="/blogs">
                 Blogs
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link href="#mycontact" className="nav-link">

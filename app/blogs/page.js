@@ -13,6 +13,16 @@ import Link from "next/link";
 //COMPONENTS
 import BlogCard from "@/components/blogCard";
 
+export async function generateMetadata({ params }, parent) {
+  return {
+    ...parent,
+    alternates: {
+      canonical: `https://api.dolphy.ca/api/news/`,
+    },
+    title: "Dolphy Blogs | Insights on real Estate",
+  };
+}
+
 const Blogs = async ({ searchParams }) => {
   let blogPosts = null;
   if (searchParams?.city) {
@@ -29,6 +39,9 @@ const Blogs = async ({ searchParams }) => {
           <div className="blogs container">
             <div className="row g-4">
               <div className="col-sm-12 col-lg-9 ">
+                <h3 className="text-center fw-bold fs-5 mb-4">
+                  15+ Insightful blogs in dolphy
+                </h3>
                 <div className="row">
                   {blogPosts.length > 0 ? (
                     <>
@@ -54,7 +67,9 @@ const Blogs = async ({ searchParams }) => {
               </div>
 
               <div className="col-lg-3 ps-5">
-                <h3 className="fw-bold fs-5">Insights on particular city</h3>
+                <h3 className="fw-bold fs-5 mb-4">
+                  Insights on Particular City
+                </h3>
                 {cities.map((city) => {
                   return (
                     <p key={city.slug}>

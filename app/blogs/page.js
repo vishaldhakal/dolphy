@@ -5,6 +5,7 @@ import Link from "next/link";
 
 //API
 import { fetchAllBlogPosts } from "@/api/blogs";
+import { endPoints } from "@/api/endpoints";
 
 //COMPONENTS
 import Container from "@/components/container";
@@ -18,12 +19,11 @@ import "./blog.css";
 const Blogs = async () => {
   const data = await fetchAllBlogPosts();
 
-  console.log(data);
   return (
     <Container>
       <div className="blogs container">
         <div className="row  g-4">
-          {data.results.map((blog, index) => {
+          {data.map((blog, index) => {
             const descLength = blog.news_description.length;
 
             return (
@@ -36,7 +36,7 @@ const Blogs = async () => {
                     <img
                       loading="lazy"
                       className="card-img-top"
-                      src={blog.news_thumbnail}
+                      src={endPoints.baseURL + blog.news_thumbnail}
                       alt={blog.news_title.slice(0, 10)}
                     />
                   </div>

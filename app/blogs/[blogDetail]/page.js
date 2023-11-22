@@ -3,9 +3,6 @@ import React from "react";
 //API
 import { fetchBlogPostById } from "@/api/blogs";
 
-//COMPONENTS
-import Container from "@/components/container";
-
 //STYLES
 import "../blog.css";
 
@@ -13,7 +10,7 @@ const BlogDetails = async ({ params }) => {
   const blogId = params?.blogDetail;
 
   const blog = await fetchBlogPostById(blogId);
-  console.log(blog);
+
   return (
     <>
       <section className="banner__container position-relative">
@@ -42,29 +39,33 @@ const BlogDetails = async ({ params }) => {
         </div>
       </section>
 
-      <Container>
-        <section className="blog__desc">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: blog.news_description,
-            }}
-          />
-          <article>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: blog.city.details,
-              }}
-            />
-          </article>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-9 col-10 mx-auto">
+            <section className="blog__desc">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: blog.news_description,
+                }}
+              />
+              <article>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: blog.city.details,
+                  }}
+                />
+              </article>
 
-          <div className="tags-container d-flex align-items-baseline">
-            <div className="fw-bold">Tags</div>
-            <div className="tag ms-5">
-              <p>{blog.city.name}</p>
-            </div>
+              <div className="tags-container d-flex align-items-baseline">
+                <div className="fw-bold">Tags</div>
+                <div className="tag ms-5">
+                  <p>{blog.city.name}</p>
+                </div>
+              </div>
+            </section>
           </div>
-        </section>
-      </Container>
+        </div>
+      </div>
     </>
   );
 };

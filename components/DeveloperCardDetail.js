@@ -29,11 +29,11 @@ export default function DeveloperCardDetail(props) {
           </h4>
           {props.phone !== "n/a" ? (
             <Link href={"telto:" + props.phone} className="link-black">
-              <i class="bi bi-telephone"></i> {props.phone}
+              <i className="bi bi-telephone"></i> {props.phone}
             </Link>
           ) : (
             <>
-              <i class="bi bi-telephone"></i>{" "}
+              <i className="bi bi-telephone"></i>{" "}
               <b className="ms-1">Phone number not available</b>
             </>
           )}

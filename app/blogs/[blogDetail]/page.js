@@ -33,7 +33,7 @@ const BlogDetails = async ({ params }) => {
         <div className="image_border__fake">
           <svg
             width="100%"
-            class="swoop"
+            className="swoop"
             viewBox="0 0 2400 275"
             preserveAspectRatio="xMidYMax slice"
           >

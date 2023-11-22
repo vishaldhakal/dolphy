@@ -10,12 +10,6 @@ import { endPoints } from "@/api/endpoints";
 //COMPONENTS
 import Container from "@/components/container";
 
-//ICONS
-import { FaArrowRightLong } from "react-icons/fa6";
-
-//STYLES
-import "./blog.css";
-
 const Blogs = async () => {
   const data = await fetchAllBlogPosts();
 
@@ -66,7 +60,7 @@ const Blogs = async () => {
                       <div className="readmore__text d-flex align-items-baseline mt-2">
                         <p>read article</p>
                         <div className="ps-2">
-                          <FaArrowRightLong />
+                          <i className="bi bi-arrow-right-short"></i>
                         </div>
                       </div>
                     </Link>

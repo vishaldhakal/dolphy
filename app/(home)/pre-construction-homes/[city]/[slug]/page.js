@@ -315,7 +315,7 @@ export default async function Home({ params }) {
                             href="telto:(587) 887-2572"
                             className="link-black"
                           >
-                            <i class="bi bi-telephone"></i> (587) 887-2572
+                            <i className="bi bi-telephone"></i> (587) 887-2572
                           </Link>
                         </p>
                         <p className="mb-0 text-center">hello@dolphy.ca</p>

@@ -66,10 +66,10 @@ export default async function Home({ params }) {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="pb-4">
-            <h1 className="main-title">
+            <h1 className="main-title text-center text-md-start">
               {`New Construction Homes in Alberta ( 2023 )`}
             </h1>
-            <p className="text-dark">
+            <p className="text-dark text-center text-md-start">
               {`${data.count}+ New Preconstruction Townhomes, detached & condos for
               sale in Alberta | Check out plans, pricing, availability
               for pre construction homes in Alberta`}

@@ -9,6 +9,7 @@ import Link from "next/link";
 
 //COMPONENT
 import Breadcrumb from "@/components/Breadcrumb";
+import BottomContactForm from "@/components/BottomContactForm";
 
 //STYLES
 import "../blog.css";
@@ -96,6 +97,29 @@ const BlogDetails = async ({ params }) => {
                 </div>
               </div>
             </section>
+          </div>
+        </div>
+      </div>
+
+      <div className="pt-5 mt-5"></div>
+      <div className="py-5 my-5 d-none d-md-block">
+        <div className="container-fluid">
+          <div className="row justify-content-center">
+            <img
+              src="/contact-bottom-2.png"
+              alt="dce"
+              className="img-fluid w-25 w-smm-50 mb-3"
+            />
+          </div>
+          <h2 className="fw-mine text-center px-md-4 fs-4">
+            Contact Dolphy for New Construction Homes
+          </h2>
+          <div className="row row-cols-1 row-cols-md-3 mt-3">
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
+              <BottomContactForm></BottomContactForm>
+            </div>
+            <div className="col-md-3"></div>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import Link from "next/link";
 
 //COMPONENTS
 import BlogCard from "@/components/blogCard";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export async function generateMetadata({ params }, parent) {
   return {
@@ -34,6 +35,28 @@ const Blogs = async ({ searchParams }) => {
 
   return (
     <div className="container mt-4">
+      <Breadcrumb
+        homeElement={"Home"}
+        separator={
+          <span>
+            {" "}
+            <svg
+              className="svg minearr"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
+                fill={"#869099"}
+              ></path>
+            </svg>{" "}
+          </span>
+        }
+        activeClasses="text-dark"
+        containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
+        listClasses="mx-1"
+        capitalizeLinks
+      />
       <div className="row">
         <div className=" mx-auto">
           <div className="blogs container">

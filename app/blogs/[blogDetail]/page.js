@@ -4,6 +4,12 @@ import React from "react";
 import { fetchBlogPostBySlug } from "@/api/blogs";
 import { endPoints } from "@/api/endpoints";
 
+//LIB
+import Link from "next/link";
+
+//COMPONENT
+import Breadcrumb from "@/components/Breadcrumb";
+
 //STYLES
 import "../blog.css";
 
@@ -15,7 +21,29 @@ const BlogDetails = async ({ params }) => {
   return (
     <>
       <section className="banner__container position-relative">
-        <div className="banner-image">
+        <Breadcrumb
+          homeElement={"Home"}
+          separator={
+            <span>
+              {" "}
+              <svg
+                className="svg minearr"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
+                  fill={"#869099"}
+                ></path>
+              </svg>{" "}
+            </span>
+          }
+          activeClasses="text-dark"
+          containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
+          listClasses="mx-1"
+          capitalizeLinks
+        />
+        <div className="banner-image mt-4">
           <img
             src={endPoints.baseURL + blog.news_thumbnail}
             alt={blog.news_title.slice(0, 10)}
@@ -59,8 +87,12 @@ const BlogDetails = async ({ params }) => {
 
               <div className="tags-container d-flex align-items-baseline">
                 <div className="fw-bold">Tags</div>
-                <div className="tag ms-5">
-                  <p>{blog.city.name}</p>
+                <div className="ms-5">
+                  <Link href={`/blogs?city=${blog.city.slug}`}>
+                    <div className="tag text-dark">
+                      <p>{blog.city.name}</p>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </section>

@@ -1,22 +1,23 @@
 import React from "react";
 
 //API
-import { fetchBlogPostById } from "@/api/blogs";
+import { fetchBlogPostBySlug } from "@/api/blogs";
+import { endPoints } from "@/api/endpoints";
 
 //STYLES
 import "../blog.css";
 
 const BlogDetails = async ({ params }) => {
-  const blogId = params?.blogDetail;
+  const blogSlug = params?.blogDetail;
 
-  const blog = await fetchBlogPostById(blogId);
+  const blog = await fetchBlogPostBySlug(blogSlug);
 
   return (
     <>
       <section className="banner__container position-relative">
         <div className="banner-image">
           <img
-            src={blog.news_thumbnail}
+            src={endPoints.baseURL + blog.news_thumbnail}
             alt={blog.news_title.slice(0, 10)}
             loading="lazy"
             width="100%"

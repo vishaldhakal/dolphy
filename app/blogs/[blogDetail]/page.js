@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 //COMPONENT
 import Breadcrumb from "@/components/Breadcrumb";
 import BottomContactForm from "@/components/BottomContactForm";
-import SocialMediaShare from "@/components/socialMediaShare";
+import SocialMediaShare from "@/components/SocialMediaShare";
 
 //STYLES
 import "../blog.css";

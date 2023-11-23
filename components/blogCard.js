@@ -37,7 +37,7 @@ const BlogCard = ({ blog }) => {
             />
           </div>
           <div className="tags-container position-absolute bottom-0 mb-3">
-            <Link href={`/blogs?city=${blog.city.slug}`}>
+            <Link href={`/blogs/category/${blog.city.slug}`}>
               <div className="tag text-dark">
                 <p>{blog.city.name}</p>
               </div>

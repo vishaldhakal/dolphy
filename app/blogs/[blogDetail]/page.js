@@ -19,7 +19,6 @@ export async function generateMetadata({ params }, parent) {
 
   const blog = await fetchBlogPostBySlug(blogSlug);
 
-  console.log(blog);
   return {
     ...parent,
     alternates: {

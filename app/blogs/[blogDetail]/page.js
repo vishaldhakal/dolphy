@@ -14,6 +14,21 @@ import BottomContactForm from "@/components/BottomContactForm";
 //STYLES
 import "../blog.css";
 
+export async function generateMetadata({ params }, parent) {
+  const blogSlug = params?.blogDetail;
+
+  const blog = await fetchBlogPostBySlug(blogSlug);
+
+  console.log(blog);
+  return {
+    ...parent,
+    alternates: {
+      canonical: `https://api.dolphy.ca/api/news/${blogSlug}`,
+    },
+    title: `${blog.news_title}`,
+  };
+}
+
 const BlogDetails = async ({ params }) => {
   const blogSlug = params?.blogDetail;
 

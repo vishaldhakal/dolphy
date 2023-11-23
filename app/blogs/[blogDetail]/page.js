@@ -20,8 +20,8 @@ const BlogDetails = async ({ params }) => {
   const blog = await fetchBlogPostBySlug(blogSlug);
 
   return (
-    <>
-      <section className="banner__container position-relative">
+    <div className="blog__details">
+      <div className="container-fluid justify-content-start">
         <Breadcrumb
           homeElement={"Home"}
           separator={
@@ -44,6 +44,8 @@ const BlogDetails = async ({ params }) => {
           listClasses="mx-1"
           capitalizeLinks
         />
+      </div>
+      <section className="banner__container position-relative">
         <div className="banner-image mt-4">
           <img
             src={endPoints.baseURL + blog.news_thumbnail}
@@ -123,7 +125,7 @@ const BlogDetails = async ({ params }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

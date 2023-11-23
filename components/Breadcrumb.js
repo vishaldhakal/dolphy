@@ -32,12 +32,12 @@ const Breadcrumb = ({
           // Remove "-" from itemLink
           itemLink = itemLink.replace(/-/g, " ");
           return (
-            <>
+            <React.Fragment key={index}>
               <li className={itemClasses} key={index}>
                 <Link href={href}>{itemLink}</Link>
               </li>
               {pathNames.length !== index + 1 && separator}
-            </>
+            </React.Fragment>
           );
         })}
       </ul>

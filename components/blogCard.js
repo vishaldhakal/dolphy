@@ -30,8 +30,8 @@ const BlogCard = ({ blog }) => {
           <div className="card-text flex-grow-1 mb-4">
             <div
               dangerouslySetInnerHTML={{
-                __html: `${blog.news_description.slice(0, 100)}${
-                  descLength > 100 ? " ..." : ""
+                __html: `${blog.news_description.slice(0, 70)}${
+                  descLength > 70 ? " ..." : ""
                 }`,
               }}
             />

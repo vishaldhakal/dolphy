@@ -13,7 +13,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://api.dolphy.ca/api/news/`,
+      canonical: `https://dolphy.ca/blogs/category/${params?.city}`,
     },
     title: `Dolphy Blogs | ${params?.city} Insights on real Estate`,
   };

@@ -9,9 +9,6 @@ import NextTopLoader from "nextjs-toploader";
 const public_sans = Public_Sans({ subsets: ["latin"] });
 
 export const metadata = {
-  alternates: {
-    canonical: `https://dolphy.ca/`,
-  },
   title: "Dolphy - Leading New Construction  Homes Platform in Canada",
   description:
     "Dolphy is your top destination for pre-construction condos in Canada. 1000+ Pre construction townhomes, detached & condos available at Dolphy.ca.",

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://api.dolphy.ca/api/news/${blogSlug}`,
+      canonical: `https://dolphy.ca/blogs/${blogSlug}`,
     },
     title: `${blog.news_title}`,
   };

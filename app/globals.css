@@ -1418,6 +1418,13 @@ color: #6e6e6e;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.text-limit{
+  font-size: 0.9rem !important;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .text-red{
   color: red;
 }

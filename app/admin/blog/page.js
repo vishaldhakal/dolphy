@@ -7,12 +7,12 @@ import NewsTable from "@/components/NewsTable";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
-export default function News() {
+export default function UploadBlog() {
   let stat = {
     id: 1,
     news_title: "",
     news_description: "",
-    news_link: "",
+    news_link: "#",
     news_thumbnail: null,
     city: {
       name: "",
@@ -171,7 +171,7 @@ export default function News() {
       .get("https://api.dolphy.ca/api/news/")
       .then((res) => {
         console.log(res.data.results);
-        setNews(res.data.results);
+        setNews(res.data);
       })
       .catch((err) => {
         console.log(err.data);
@@ -224,7 +224,7 @@ export default function News() {
           <section className="modal-main rounded-4">
             <div className="p-3 py-4 bg-light">
               <div className="d-flex justify-content-between align-items-center">
-                <p className="fw-bold mb-0">Upload News</p>
+                <p className="fw-bold mb-0">Upload Blog</p>
                 <button
                   className="btn bg-white btn-outline-danger p-1 py-0"
                   onClick={() => {
@@ -247,7 +247,7 @@ export default function News() {
               </div>
               <div className="py-3 mt-2">
                 <div className="row row-cols-1 gy-4">
-                  <div className="col-4">
+                  <div className="col-8">
                     <div className="form-floating w-100">
                       <input
                         type="text"
@@ -257,11 +257,11 @@ export default function News() {
                         onChange={(e) => handleChange(e)}
                       />
                       <label htmlFor="news_title">
-                        News Title <span className="text-danger">*</span>
+                        Blog Title <span className="text-danger">*</span>
                       </label>
                     </div>
                   </div>
-                  <div className="col-4">
+                  {/* <div className="col-4">
                     <div className="form-floating w-100">
                       <input
                         type="text"
@@ -271,10 +271,10 @@ export default function News() {
                         onChange={(e) => handleChange(e)}
                       />
                       <label htmlFor="news_link">
-                        News Link <span className="text-danger">*</span>
+                        Blog Link <span className="text-danger">*</span>
                       </label>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="col-4">
                     <div className="form-floating w-100">
                       <select
@@ -317,13 +317,13 @@ export default function News() {
                       <label htmlFor="image">
                         {!isEdit && (
                           <>
-                            News Thumbnail{" "}
+                            Blog Thumbnail{" "}
                             <span className="text-danger">*</span>
                           </>
                         )}
                         {isEdit && (
                           <>
-                            News Thumbnail{" "}
+                            Blog Thumbnail{" "}
                             <span className="text-danger">*</span>
                           </>
                         )}
@@ -340,7 +340,7 @@ export default function News() {
                   </div>
                   <div className="col-12">
                     <p className="fw-bold ms-2 mb-1 mt-2">
-                      News Detail <span className="text-danger">*</span>{" "}
+                      Blog Detail <span className="text-danger">*</span>{" "}
                     </p>
                     <ReactQuill
                       theme="snow"
@@ -417,14 +417,14 @@ export default function News() {
       <div className="py-4 w-100 ">
         <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
           <div className="col-md-8">
-            <h5 className="fw-bold mb-0">News</h5>
+            <h5 className="fw-bold mb-0">Blog</h5>
           </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
               className="btn btn-success py-3"
               onClick={() => setModalNews(true)}
             >
-              Add New News
+              Add New Blog
             </button>
           </div>
         </div>

@@ -43,7 +43,7 @@ const AdminSidebar = () => {
             <span>Developers</span>
           </Link>
         </li>
-        <li className="nav-item sidebar-nav-link">
+        {/* <li className="nav-item sidebar-nav-link">
           <Link
             className={
               pathname.startsWith("/admin/events")
@@ -55,18 +55,18 @@ const AdminSidebar = () => {
             <i className="bi bi-calendar-check"></i>
             <span>Events</span>
           </Link>
-        </li>
+        </li> */}
         <li className="nav-item sidebar-nav-link">
           <Link
             className={
-              pathname.startsWith("/admin/news")
+              pathname.startsWith("/admin/blog")
                 ? "nav-link active"
                 : "nav-link"
             }
-            href="/admin/news"
+            href="/admin/blog"
           >
             <i className="bi bi-newspaper"></i>
-            <span>News</span>
+            <span>Blogs</span>
           </Link>
         </li>
       </ul>

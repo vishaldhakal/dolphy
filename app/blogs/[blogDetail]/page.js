@@ -43,30 +43,7 @@ const BlogDetails = async ({ params }) => {
 
   return (
     <div className="blog__details">
-      <div className="container-fluid justify-content-start">
-        <Breadcrumb
-          homeElement={"Home"}
-          separator={
-            <span>
-              {" "}
-              <svg
-                className="svg minearr"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
-                  fill={"#869099"}
-                ></path>
-              </svg>{" "}
-            </span>
-          }
-          activeClasses="text-dark"
-          containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
-          listClasses="mx-1"
-          capitalizeLinks
-        />
-      </div>
+      <div className="container-fluid justify-content-start"></div>
       <section className="banner__container position-relative">
         <div className="banner-image mt-4">
           <img

@@ -9,7 +9,6 @@ import Link from "next/link";
 import dayjs from "dayjs";
 
 //COMPONENT
-import Breadcrumb from "@/components/Breadcrumb";
 import BottomContactForm from "@/components/BottomContactForm";
 import SocialMediaShare from "@/components/SocialMediaShare";
 
@@ -43,7 +42,6 @@ const BlogDetails = async ({ params }) => {
 
   return (
     <div className="blog__details">
-      <div className="container-fluid justify-content-start"></div>
       <section className="banner__container position-relative">
         <div className="banner-image mt-4">
           <img
@@ -108,7 +106,7 @@ const BlogDetails = async ({ params }) => {
                 <div className="fw-bold">Tags</div>
                 <div className="ms-5">
                   <Link href={`/blogs/category/${blog.city.slug}`}>
-                    <div className="tag text-dark">
+                    <div className="tag">
                       <p>{blog.city.name}</p>
                     </div>
                   </Link>

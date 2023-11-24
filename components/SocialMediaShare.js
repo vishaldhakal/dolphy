@@ -22,7 +22,7 @@ import { endPoints } from "@/api/endpoints";
 const SocialMediaShare = () => {
   const pathname = usePathname();
 
-  const url = endPoints.baseURL + pathname;
+  const url = endPoints.shareURL + pathname;
   const title = "Check out this awesome blog!";
 
   return (

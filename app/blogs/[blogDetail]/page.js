@@ -1,27 +1,49 @@
 import React from "react";
 
 //API
-import { fetchBlogPostBySlug } from "@/api/blogs";
+import { fetchBlogPostByCity, fetchBlogPostBySlug } from "@/api/blogs";
 import { endPoints } from "@/api/endpoints";
 
 //LIB
 import Link from "next/link";
+import dayjs from "dayjs";
 
 //COMPONENT
 import Breadcrumb from "@/components/Breadcrumb";
 import BottomContactForm from "@/components/BottomContactForm";
+import SocialMediaShare from "@/components/SocialMediaShare";
 
 //STYLES
 import "../blog.css";
+
+export async function generateMetadata({ params }, parent) {
+  const blogSlug = params?.blogDetail;
+
+  const blog = await fetchBlogPostBySlug(blogSlug);
+
+  return {
+    ...parent,
+    alternates: {
+      canonical: `https://api.dolphy.ca/api/news/${blogSlug}`,
+    },
+    title: `${blog.news_title}`,
+  };
+}
 
 const BlogDetails = async ({ params }) => {
   const blogSlug = params?.blogDetail;
 
   const blog = await fetchBlogPostBySlug(blogSlug);
+  const relatedBlogPosts = await fetchBlogPostByCity(blog.city.slug);
+
+  //filter out related blogs for the same city
+  const filteredBlogPostsBasedOnCity = relatedBlogPosts.filter(
+    (relatedBlog) => blog.slug != relatedBlog.slug
+  );
 
   return (
-    <>
-      <section className="banner__container position-relative">
+    <div className="blog__details">
+      <div className="container-fluid justify-content-start">
         <Breadcrumb
           homeElement={"Home"}
           separator={
@@ -44,6 +66,8 @@ const BlogDetails = async ({ params }) => {
           listClasses="mx-1"
           capitalizeLinks
         />
+      </div>
+      <section className="banner__container position-relative">
         <div className="banner-image mt-4">
           <img
             src={endPoints.baseURL + blog.news_thumbnail}
@@ -72,7 +96,24 @@ const BlogDetails = async ({ params }) => {
       <div className="container">
         <div className="row">
           <div className="col-md-9 col-10 mx-auto">
-            <section className="blog__desc">
+            <section className="blog__author d-flex align-items-center mt-3">
+              <div className="blog__author-image">
+                <img
+                  width="80px"
+                  height="80px"
+                  className="img-fluid rounded-circle"
+                  src="https://api.homebaba.ca/media/agent_UGllzo7.jpg"
+                  alt="blog-author"
+                />
+              </div>
+              <div className="blog__author-detail d-flex flex-column justify-content-center ps-4">
+                <div className="fw-bold">Mr Precon</div>
+                <div className="text-secondary">
+                  {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
+                </div>
+              </div>
+            </section>
+            <section className="blog__desc mt-4">
               <div
                 dangerouslySetInnerHTML={{
                   __html: blog.news_description,
@@ -89,14 +130,41 @@ const BlogDetails = async ({ params }) => {
               <div className="tags-container d-flex align-items-baseline">
                 <div className="fw-bold">Tags</div>
                 <div className="ms-5">
-                  <Link href={`/blogs?city=${blog.city.slug}`}>
+                  <Link href={`/blogs/category/${blog.city.slug}`}>
                     <div className="tag text-dark">
                       <p>{blog.city.name}</p>
                     </div>
                   </Link>
                 </div>
               </div>
+
+              <div className="blog__share mt-5">
+                <SocialMediaShare />
+              </div>
             </section>
+
+            {filteredBlogPostsBasedOnCity.length > 0 ? (
+              <>
+                <div className="pt-5 mt-5"></div>
+                <section className="blogs__related">
+                  <h3 className="main-title">You might be interested in</h3>
+                  <article>
+                    <div className="row">
+                      {filteredBlogPostsBasedOnCity.map((blog, index) => {
+                        return (
+                          <div
+                            className="col-sm-12 col-md-6 col-lg-4 mb-4"
+                            key={index}
+                          >
+                            <BlogCard blog={blog} />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </article>
+                </section>
+              </>
+            ) : null}
           </div>
         </div>
       </div>
@@ -123,7 +191,7 @@ const BlogDetails = async ({ params }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

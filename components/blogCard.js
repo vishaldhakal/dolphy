@@ -30,14 +30,14 @@ const BlogCard = ({ blog }) => {
           <div className="card-text flex-grow-1 mb-4">
             <div
               dangerouslySetInnerHTML={{
-                __html: `${blog.news_description.slice(0, 100)}${
-                  descLength > 100 ? " ..." : ""
+                __html: `${blog.news_description.slice(0, 70)}${
+                  descLength > 70 ? " ..." : ""
                 }`,
               }}
             />
           </div>
           <div className="tags-container position-absolute bottom-0 mb-3">
-            <Link href={`/blogs?city=${blog.city.slug}`}>
+            <Link href={`/blogs/category/${blog.city.slug}`}>
               <div className="tag text-dark">
                 <p>{blog.city.name}</p>
               </div>

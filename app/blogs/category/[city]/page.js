@@ -1,9 +1,9 @@
 import React from "react";
 
 //API
-import { fetchAllBlogPosts } from "@/api/blogs";
+import { fetchBlogPostByCity } from "@/api/blogs";
 
-//COMPONENTS
+//COMPONENT
 import BlogCard from "@/components/blogCard";
 import Breadcrumb from "@/components/Breadcrumb";
 import BottomContactForm from "@/components/BottomContactForm";
@@ -15,12 +15,12 @@ export async function generateMetadata({ params }, parent) {
     alternates: {
       canonical: `https://api.dolphy.ca/api/news/`,
     },
-    title: "Dolphy Blogs | Insights on real Estate",
+    title: `Dolphy Blogs | ${params?.city} Insights on real Estate`,
   };
 }
 
-const Blogs = async () => {
-  const blogPosts = await fetchAllBlogPosts();
+const CityBlogs = async ({ params }) => {
+  const blogPosts = await fetchBlogPostByCity(params?.city);
 
   return (
     <div className="pages">
@@ -117,4 +117,4 @@ const Blogs = async () => {
   );
 };
 
-export default Blogs;
+export default CityBlogs;

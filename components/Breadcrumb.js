@@ -11,6 +11,7 @@ const Breadcrumb = ({
   listClasses,
   activeClasses,
   capitalizeLinks,
+  removePathName,
 }) => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
@@ -23,6 +24,9 @@ const Breadcrumb = ({
         </li>
         {pathNames.length > 0 && separator}
         {pathNames.map((link, index) => {
+          if (removePathName?.toUpperCase() === link.toUpperCase()) {
+            return;
+          }
           let href = `/${pathNames.slice(0, index + 1).join("/")}`;
           let itemClasses =
             paths === href ? `${listClasses} ${activeClasses}` : listClasses;

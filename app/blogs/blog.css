@@ -1,7 +1,14 @@
 .blog-container {
-  max-width: 29.688em;
   margin: auto;
   height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all 150ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+}
+
+.blog-container:hover {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
 .image-container {
@@ -15,7 +22,8 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  border-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 
 .card {
@@ -26,26 +34,33 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: #e5eff1;
+  background-color: #fff;
   height: 30px;
   font-size: 14px;
   padding: 4px 10px;
   border-radius: 8px;
+  color: #00a1ff;
+  border: 1px solid #00a1ff;
+  transition: all 100ms linear;
 }
 
 .tag p {
   margin: 0px;
 }
 
+.tag:hover {
+  background-color: #00a1ff;
+  color: #fff;
+}
 .banner-image {
   /* border-bottom-left-radius: 40%; */
   /* border-bottom-right-radius: 40%; */
   overflow: hidden;
-  height: 500px;
   object-fit: cover;
   width: 100%;
   display: block;
-  position: relative;
+  max-height: 600px;
+  border-radius: 4px;
 }
 
 .image_border__fake {

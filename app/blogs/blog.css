@@ -22,7 +22,8 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  border-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 
 .card {

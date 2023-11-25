@@ -6,19 +6,30 @@ import { fetchCities } from "@/api/blogs";
 //LIB
 import Link from "next/link";
 
-const CityInsights = async () => {
+const CityInsights = async ({ particularCity }) => {
   const cities = await fetchCities();
+
+  const isActiveCity = (city) => city.includes(particularCity);
+
   return (
-    <>
-      <h3 className="fw-bold fs-5 mb-4">Insights on Particular City</h3>
-      {cities.map((city) => {
-        return (
-          <p key={city.slug}>
-            <Link href={`/blogs/category/${city.slug}`}>{city.name}</Link>
-          </p>
-        );
-      })}
-    </>
+    <div className="city-insights-container">
+      <h3 className="insights-title">Insights on Particular City</h3>
+      <div className="city-list">
+        {cities.map((city) => (
+          <Link
+            href={`/blogs/category/${city.slug}`}
+            className="city-link"
+            key={city.slug}
+          >
+            <div
+              className={`city-item ${isActiveCity(city.slug) ? "active" : ""}`}
+            >
+              {city.name}
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -46,15 +46,16 @@ const CityBlogs = async ({ params }) => {
           containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
           listClasses="mx-1"
           capitalizeLinks
+          removePathName="Category"
         />
       </div>
 
-      <div className="container mt-4">
+      <div className="container-fluid mt-4">
         <div className="row mt-3">
           <div className=" mx-auto">
-            <div className="blogs container">
+            <div className="blogs">
               <div className="row g-4">
-                <div className="col-sm-12 col-lg-9 ">
+                <div className="col-sm-12 col-lg-8 ">
                   <h1 className="main-title text-center text-md-start mb-4">
                     15+ Insightful blogs in dolphy
                   </h1>
@@ -83,7 +84,7 @@ const CityBlogs = async ({ params }) => {
                 </div>
 
                 <div className="col-lg-3 ps-5">
-                  <CityInsights />
+                  <CityInsights particularCity={params?.city} />
                 </div>
               </div>
             </div>

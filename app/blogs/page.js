@@ -49,12 +49,12 @@ const Blogs = async () => {
         />
       </div>
 
-      <div className="container mt-4">
+      <div className="container-fluid mt-4">
         <div className="row mt-3">
           <div className=" mx-auto">
-            <div className="blogs container">
+            <div className="blogs ">
               <div className="row g-4">
-                <div className="col-sm-12 col-lg-9 ">
+                <div className="col-sm-12 col-lg-8 ">
                   <h1 className="main-title text-center text-md-start mb-4">
                     15+ Insightful blogs in dolphy
                   </h1>

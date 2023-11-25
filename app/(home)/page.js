@@ -1,15 +1,15 @@
 import Link from "next/link";
 import BottomContactForm from "@/components/BottomContactForm";
-import ListingCardHome from "@/components/ListingCardHome";
+import CondoCard from "@/components/CondoCard";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
 import SearchBar from "@/components/SearchBar";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 
-async function getData() {
+async function getData(city) {
   const res = await fetch(
-    "https://api.dolphy.ca/api/preconstructions/?page_size=10",
+    "https://api.dolphy.ca/api/preconstructions-city/" + city + "?page_size=10",
     {
       next: { revalidate: 10 },
     }
@@ -34,7 +34,8 @@ async function getCities() {
 }
 
 export default async function Home() {
-  const data = await getData();
+  const data = await getData("calgary");
+  const toronto_data = await getData("toronto");
   let cities = await getCities();
   return (
     <>
@@ -44,7 +45,7 @@ export default async function Home() {
         <div className="container-fluid">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
-              src="dolphin.png"
+              src="/dolphin.png"
               alt="dolphy logo icon"
               className="img-fluid icon-img"
             />
@@ -105,8 +106,8 @@ export default async function Home() {
             </Link>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.results &&
-              data.results.slice(0, 5).map((item) => (
+            {data.preconstructions &&
+              data.preconstructions.slice(0, 5).map((item) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -115,7 +116,7 @@ export default async function Home() {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <ListingCardHome {...item} />
+                  <CondoCard {...item} />
                 </div>
               ))}
           </div>
@@ -208,8 +209,8 @@ export default async function Home() {
             </Link>
           </div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.results &&
-              data.results.slice(5, 10).map((item) => (
+            {toronto_data.preconstructions &&
+              toronto_data.preconstructions.slice(0.5).map((item) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -218,7 +219,7 @@ export default async function Home() {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <ListingCardHome {...item} />
+                  <CondoCard {...item} />
                 </div>
               ))}
           </div>

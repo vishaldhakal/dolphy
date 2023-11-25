@@ -76,7 +76,7 @@ export default async function Home({ params }) {
               <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
                 All
                 <img
-                  src="/dropdown.png"
+                  src="/dropdown.svg"
                   alt="dropdown icon"
                   className="img-fluid dropdown-icon ms-1"
                 />
@@ -86,7 +86,7 @@ export default async function Home({ params }) {
               <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
                 Home Types
                 <img
-                  src="/dropdown.png"
+                  src="/dropdown.svg"
                   alt="dropdown icon"
                   className="img-fluid dropdown-icon ms-1"
                 />
@@ -95,7 +95,7 @@ export default async function Home({ params }) {
               <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
                 All price range
                 <img
-                  src="/dropdown.png"
+                  src="/dropdown.svg"
                   alt="dropdown icon"
                   className="img-fluid dropdown-icon ms-1"
                 />
@@ -106,7 +106,7 @@ export default async function Home({ params }) {
               <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
                 All
                 <img
-                  src="/dropdown.png"
+                  src="/dropdown.svg"
                   alt="dropdown icon"
                   className="img-fluid dropdown-icon ms-1"
                 />
@@ -133,8 +133,13 @@ export default async function Home({ params }) {
           </div>
           <div className="pt-5 mt-5"></div>
           <h2 className="fw-bold fs-3 mb-4">
-            Upcoming New Construction Projects in{" "}
-            {CapitalizeFirst(data.city.name)}
+            {filteredprojects("Upcoming").length > 0 ? (
+              `Upcoming New Construction Projects in ${CapitalizeFirst(
+                data.city.name
+              )}`
+            ) : (
+              <></>
+            )}
           </h2>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
@@ -153,10 +158,13 @@ export default async function Home({ params }) {
           </div>
           <div className="pt-5 mt-5"></div>
           <h2 className="fw-bold fs-3 mb-4 text-red">
-            New Construction Past Communities in{" "}
-            {CapitalizeFirst(data.city.name)}
+            {filteredprojects("Sold out").length > 0 ? (
+              `Past Communities in ${CapitalizeFirst(data.city.name)}`
+            ) : (
+              <></>
+            )}
           </h2>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-6 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
               filteredprojects("Sold out").map((item) => (
                 <div className="col" key={item.id}>

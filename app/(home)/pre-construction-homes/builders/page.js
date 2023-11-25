@@ -44,7 +44,20 @@ export default async function Builders() {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="py-4 pt-5 text-center">
-            <h1 className="main-title">New Construction Builders at Dolphy</h1>
+            <h1 className="main-title mb-4">
+              List of Top New Construction Home Builders in Canada{" "}
+            </h1>
+            <p className="text-secondary">
+              Explore the Builders behind your favourite condominium & freehold
+              home projects. These developers are driven by a passion to
+              transform ideas into tangible structures. Uncover the compelling
+              narratives, innovative designs, and unmatched commitment to
+              precision that position these developers as the driving influence
+              behind the city's most desirable living spaces. These companies
+              have demonstrated leading-edge practices year after year. Check
+              out the list of smaller to bigger builders from a few million
+              dollars to billion dollars of investment.
+            </p>
           </div>
         </div>
         <div className="container-fluid">

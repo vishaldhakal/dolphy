@@ -60,7 +60,7 @@ export default async function BuilderSingle({ params }) {
             </h1>
             <p className="text-dark">
               {data.length} New Pre construction Detached, Townhomes, or Condos
-              for sale in {CapitalizeFirst(params.builder)} | Check out plans,
+              for sale by {CapitalizeFirst(params.builder)} | Check out plans,
               pricing, availability for preconstruction homes by{" "}
               {CapitalizeFirst(params.builder)}
             </p>

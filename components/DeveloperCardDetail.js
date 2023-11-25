@@ -27,7 +27,7 @@ export default function DeveloperCardDetail(props) {
           <h4 className="mb-2 cardd-subtitle">
             <span className="link-black">Website :</span> {props.website_link}
           </h4>
-          {props.phone !== "n/a" ? (
+          {/* {props.phone !== "n/a" ? (
             <Link href={"telto:" + props.phone} className="link-black">
               <i className="bi bi-telephone"></i> {props.phone}
             </Link>
@@ -36,7 +36,7 @@ export default function DeveloperCardDetail(props) {
               <i className="bi bi-telephone"></i>{" "}
               <b className="ms-1">Phone number not available</b>
             </>
-          )}
+          )} */}
           <p className="mb-0 pt-3">{props.details}</p>
         </div>
       </div>

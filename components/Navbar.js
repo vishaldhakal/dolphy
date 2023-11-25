@@ -10,7 +10,7 @@ const Navbar = ({ cities }) => {
   const [cityname, setCityname] = useState("");
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3">
+    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3 py-md-2 shadow-navbar mb-3">
       <div className="container-fluid justify-content-start">
         <Link href="/" className="logo">
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
@@ -63,14 +63,14 @@ const Navbar = ({ cities }) => {
           <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-start align-items-md-center">
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
-                className="nav-link dropdown-toggle align-items-center d-flex"
+                className="nav-link dropdown-toggle align-items-center d-flex shadow-lg fw-500 text-dark me-3 px-2"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="true"
               >
                 New Projects
                 <img
-                  src="/dropdown.png"
+                  src="/dropdown.svg"
                   alt="dropdown icon"
                   className="img-fluid dropdown-nav-icon ms-1"
                 />

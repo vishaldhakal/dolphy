@@ -1425,12 +1425,18 @@ color: #6e6e6e;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.shadow-navbar{
+  box-shadow: 0 1rem 1rem rgba(0,0,0,.04)!important;
+}
 .text-red{
   color: red;
 }
 .accordion-button:focus{
   box-shadow: none !important;
   outline: none !important;
+}
+.fw-500{
+  font-weight: 500 !important;
 }
 .agent-img {
   width: 100% !important;
@@ -1709,6 +1715,17 @@ button:focus:not(:focus-visible) {
   /* .p-sticky-top{
     position: relative;
   } */
+
+  .dropdown-fullwidth {
+    position: static !important;
+  }
+
+  .dropdown-fullwidth .dropdown-menu {
+    max-width: 100% !important;
+  }
+  .dropdown-menu[data-bs-popper] {
+    top: 36% !important;
+}
   .fs-top{
     font-size: 2rem;
     padding-bottom: 0 !important;

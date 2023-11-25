@@ -55,11 +55,11 @@
   /* border-bottom-left-radius: 40%; */
   /* border-bottom-right-radius: 40%; */
   overflow: hidden;
-  height: 500px;
   object-fit: cover;
   width: 100%;
   display: block;
-  position: relative;
+  max-height: 600px;
+  border-radius: 4px;
 }
 
 .image_border__fake {

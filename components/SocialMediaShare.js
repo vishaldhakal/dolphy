@@ -27,14 +27,13 @@ const SocialMediaShare = () => {
 
   return (
     <div className="tags-container d-flex align-items-baseline">
-      <div className="fw-bold">Share</div>
-      <div className="ms-5 d-flex gap-3">
+      <div className="d-flex gap-3">
         <FacebookShareButton url={url} quote={title}>
-          <FacebookIcon size={32} round />
+          <FacebookIcon size={38} round />
         </FacebookShareButton>
 
         <TwitterShareButton url={url} title={title}>
-          <TwitterIcon size={32} round />
+          <TwitterIcon size={38} round />
         </TwitterShareButton>
 
         <EmailShareButton
@@ -42,15 +41,15 @@ const SocialMediaShare = () => {
           subject={title}
           body="Check out this awesome content!"
         >
-          <EmailIcon size={32} round />
+          <EmailIcon size={38} round />
         </EmailShareButton>
 
         <TelegramShareButton url={url} subject={title}>
-          <TelegramIcon size={32} round />
+          <TelegramIcon size={38} round />
         </TelegramShareButton>
 
         <WhatsappShareButton url={url} subject={title}>
-          <WhatsappIcon size={32} round />
+          <WhatsappIcon size={38} round />
         </WhatsappShareButton>
       </div>
     </div>

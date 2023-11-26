@@ -9,7 +9,14 @@ export const fetchAllBlogPosts = async () => {
     notFound();
   }
 
-  return res.json();
+  const blogs = await res.json();
+
+  // REQUIRED LATERON AFTER TIME COMES FROM API
+  // const sortedBlogs = blogs.sort(
+  //   (a, b) => new Date(b.date_of_upload) - new Date(a.date_of_upload)
+  // );
+
+  return blogs.reverse();
 };
 
 export const fetchBlogPostBySlug = async (slug) => {
@@ -21,7 +28,8 @@ export const fetchBlogPostBySlug = async (slug) => {
     notFound();
   }
 
-  return res.json();
+  const blogs = await res.json();
+  return blogs;
 };
 
 export const fetchBlogPostByCity = async (citySlug) => {
@@ -33,7 +41,8 @@ export const fetchBlogPostByCity = async (citySlug) => {
     notFound();
   }
 
-  return res.json();
+  const blogs = await res.json();
+  return blogs.reverse();
 };
 
 export const fetchCities = async () => {

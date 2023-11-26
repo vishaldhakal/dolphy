@@ -39,7 +39,7 @@ const BlogDetails = async ({ params }) => {
 
   //filter out related blogs for the same city
   const filteredBlogPostsBasedOnCity = relatedBlogPosts.filter(
-    (relatedBlog) => blog.slug != relatedBlog.slug
+    (relatedBlog) => blog.slug !== relatedBlog.slug
   );
 
   return (
@@ -105,7 +105,7 @@ const BlogDetails = async ({ params }) => {
               </div>
             </section>
 
-            <div className="blog__share my-4 d-flex justify-content-end">
+            <div className="blog__share my-4 d-flex align-items-baseline gap-4">
               <SocialMediaShare />
             </div>
 

@@ -6,7 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-/*   font-family: Montserrat, sans-serif !important; */
+  /*   font-family: Montserrat, sans-serif !important; */
 }
 
 body {
@@ -1421,17 +1421,17 @@ label {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.shadow-navbar{
-  box-shadow: 0 1rem 1rem rgba(0,0,0,.04)!important;
+.shadow-navbar {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.04) !important;
 }
-.text-red{
+.text-red {
   color: red;
 }
 .accordion-button:focus {
   box-shadow: none !important;
   outline: none !important;
 }
-.fw-500{
+.fw-500 {
   font-weight: 500 !important;
 }
 .agent-img {
@@ -1720,7 +1720,7 @@ button:focus:not(:focus-visible) {
   .dropdown-menu[data-bs-popper] {
     top: 36% !important;
   }
-  .fs-top{
+  .fs-top {
     font-size: 2rem;
     padding-bottom: 0 !important;
     scale: 1;
@@ -1821,7 +1821,7 @@ button:focus:not(:focus-visible) {
   }
   .dropdown-fullwidth .dropdown-menu {
     max-width: 900px !important;
-}
+  }
 }
 .horizontal-row {
   border: 1px solid #9b959536;
@@ -1847,25 +1847,33 @@ button:focus:not(:focus-visible) {
 .city-item {
   margin: 10px;
   padding: 8px;
-  border: 1px solid #00a1ff;
-  border-radius: 8px;
+  /* border: 1px solid #00a1ff; */
+  border: 1px solid rgb(218, 220, 224);
+  /* border-radius: 8px; */
+  border-radius: 100px;
   transition: all 100ms linear;
+  color: rgb(32, 33, 36);
 }
 
 .city-link .active {
-  background-color: #00a1ff;
-  color: #fff !important;
+  /* background-color: #00a1ff; */
+  /* color: #fff !important; */
+
+  background: rgb(232, 240, 254);
+  color: #00a1ff;
+  font-weight: bold;
 }
 
 .city-item:hover {
   /* transform: scale(1.05); */
-  background-color: #00a1ff;
-  color: #fff !important;
+  /* background-color: #00a1ff; */
+  /* color: #fff !important; */
+  background-color: rgb(232, 234, 237);
 }
 
 .city-link {
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: block;
   color: inherit;
 }

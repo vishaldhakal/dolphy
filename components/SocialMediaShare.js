@@ -27,7 +27,7 @@ const SocialMediaShare = () => {
 
   return (
     <div className="tags-container d-flex align-items-baseline">
-      <div className="d-flex gap-3">
+      <div className="d-flex gap-2 gap-md-3 flex-wrap">
         <div title="Share With Facebook">
           <FacebookShareButton url={url} quote={title}>
             <FacebookIcon size={38} round />

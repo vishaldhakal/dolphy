@@ -54,5 +54,17 @@ export const fetchCities = async () => {
     notFound();
   }
 
-  return res.json();
+  const cities = await res.json();
+
+  //append All to top of list
+  const allCities = [
+    {
+      slug: "all",
+      name: "All",
+      redirectTo: "/blogs",
+    },
+    ...cities,
+  ];
+
+  return allCities;
 };

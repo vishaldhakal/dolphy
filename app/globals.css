@@ -1704,6 +1704,19 @@ button:focus:not(:focus-visible) {
   object-position: center;
   border-radius: 7px;
 }
+.builder-logo-detail{
+  position: absolute;
+    top: -8%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+.builder-logo-detail img{
+  height: 100px;
+}
+.max-w-mine{
+  max-width: 1000px !important;
+}
 
 @media (max-width: 800px) {
   /* .p-sticky-top{

@@ -191,16 +191,17 @@ export default async function Home({ params }) {
               <strong>The Dolphy Insights</strong> - Know Whats Happening in{" "}
               {CapitalizeFirst(data.city.name)}
             </h3>
+            <p>
+              Learn about the new projects, news and insights and current new
+              trends happening in {CapitalizeFirst(data.city.name)}
+            </p>
           </div>
-          <div className="row">
+          <div className="row row-cols-lg-5">
             {blogPosts.length > 0 ? (
               <>
                 {blogPosts.map((blog, index) => {
                   return (
-                    <div
-                      className="col-sm-12 col-md-4 col-lg-3 mb-4"
-                      key={index}
-                    >
+                    <div className="col-12 mb-4" key={index}>
                       <BlogCard blog={blog} />
                     </div>
                   );

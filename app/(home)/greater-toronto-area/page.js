@@ -24,7 +24,7 @@ export async function generateMetadata({ params }, parent) {
     alternates: {
       canonical: `https://dolphy.ca/greater-toronto-area/`,
     },
-    title: "Looking for a Preconstruction Homes in Greater Toronto Area ?",
+    title: "Looking for a Preconstruction Homes in Greater Toronto Area ? ",
     description:
       "Search our selection of pre construction homes for sale in Greater Toronto Area. Our ever-changing portfolio of pre constructions brings you closer to your ideal homes in the growing area of Toronto.",
   };

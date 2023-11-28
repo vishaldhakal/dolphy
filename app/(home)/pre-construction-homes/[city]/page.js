@@ -195,7 +195,9 @@ export default async function Home({ params }) {
           <div className="pt-5"></div>
           <h2 className="fw-bold fs-3 mb-4 text-red">
             {filteredprojects("Sold out").length > 0 ? (
-              <i>{`Past Communities in ${CapitalizeFirst(data.city.name)}`}</i>
+              <i>{`Past Communities in ${CapitalizeFirst(
+                data.city.name
+              )} - Sold out`}</i>
             ) : (
               <></>
             )}

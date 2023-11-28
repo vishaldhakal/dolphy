@@ -276,7 +276,7 @@ const Navbar = ({ cities }) => {
             </li>
             <li className="nav-item d-flex flex-column">
               <Link
-                href="tel:6476745958"
+                href="tel:5878872572"
                 className="btn my-2 my-sm-0 ms-md-3 d-flex text-dark gap-1"
               >
                 <img

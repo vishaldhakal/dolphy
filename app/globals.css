@@ -1159,11 +1159,11 @@ font-weight: 800 !important;
   background-image: linear-gradient(106deg, #171717, #363636);
 }
 
-.container-fluid {
+.container-fluid2 {
   padding-right: 7rem !important;
   padding-left: 7rem !important;
 }
-.container-fluid2 {
+.container-fluid {
   padding-right: 2rem !important;
   padding-left: 2rem !important;
 }
@@ -1753,6 +1753,7 @@ button:focus:not(:focus-visible) {
 .fs-big{
 font-size: 2rem !important;
 font-weight: 800 !important;
+color: #2c2c2c !important;
 }
 
   .dropdown-fullwidth {

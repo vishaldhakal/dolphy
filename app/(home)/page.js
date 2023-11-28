@@ -42,7 +42,7 @@ export default async function Home() {
       <FixedContactButton></FixedContactButton>
       <div className="py-5"></div>
       <div className="pt-3">
-        <div className="container-fluid">
+        <div className="container-fluid2">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
               src="/dolphin.png"
@@ -360,7 +360,7 @@ export default async function Home() {
         </div>
         <div className="py-3 py-md-5">
           <div className="my-5 py-5">
-            <div className="position-relative bg-lightblue container-fluid">
+            <div className="position-relative bg-lightblue container-fluid2">
               <div className="side-img">
                 <img
                   src="/calgarypng.png"
@@ -379,7 +379,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid2">
           <DolphyAdvantage></DolphyAdvantage>
           <div className="py-md-5"></div>
           <div className="py-5">
@@ -395,7 +395,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="py-5 my-5" id="mycontact">
-            <div className="container-fluid">
+            <div className="container-fluid2">
               <div className="row justify-content-center">
                 <img
                   src="/contact-bottom-2.png"

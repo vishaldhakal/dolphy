@@ -57,16 +57,14 @@ export default async function Home({ params }) {
       <div className="pt-2 position-relative">
         <div className="container-fluid">
           <div className="pb-1">
-            <h1 className="main-title text-center text-md-start">
+            <h1 className="main-title text-center text-md-start mb-0">
               {`New Construction Homes in ${CapitalizeFirst(
                 params.city
               )} ( 2023 )`}
             </h1>
             <p className="text-dark text-center text-md-start">
               {`${data.preconstructions.length} New Pre construction Detached,
-              Townhomes and Condos for sale in ${CapitalizeFirst(params.city)} |
-              Check out plans, pricing, availability for preconstruction homes
-              in ${CapitalizeFirst(params.city)}`}
+              Townhomes and Condos for sale in ${CapitalizeFirst(params.city)}`}
             </p>
           </div>
         </div>

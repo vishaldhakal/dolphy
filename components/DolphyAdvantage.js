@@ -19,6 +19,13 @@ export default function DolphyAdvantage() {
           </div>
           <div className="col col-md-4 dolphy-advantage-image">
             <img
+              src="/dolphyadvantage/4.jpg"
+              alt="Dolphy Advantage image 4"
+              className="img-fluid"
+            />
+          </div>
+          <div className="col col-md-2 dolphy-advantage-image">
+            <img
               src="/dolphyadvantage/2.jpg"
               alt="Dolphy Advantage image 2"
               className="img-fluid"
@@ -34,13 +41,6 @@ export default function DolphyAdvantage() {
           <div className="col col-md-2 dolphy-advantage-image">
             <img
               src="/dolphyadvantage/5.jpg"
-              alt="Dolphy Advantage image 4"
-              className="img-fluid"
-            />
-          </div>
-          <div className="col col-md-2 dolphy-advantage-image">
-            <img
-              src="/dolphyadvantage/4.jpg"
               alt="Dolphy Advantage image 4"
               className="img-fluid"
             />

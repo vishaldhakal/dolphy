@@ -125,6 +125,7 @@ const BlogDetails = async ({ params }) => {
 
               <div
                 className="mt-4"
+                id="make-img-responsive"
                 dangerouslySetInnerHTML={{
                   __html: blog.news_description,
                 }}

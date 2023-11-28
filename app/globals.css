@@ -1071,6 +1071,11 @@ label {
   line-height: 2rem;
 }
 
+.fs-big{
+font-size: 5.5rem !important;
+font-weight: 800 !important;
+}
+
 .fields {
   width: 100%;
   padding: 1.3rem 1rem;
@@ -1737,6 +1742,10 @@ button:focus:not(:focus-visible) {
   .fs-mine{
     font-size: 1.4rem !important;
   }
+.fs-big{
+font-size: 2rem !important;
+font-weight: 800 !important;
+}
 
   .dropdown-fullwidth {
     position: static !important;

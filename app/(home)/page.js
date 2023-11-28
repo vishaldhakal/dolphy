@@ -83,7 +83,7 @@ export default async function Home() {
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>
           <div className="d-flex align-items-center justify-content-center">
-            <h2 className="fw-mine ccent-line fs-1">
+            <h2 className="fw-mine ccent-line fs-big fs-1">
               <Link
                 href={"/pre-construction-homes/calgary"}
                 className="link-black"
@@ -186,7 +186,7 @@ export default async function Home() {
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>
           <div className="d-flex align-items-center justify-content-center">
-            <h2 className="fw-mine ccent-line fs-1">
+            <h2 className="fw-mine ccent-line fs-big fs-1">
               <Link
                 href={"/pre-construction-homes/toronto"}
                 className="link-black"

@@ -6,6 +6,7 @@ import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 import { fetchBlogPostByCity } from "@/api/blogs";
 import BlogCard from "@/components/blogCard";
+import Link from "next/link";
 
 async function getData(city) {
   const res = await fetch(
@@ -19,6 +20,17 @@ async function getData(city) {
     notFound();
   }
 
+  return res.json();
+}
+
+async function getCities() {
+  const res = await fetch("https://api.dolphy.ca/api/all-city", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
   return res.json();
 }
 
@@ -46,6 +58,7 @@ export async function generateMetadata({ params }, parent) {
 export default async function Home({ params }) {
   const data = await getData(params.city);
   const blogPosts = await fetchBlogPostByCity(params?.city);
+  let cities = await getCities();
 
   const filteredprojects = (value) => {
     return data.preconstructions.filter((item) => item.status == value);
@@ -75,6 +88,17 @@ export default async function Home({ params }) {
                 new Date().getFullYear()
               })`}
             </p>
+          </div>
+          <div className="d-flex overflow-hidden">
+            {cities &&
+              cities.map((item) => (
+                <Link
+                  href={"/pre-construction-homes/" + item.slug}
+                  className="btn btn-light link-black me-3 mb-3"
+                >
+                  {item.name}
+                </Link>
+              ))}
           </div>
         </div>
         {/* <div className="bg-white pt-3 pb-3 p-sticky-top">

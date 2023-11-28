@@ -1,10 +1,7 @@
 import Link from "next/link";
 import BottomContactForm from "@/components/BottomContactForm";
-import ListingCardHome from "@/components/ListingCardHome";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
-import SearchBar from "@/components/SearchBar";
-import PreconSchema from "@/components/PreconSchema";
 
 async function getData() {
   const res = await fetch(
@@ -21,19 +18,7 @@ async function getData() {
   return res.json();
 }
 
-async function getCities() {
-  const res = await fetch("https://api.dolphy.ca/api/all-city", {
-    next: { revalidate: 10 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
-
 export async function generateMetadata({ params }, parent) {
-  let city = "Greater Toronto Area";
   return {
     ...parent,
     alternates: {

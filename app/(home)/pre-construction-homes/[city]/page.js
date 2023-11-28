@@ -54,7 +54,7 @@ export default async function Home({ params }) {
   return (
     <>
       <FixedContactButton></FixedContactButton>
-      <div className="pt-2 position-relative">
+      <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="pb-1">
             <h1 className="main-title text-center text-md-start mb-0">

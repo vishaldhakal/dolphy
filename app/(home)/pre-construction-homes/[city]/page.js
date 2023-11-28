@@ -70,7 +70,7 @@ export default async function Home({ params }) {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="pb-1">
-            <h1 className="main-title text-center text-md-start mb-0">
+            <h1 className="main-title text-center text-md-start fs-mine mb-0">
               {`New Construction Homes in ${CapitalizeFirst(
                 params.city
               )} ( 2023 )`}
@@ -79,7 +79,7 @@ export default async function Home({ params }) {
               {`${data.preconstructions.length} New Pre construction Detached,
               Townhomes and Condos for sale in ${CapitalizeFirst(
                 params.city
-              )} | (Updated ${
+              )} (Updated ${
                 new Date().getMonth() +
                 1 +
                 "-" +

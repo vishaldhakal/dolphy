@@ -47,17 +47,24 @@ export default async function Builders() {
             <h1 className="main-title mb-4">
               List of Top New Construction Home Builders in Canada{" "}
             </h1>
-            <p className="text-secondary">
-              Explore the Builders behind your favourite condominium & freehold
-              home projects. These developers are driven by a passion to
-              transform ideas into tangible structures. Uncover the compelling
-              narratives, innovative designs, and unmatched commitment to
-              precision that position these developers as the driving influence
-              behind the city's most desirable living spaces. These companies
-              have demonstrated leading-edge practices year after year. Check
-              out the list of smaller to bigger builders from a few million
-              dollars to billion dollars of investment.
-            </p>
+            <div className="row row-cols-1 row-cols-md-3">
+              <div className="col-md-2"></div>
+              <div className="col-md-8">
+                <p className="text-secondary">
+                  Explore the Builders behind your favourite condominium &
+                  freehold home projects. These developers are driven by a
+                  passion to transform ideas into tangible structures. Uncover
+                  the compelling narratives, innovative designs, and unmatched
+                  commitment to precision that position these developers as the
+                  driving influence behind the city's most desirable living
+                  spaces. These companies have demonstrated leading-edge
+                  practices year after year. Check out the list of smaller to
+                  bigger builders from a few million dollars to billion dollars
+                  of investment.
+                </p>
+              </div>
+              <div className="col-md-2"></div>
+            </div>
           </div>
         </div>
         <div className="container-fluid">
@@ -87,7 +94,10 @@ export default async function Builders() {
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
-                  <BottomContactForm></BottomContactForm>
+                  <BottomContactForm
+                    proj_name="All"
+                    city="Builders Page"
+                  ></BottomContactForm>
                 </div>
                 <div className="col-md-3"></div>
               </div>

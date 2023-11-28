@@ -9,6 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
+import FloorPlans from "@/components/FloorPlans";
 
 async function getData(slug) {
   const res = await fetch(
@@ -45,12 +46,16 @@ export async function generateMetadata({ params }, parent) {
       canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/${params.slug}`,
     },
     title:
-      data.project_name + " in " + data.city.name + "by " + data.developer.name,
+      data.project_name +
+      " in " +
+      data.city.name +
+      " by " +
+      data.developer.name,
     description:
       data.project_name +
       " in " +
       data.city.name +
-      "by " +
+      " by " +
       data.developer.name +
       " prices starting from " +
       Nformatter(data.price_starting_from, 2) +
@@ -176,11 +181,15 @@ export default async function Home({ params }) {
                         {data.project_name}
                       </h1>
                       <p className="mb-0">
-                        <Link
-                          className="link-black"
-                          href={`/pre-construction-homes/builders/${data.developer.slug}/`}
-                        ></Link>
-                        By <strong>{data.developer.name}</strong>
+                        Developed By{" "}
+                        <strong>
+                          <Link
+                            className="link-black"
+                            href={`/pre-construction-homes/builders/${data.developer.slug}/`}
+                          >
+                            {data.developer.name}
+                          </Link>
+                        </strong>
                       </p>
                       <h2 className="vmain-title fs-3 fw-mine3 mt-1 mb-0">
                         {checkPricing(data.price_starting_from, data.price_to)}
@@ -203,28 +212,15 @@ export default async function Home({ params }) {
                               {data.project_address}, {data.city.name}
                             </span>
                           </div>
-                          <div className="mb-1">
-                            <span className="me-2 fw-mine2 mb-2 fs-mine3">
-                              Developed by:
-                            </span>
-                            <span scope="col">{data.developer.name}</span>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <p>
-                      <i>
-                        {data.project_name} is a pre construction project
-                        developed by {data.developer.name} in the city of{" "}
-                        {data.city.name}. The project status is {data.status} .
-                      </i>
-                    </p>
                     <div className="py-5 pt-3">
                       <h2 className="fw-bold fs-3">
                         Information about {data.project_name} in{" "}
                         {data.city.name}
                       </h2>
-                      <div className="text-start my-3 text-inside">
+                      <div className="text-start mb-1 text-inside">
                         <div
                           className="iframe-container"
                           dangerouslySetInnerHTML={{
@@ -242,22 +238,9 @@ export default async function Home({ params }) {
                       : `Floor Plans Coming Soon`}
                   </h2>
                   <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3">
-                    {data.floorplan &&
-                      data.floorplan.length > 0 &&
-                      data.floorplan.map(
-                        (item, index) =>
-                          item.image !== null && (
-                            <div className="col" key={index}>
-                              <div className="card shadow-sm">
-                                <img
-                                  src={`https://api.dolphy.ca${item.floorplan}`}
-                                  className="img-fluid rounded-mine"
-                                  alt="floor plan"
-                                />
-                              </div>
-                            </div>
-                          )
-                      )}
+                    {data.floorplan && data.floorplan.length > 0 && (
+                      <FloorPlans images={data.floorplan}></FloorPlans>
+                    )}
                   </div>
                 </div>
                 <div className="py-3 my-5">
@@ -351,7 +334,10 @@ export default async function Home({ params }) {
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
-                  <BottomContactForm></BottomContactForm>
+                  <BottomContactForm
+                    proj_name={data.project_name}
+                    city="Project Detail Page"
+                  ></BottomContactForm>
                 </div>
                 <div className="col-md-3"></div>
               </div>

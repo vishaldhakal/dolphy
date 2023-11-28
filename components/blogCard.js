@@ -12,7 +12,7 @@ import "../app/blogs/blog.css";
 const BlogCard = ({ blog }) => {
   const descLength = blog.news_description.length;
   return (
-    <div className="card border-0  my-3 my-md-0 blog-container position-relative">
+    <div className="card border-0  my-3 my-md-0 blog-container shadow-lg position-relative">
       {/* Wrap the card in the Link component */}
       <Link href={`/blogs/${blog.slug}`} passHref className="h-100">
         <div className="image-container w-100">
@@ -24,18 +24,18 @@ const BlogCard = ({ blog }) => {
           />
         </div>
         <div className="card-body d-flex flex-column text-dark">
-          <h5 className="card-title font-weight-bold text-dark title-container">
+          <h5 className="card-title font-weight-bold text-dark title-container mb-4">
             {blog.news_title}
           </h5>
-          <div className="card-text flex-grow-1 mb-4">
+          {/* <div className="card-text flex-grow-1 mb-4">
             <div
               dangerouslySetInnerHTML={{
                 __html: `${blog.news_description.slice(0, 70)}${
-                  descLength > 70 ? " ..." : ""
+                  descLength > 20 ? " ..." : ""
                 }`,
               }}
             />
-          </div>
+          </div> */}
           <div className="tags-container position-absolute bottom-0 mb-3">
             <Link href={`/blogs/category/${blog.city.slug}`}>
               <div className="tag">

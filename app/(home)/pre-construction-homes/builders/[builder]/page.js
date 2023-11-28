@@ -54,11 +54,11 @@ export default async function BuilderSingle({ params }) {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="pb-4">
-            <h1 className="main-title">
+            <h1 className="main-title text-center">
               New Construction Homes by {CapitalizeFirst(params.builder)} ( 2023
               )
             </h1>
-            <p className="text-dark">
+            <p className="text-dark text-center">
               {data.length} New Pre construction Detached, Townhomes, or Condos
               for sale by {CapitalizeFirst(params.builder)} | Check out plans,
               pricing, availability for preconstruction homes by{" "}
@@ -66,17 +66,14 @@ export default async function BuilderSingle({ params }) {
             </p>
           </div>
         </div>
-        {/* <div className="container-fluid">
-          <img src={data.image} alt="developer image" className="img-fluid" />
-        </div> */}
         <div className="container-fluid">
-          <div className="row rowcols-1 row-cols-md-2 position-relative">
-            <div className="col-md-5 order-2 order-md-1">
-              <DeveloperCardDetail {...developer} />
-            </div>
-            <div className="col-md-7">
+          <div className="row row-cols-1 row-cols-md-1 position-relative">
+            <div className="col mt-4">
+              <div className="d-flex justify-content-center">
+                <DeveloperCardDetail {...developer} />
+              </div>
               <div className="py-2"></div>
-              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4 gx-3 gx-lg-2">
+              <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
                 {data &&
                   data.map((item) => (
                     <div className="col" key={item.id}>
@@ -110,7 +107,10 @@ export default async function BuilderSingle({ params }) {
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
-                  <BottomContactForm></BottomContactForm>
+                  <BottomContactForm
+                    proj_name={params.builder}
+                    city="Builders Detail Page"
+                  ></BottomContactForm>
                 </div>
                 <div className="col-md-3"></div>
               </div>

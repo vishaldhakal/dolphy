@@ -860,8 +860,8 @@ label {
 
 .cardd-subtitle {
   font-size: 1.05rem;
-  font-weight: 500;
-  color: #00b5d6;
+  font-weight: 700;
+  color: #a30000;
 }
 
 .card-address {
@@ -1703,6 +1703,19 @@ button:focus:not(:focus-visible) {
   object-fit: cover;
   object-position: center;
   border-radius: 7px;
+}
+.builder-logo-detail{
+  position: absolute;
+    top: -8%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+.builder-logo-detail img{
+  height: 100px;
+}
+.max-w-mine{
+  max-width: 1000px !important;
 }
 
 @media (max-width: 800px) {

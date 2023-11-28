@@ -318,14 +318,55 @@ export default function Upload() {
                     <p className="fw-bold mb-1 mt-2">
                       About <span className="text-danger">*</span>{" "}
                     </p>
-                    <textarea
-                      name="details"
-                      id="details"
-                      rows={8}
-                      className="textbox w-100"
-                      defaultValue={developerdata.details}
-                      onChange={(e) => handleChangeDeveloperData(e)}
-                    ></textarea>
+                    <ReactQuill
+                      theme="snow"
+                      value={developerdata.details}
+                      style={{ height: "200px" }}
+                      modules={{
+                        toolbar: [
+                          [{ header: "1" }, { header: "2" }, { font: [] }],
+                          [{ size: [] }],
+                          [
+                            "bold",
+                            "italic",
+                            "underline",
+                            "strike",
+                            "blockquote",
+                          ],
+                          [
+                            { list: "ordered" },
+                            { list: "bullet" },
+                            { indent: "-1" },
+                            { indent: "+1" },
+                          ],
+                          ["link", "image", "video"],
+                          ["clean"],
+                        ],
+                        clipboard: {
+                          // toggle to add extra line breaks when pasting HTML:
+                          matchVisual: false,
+                        },
+                      }}
+                      formats={[
+                        "header",
+                        "bold",
+                        "italic",
+                        "underline",
+                        "strike",
+                        "blockquote",
+                        "list",
+                        "bullet",
+                        "link",
+                        "image",
+                        "video",
+                      ]}
+                      onChange={(newText) =>
+                        setDeveloperData((prevState) => ({
+                          ...prevState,
+                          ["details"]: newText,
+                        }))
+                      }
+                    />
                   </div>
                 </div>
               </div>

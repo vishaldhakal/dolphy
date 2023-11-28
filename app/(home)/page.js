@@ -6,7 +6,6 @@ import DolphyAdvantage from "@/components/DolphyAdvantage";
 import SearchBar from "@/components/SearchBar";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
-import FixedContact from "@/components/FixedContact";
 
 async function getData(city) {
   const res = await fetch(
@@ -40,7 +39,6 @@ export default async function Home() {
   let cities = await getCities();
   return (
     <>
-      <FixedContact></FixedContact>
       <FixedContactButton></FixedContactButton>
       <div className="py-5"></div>
       <div className="pt-3">

@@ -16,7 +16,7 @@ export default function FixedContact() {
             />
             <div className="d-flex flex-column justify-content-start align-items-start">
               <p className="mb-0 fw-bold">
-                Looking for New Construction Homes in Calgary ?
+                Looking for New Construction Homes ?
               </p>
               <p className="fs-small mb-0">
                 Call us at

@@ -75,6 +75,10 @@ export default async function BuilderSingle({ params }) {
         <div className="container-fluid">
           <div className="row row-cols-1 row-cols-md-1 position-relative">
             <div className="col mt-4">
+              <div className="d-flex justify-content-center">
+                <DeveloperCardDetail {...developer} />
+              </div>
+              <div className="py-5 my-4"></div>
               <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
                 {data &&
                   data.map((item) => (
@@ -89,10 +93,6 @@ export default async function BuilderSingle({ params }) {
                       <CondoCard {...item} />
                     </div>
                   ))}
-              </div>
-              <div className="py-5 my-4"></div>
-              <div className="d-flex justify-content-center">
-                <DeveloperCardDetail {...developer} />
               </div>
             </div>
           </div>

@@ -66,7 +66,14 @@ export default async function Home({ params }) {
               {`${data.preconstructions.length} New Pre construction Detached,
               Townhomes and Condos for sale in ${CapitalizeFirst(
                 params.city
-              )} | Updated ${new Date().toLocaleDateString()}}`}
+              )} | (Updated ${
+                new Date().getMonth() +
+                1 +
+                "-" +
+                new Date().getDate() +
+                "-" +
+                new Date().getFullYear()
+              })`}
             </p>
           </div>
         </div>

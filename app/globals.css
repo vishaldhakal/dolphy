@@ -1307,6 +1307,10 @@ color: #2c2c2c !important;
   background-color: #5bdbff1f !important;
   border-color: #5bdbff1f;
 }
+.bg-lightyellow2{
+  background-color: #effcff !important;
+  border-color: #5bdbff1f;
+}
 .side-text {
   position: absolute;
   right: 5%;
@@ -1668,6 +1672,16 @@ button:focus:not(:focus-visible) {
 .fixcontact {
   display: none;
 }
+.fixcontact2 {
+  bottom: 12px;
+  width: 54%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 9px;
+  position: fixed;
+  z-index: 9999;
+  display: block;
+}
 @media only screen and (max-width: 768px) {
   .fixcontact {
     bottom: 12px;
@@ -1678,6 +1692,9 @@ button:focus:not(:focus-visible) {
     position: fixed;
     z-index: 9999;
     display: block;
+  }
+  .fixcontact2{
+    display: none;
   }
 }
 .fs-top {

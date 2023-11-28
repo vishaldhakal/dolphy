@@ -27,30 +27,40 @@ const SocialMediaShare = () => {
 
   return (
     <div className="tags-container d-flex align-items-baseline">
-      <div className="d-flex gap-3">
-        <FacebookShareButton url={url} quote={title}>
-          <FacebookIcon size={38} round />
-        </FacebookShareButton>
+      <div className="d-flex gap-2 gap-md-3 flex-wrap">
+        <div title="Share With Facebook">
+          <FacebookShareButton url={url} quote={title}>
+            <FacebookIcon size={38} round />
+          </FacebookShareButton>
+        </div>
 
-        <TwitterShareButton url={url} title={title}>
-          <TwitterIcon size={38} round />
-        </TwitterShareButton>
+        <div title="Share With Twitter">
+          <TwitterShareButton url={url} title={title}>
+            <TwitterIcon size={38} round />
+          </TwitterShareButton>
+        </div>
 
-        <EmailShareButton
-          url={url}
-          subject={title}
-          body="Check out this awesome content!"
-        >
-          <EmailIcon size={38} round />
-        </EmailShareButton>
+        <div title="Share With Email">
+          <EmailShareButton
+            url={url}
+            subject={title}
+            body="Check out this awesome content!"
+          >
+            <EmailIcon size={38} round />
+          </EmailShareButton>
+        </div>
 
-        <TelegramShareButton url={url} subject={title}>
-          <TelegramIcon size={38} round />
-        </TelegramShareButton>
+        <div title="Share With Telegram">
+          <TelegramShareButton url={url} subject={title}>
+            <TelegramIcon size={38} round />
+          </TelegramShareButton>
+        </div>
 
-        <WhatsappShareButton url={url} subject={title}>
-          <WhatsappIcon size={38} round />
-        </WhatsappShareButton>
+        <div title="Share With Whatsapp">
+          <WhatsappShareButton url={url} subject={title}>
+            <WhatsappIcon size={38} round />
+          </WhatsappShareButton>
+        </div>
       </div>
     </div>
   );

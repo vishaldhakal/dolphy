@@ -39,7 +39,7 @@ const BlogDetails = async ({ params }) => {
 
   //filter out related blogs for the same city
   const filteredBlogPostsBasedOnCity = relatedBlogPosts.filter(
-    (relatedBlog) => blog.slug != relatedBlog.slug
+    (relatedBlog) => blog.slug !== relatedBlog.slug
   );
 
   return (
@@ -80,32 +80,33 @@ const BlogDetails = async ({ params }) => {
             <div className="blog-title">
               <h1 className="main-title py-3 mb-3 fs-1">{blog.news_title}</h1>
             </div>
-            <section className="blog__author d-flex justify-content-between mt-3 align-items-baseline">
-              <div className="d-flex align-items-center">
-                <div className="blog__author-image">
-                  <img
-                    width="60px"
-                    height="60px"
-                    className="img-fluid rounded-circle"
-                    src="https://api.homebaba.ca/media/agent_UGllzo7.jpg"
-                    alt="blog-author"
-                  />
-                </div>
-                <div className="blog__author-detail d-flex flex-column justify-content-center ps-3">
+            <section className="blog__author d-flex align-items-center mt-3">
+              <div className="blog__author-image">
+                <img
+                  width="60px"
+                  height="60px"
+                  className="rounded-circle"
+                  src="https://api.homebaba.ca/media/agent_UGllzo7.jpg"
+                  alt="blog-author"
+                />
+              </div>
+              <div className="row flex-grow-1 ps-3">
+                <div className="blog__author-detail col-sm-12 col-md-9 ">
                   <div className="fw-bold">The Dolphy Content Team</div>
                   <div className="text-secondary">
                     Posted {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
                   </div>
                 </div>
-              </div>
 
-              <div className="blog-read__time text-secondary text-start">
-                <div>Blog</div>
-                <div>5 min read</div>
+                <div className="blog-read__time text-secondary text-start col-sm-12 col-md-3">
+                  <div className="blog-read__time-name">Blog</div>
+                  <div>5 min read</div>
+                </div>
               </div>
             </section>
 
-            <div className="blog__share my-4 d-flex justify-content-end">
+            <div className="blog__share my-4 d-flex align-items-baseline gap-4">
+              <p className="fw-bold text-secondary ps-2">Share</p>
               <SocialMediaShare />
             </div>
 

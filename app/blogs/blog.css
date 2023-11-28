@@ -87,3 +87,17 @@
   /* bottom: -10px; */
   fill: rgb(255, 255, 255);
 }
+
+@media screen and (max-width: 768px) {
+  .blog-read__time {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .blog-read__time-name::after {
+    content: ".";
+    padding-inline: 6px;
+    position: relative;
+    top: -3px;
+  }
+}

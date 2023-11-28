@@ -162,7 +162,7 @@ export default async function Home({ params }) {
           <div className="py-5 mt-5"></div>
           <h2 className="fw-bold fs-3 mb-4 text-red">
             {filteredprojects("Sold out").length > 0 ? (
-              `Past Communities in ${CapitalizeFirst(data.city.name)}`
+              <i>{`Past Communities in ${CapitalizeFirst(data.city.name)}`}</i>
             ) : (
               <></>
             )}

@@ -1163,6 +1163,10 @@ font-weight: 800 !important;
   padding-right: 7rem !important;
   padding-left: 7rem !important;
 }
+.container-fluid2 {
+  padding-right: 2rem !important;
+  padding-left: 2rem !important;
+}
 
 @media screen and (max-width: 768px) {
   .w-mine {
@@ -1171,6 +1175,10 @@ font-weight: 800 !important;
 }
 @media screen and (max-width: 1000px) {
   .container-fluid {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+  .container-fluid2 {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
   }

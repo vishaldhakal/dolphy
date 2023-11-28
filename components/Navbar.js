@@ -11,7 +11,7 @@ const Navbar = ({ cities }) => {
 
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white py-3 py-md-2 shadow-navbar mb-3">
-      <div className="container-fluid justify-content-start">
+      <div className="container-fluid container-fluid2 justify-content-start">
         <Link href="/" className="logo">
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>

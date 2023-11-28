@@ -15,14 +15,14 @@ export default function DeveloperCard(props) {
                 loading="lazy"
                 src={`${props.image}`}
                 layout="responsive"
-                className="img-fluid condocard-img-top"
+                className="img-fluid condocard-img-top2"
                 alt={`${props.name} builder's logo`}
               />
             ) : (
               <img
                 loading="lazy"
                 src="/noimage.webp"
-                className="img-fluid condocard-img-top"
+                className="img-fluid condocard-img-top2"
                 alt={`no image available for ${props.name}`}
               />
             )}
@@ -34,8 +34,10 @@ export default function DeveloperCard(props) {
           target="_blank"
         >
           <div className="card-content pt-2">
-            <h3 className="mb-1 cardd-title text-dark">{props.name}</h3>
-            <h4 className="mb-2 cardd-subtitle">{props.website_link}</h4>
+            <h3 className="mb-1 cardd-title text-dark fs-small text-center">
+              {props.name}
+            </h3>
+            {/* <h4 className="mb-2 cardd-subtitle">{props.website_link}</h4> */}
             <p className="mb-0 project-address-card">{props.details}</p>
             {/* <p className="card-secondary-title mb-0">{props.phone}</p> */}
           </div>

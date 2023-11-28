@@ -852,6 +852,15 @@ label {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
+.condocard-img-top2 {
+  width: 100%;
+  max-height: 18rem;
+  height: 120px !important;
+  object-fit: cover;
+  border-radius: 7px;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
 
 .cardd-title {
   font-size: 1.3rem;
@@ -863,7 +872,9 @@ label {
   font-weight: 700;
   color: #a30000;
 }
-
+.fs-mine{
+  font-size: 2.19rem !important;
+}
 .card-address {
   font-size: 1rem;
 }
@@ -1060,6 +1071,15 @@ label {
   line-height: 2rem;
 }
 
+.fs-big{
+font-size: 5.5rem !important;
+font-weight: 800 !important;
+color: #2c2c2c !important;
+}
+.fs-big a{
+color: #2c2c2c !important;
+}
+
 .fields {
   width: 100%;
   padding: 1.3rem 1rem;
@@ -1143,9 +1163,13 @@ label {
   background-image: linear-gradient(106deg, #171717, #363636);
 }
 
+.container-fluid2 {
+  padding-right: 7rem !important;
+  padding-left: 7rem !important;
+}
 .container-fluid {
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
+  padding-right: 2rem !important;
+  padding-left: 2rem !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -1155,6 +1179,10 @@ label {
 }
 @media screen and (max-width: 1000px) {
   .container-fluid {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+  .container-fluid2 {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
   }
@@ -1277,6 +1305,10 @@ label {
 }
 .bg-lightyellow {
   background-color: #5bdbff1f !important;
+  border-color: #5bdbff1f;
+}
+.bg-lightyellow2{
+  background-color: #effcff !important;
   border-color: #5bdbff1f;
 }
 .side-text {
@@ -1640,6 +1672,16 @@ button:focus:not(:focus-visible) {
 .fixcontact {
   display: none;
 }
+.fixcontact2 {
+  bottom: 40px;
+  width: 605px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 9px;
+  position: fixed;
+  z-index: 9999;
+  display: block;
+}
 @media only screen and (max-width: 768px) {
   .fixcontact {
     bottom: 12px;
@@ -1650,6 +1692,9 @@ button:focus:not(:focus-visible) {
     position: fixed;
     z-index: 9999;
     display: block;
+  }
+  .fixcontact2{
+    display: none;
   }
 }
 .fs-top {
@@ -1722,6 +1767,16 @@ button:focus:not(:focus-visible) {
   /* .p-sticky-top{
     position: relative;
   } */
+
+  .fs-mine{
+    font-size: 1.4rem !important;
+  }
+.fs-big{
+font-size: 2rem !important;
+font-weight: 800 !important;
+color: #2c2c2c !important;
+}
+
 
   .dropdown-fullwidth {
     position: static !important;

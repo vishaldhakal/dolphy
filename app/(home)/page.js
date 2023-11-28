@@ -42,7 +42,7 @@ export default async function Home() {
       <FixedContactButton></FixedContactButton>
       <div className="py-5"></div>
       <div className="pt-3">
-        <div className="container-fluid">
+        <div className="container-fluid2">
           <div className="d-flex flex-column align-items-center justify-content-center">
             <img
               src="/dolphin.png"
@@ -83,7 +83,7 @@ export default async function Home() {
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>
           <div className="d-flex align-items-center justify-content-center">
-            <h2 className="fw-mine ccent-line fs-1">
+            <h2 className="fw-mine ccent-line fs-big fs-1">
               <Link
                 href={"/pre-construction-homes/calgary"}
                 className="link-black"
@@ -186,11 +186,8 @@ export default async function Home() {
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>
           <div className="d-flex align-items-center justify-content-center">
-            <h2 className="fw-mine ccent-line fs-1">
-              <Link
-                href={"/pre-construction-homes/toronto"}
-                className="link-black"
-              >
+            <h2 className="fw-mine ccent-line fs-big fs-1">
+              <Link href={"/greater-toronto-area/"} className="link-black">
                 Toronto
               </Link>
             </h2>
@@ -360,7 +357,7 @@ export default async function Home() {
         </div>
         <div className="py-3 py-md-5">
           <div className="my-5 py-5">
-            <div className="position-relative bg-lightblue container-fluid">
+            <div className="position-relative bg-lightblue container-fluid2">
               <div className="side-img">
                 <img
                   src="/calgarypng.png"
@@ -379,7 +376,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="container-fluid2">
           <DolphyAdvantage></DolphyAdvantage>
           <div className="py-md-5"></div>
           <div className="py-5">
@@ -395,7 +392,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="py-5 my-5" id="mycontact">
-            <div className="container-fluid">
+            <div className="container-fluid2">
               <div className="row justify-content-center">
                 <img
                   src="/contact-bottom-2.png"
@@ -404,7 +401,7 @@ export default async function Home() {
                 />
               </div>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Contact Dolphy for New Construction Homes
+                Contact us today
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>

@@ -6,6 +6,7 @@ import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 import { fetchBlogPostByCity } from "@/api/blogs";
 import BlogCard from "@/components/blogCard";
+import Link from "next/link";
 
 async function getData(city) {
   const res = await fetch(
@@ -19,6 +20,17 @@ async function getData(city) {
     notFound();
   }
 
+  return res.json();
+}
+
+async function getCities() {
+  const res = await fetch("https://api.dolphy.ca/api/all-city", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
   return res.json();
 }
 
@@ -46,6 +58,7 @@ export async function generateMetadata({ params }, parent) {
 export default async function Home({ params }) {
   const data = await getData(params.city);
   const blogPosts = await fetchBlogPostByCity(params?.city);
+  let cities = await getCities();
 
   const filteredprojects = (value) => {
     return data.preconstructions.filter((item) => item.status == value);
@@ -57,15 +70,35 @@ export default async function Home({ params }) {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="pb-1">
-            <h1 className="main-title text-center text-md-start mb-0">
+            <h1 className="main-title text-center text-md-start fs-mine mb-0">
               {`New Construction Homes in ${CapitalizeFirst(
                 params.city
               )} ( 2023 )`}
             </h1>
             <p className="text-dark text-center text-md-start">
               {`${data.preconstructions.length} New Pre construction Detached,
-              Townhomes and Condos for sale in ${CapitalizeFirst(params.city)}`}
+              Townhomes and Condos for sale in ${CapitalizeFirst(
+                params.city
+              )} (Updated ${
+                new Date().getMonth() +
+                1 +
+                "-" +
+                new Date().getDate() +
+                "-" +
+                new Date().getFullYear()
+              })`}
             </p>
+          </div>
+          <div className="d-flex overflow-hidden">
+            {cities &&
+              cities.map((item) => (
+                <Link
+                  href={"/pre-construction-homes/" + item.slug}
+                  className="btn btn-light link-black me-3 mb-3"
+                >
+                  {item.name}
+                </Link>
+              ))}
           </div>
         </div>
         {/* <div className="bg-white pt-3 pb-3 p-sticky-top">
@@ -162,7 +195,9 @@ export default async function Home({ params }) {
           <div className="pt-5"></div>
           <h2 className="fw-bold fs-3 mb-4 text-red">
             {filteredprojects("Sold out").length > 0 ? (
-              <i>{`Past Communities in ${CapitalizeFirst(data.city.name)}`}</i>
+              <i>{`Past Communities in ${CapitalizeFirst(
+                data.city.name
+              )} - Sold out`}</i>
             ) : (
               <></>
             )}
@@ -225,7 +260,7 @@ export default async function Home({ params }) {
                 />
               </div>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Contact Dolphy for New Construction Homes
+                Contact us today
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>

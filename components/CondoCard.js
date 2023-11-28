@@ -4,7 +4,7 @@ import Nformatter from "./Nformatter";
 export default function CondoCard(props) {
   function checkPricing(price) {
     if (parseInt(price) > 0) {
-      return `Starting from low $${Nformatter(price, 2)}`;
+      return `Starting from $${Nformatter(price, 2)}`;
     } else {
       return `Pricing not available`;
     }
@@ -53,12 +53,12 @@ export default function CondoCard(props) {
             <span className="mmmmm bg-yellow p-1 px-2">{props.status}</span>
           )}
           {props.status == "Sold out" && (
-            <span className="mmmmm p-1 px-2">Past Communities</span>
+            <span className="mmmmm bg-green text-white p-1 px-2">
+              Past Communities
+            </span>
           )}
           {props.status == "Selling" && (
-            <span className="mmmmm bg-green text-white p-1 px-2">
-              Selling Now
-            </span>
+            <span className="mmmmm p-1 px-2">Selling Now</span>
           )}
           {props.occupancy && (
             <span className="shadow-lg p-1 px-2 abs2">

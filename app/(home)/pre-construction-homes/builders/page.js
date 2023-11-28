@@ -44,8 +44,8 @@ export default async function Builders() {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="py-4 pt-5 text-center">
-            <h1 className="main-title mb-4">
-              List of Top New Construction Home Builders in Canada{" "}
+            <h1 className="main-title mb-4 fs-1">
+              Leading Home Builders in Canada
             </h1>
             <div className="row row-cols-1 row-cols-md-3">
               <div className="col-md-2"></div>
@@ -69,13 +69,19 @@ export default async function Builders() {
         </div>
         <div className="container-fluid">
           <div className="py-2"></div>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.results &&
-              data.results.map((item) => (
-                <div className="col" key={item.id}>
-                  <DeveloperCard {...item} />
-                </div>
-              ))}
+          <div className="row row-cols-1 row-cols-md-3">
+            <div className="col-md-2"></div>
+            <div className="col-md-8">
+              <div className="row row-cols-1 row-cols-md-4 row-cols-lg-4 gy-4 gx-3 gx-lg-3">
+                {data.results &&
+                  data.results.map((item) => (
+                    <div className="col" key={item.id}>
+                      <DeveloperCard {...item} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+            <div className="col-md-2"></div>
           </div>
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
@@ -89,7 +95,7 @@ export default async function Builders() {
                 />
               </div>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Contact Dolphy for New Construction Homes
+                Contact us today
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>

@@ -1673,8 +1673,8 @@ button:focus:not(:focus-visible) {
   display: none;
 }
 .fixcontact2 {
-  bottom: 12px;
-  width: 44%;
+  bottom: 40px;
+  width: 42%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 9px;

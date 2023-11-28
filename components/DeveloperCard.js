@@ -34,7 +34,7 @@ export default function DeveloperCard(props) {
           target="_blank"
         >
           <div className="card-content pt-2">
-            <h3 className="mb-1 cardd-title text-dark fs-small">
+            <h3 className="mb-1 cardd-title text-dark fs-small text-center">
               {props.name}
             </h3>
             {/* <h4 className="mb-2 cardd-subtitle">{props.website_link}</h4> */}

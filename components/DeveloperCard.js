@@ -15,14 +15,14 @@ export default function DeveloperCard(props) {
                 loading="lazy"
                 src={`${props.image}`}
                 layout="responsive"
-                className="img-fluid condocard-img-top"
+                className="img-fluid condocard-img-top2"
                 alt={`${props.name} builder's logo`}
               />
             ) : (
               <img
                 loading="lazy"
                 src="/noimage.webp"
-                className="img-fluid condocard-img-top"
+                className="img-fluid condocard-img-top2"
                 alt={`no image available for ${props.name}`}
               />
             )}

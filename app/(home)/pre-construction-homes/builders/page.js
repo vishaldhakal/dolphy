@@ -69,7 +69,7 @@ export default async function Builders() {
         </div>
         <div className="container-fluid">
           <div className="py-2"></div>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-3">
             {data.results &&
               data.results.map((item) => (
                 <div className="col" key={item.id}>

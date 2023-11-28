@@ -64,7 +64,9 @@ export default async function Home({ params }) {
             </h1>
             <p className="text-dark text-center text-md-start">
               {`${data.preconstructions.length} New Pre construction Detached,
-              Townhomes and Condos for sale in ${CapitalizeFirst(params.city)}`}
+              Townhomes and Condos for sale in ${CapitalizeFirst(
+                params.city
+              )} | Updated ${new Date().toLocaleDateString()}}`}
             </p>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function DeveloperCard(props) {
         >
           <div className="card-content pt-2">
             <h3 className="mb-1 cardd-title text-dark">{props.name}</h3>
-            <h4 className="mb-2 cardd-subtitle">{props.website_link}</h4>
+            {/* <h4 className="mb-2 cardd-subtitle">{props.website_link}</h4> */}
             <p className="mb-0 project-address-card">{props.details}</p>
             {/* <p className="card-secondary-title mb-0">{props.phone}</p> */}
           </div>

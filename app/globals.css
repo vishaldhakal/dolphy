@@ -1160,8 +1160,8 @@ font-weight: 800 !important;
 }
 
 .container-fluid {
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
+  padding-right: 7rem !important;
+  padding-left: 7rem !important;
 }
 
 @media screen and (max-width: 768px) {

@@ -1074,6 +1074,10 @@ label {
 .fs-big{
 font-size: 5.5rem !important;
 font-weight: 800 !important;
+color: #2c2c2c !important;
+}
+.fs-big a{
+color: #2c2c2c !important;
 }
 
 .fields {
@@ -1755,6 +1759,7 @@ font-size: 2rem !important;
 font-weight: 800 !important;
 color: #2c2c2c !important;
 }
+
 
   .dropdown-fullwidth {
     position: static !important;

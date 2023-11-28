@@ -28,13 +28,13 @@ export default function FixedContact() {
             </div>
           </div>
         </div>
-        <Link
+        {/* <Link
           className="btn btn-white link-black"
           href={"/pre-construction-homes/"}
         >
           Explore all projects
           <i className="bi bi-arrow-right-short"></i>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

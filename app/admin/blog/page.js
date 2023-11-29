@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import axios from "axios";
 import swal from "sweetalert";
 import NewsTable from "@/components/NewsTable";
+import TinyTextEditor from "@/components/TinyTextEditor";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -201,7 +202,6 @@ export default function UploadBlog() {
     axios
       .get(`https://api.dolphy.ca/api/news/${id}/`)
       .then((res) => {
-        console.log(res.data);
         setModalNews(true);
         setIsEdit(true);
         setNewsData(res.data);
@@ -217,14 +217,22 @@ export default function UploadBlog() {
     setNewsData(newData);
   };
 
+  const handleBlogDescChange = (newText) =>
+    setNewsData((prevState) => ({
+      ...prevState,
+      ["news_description"]: newText,
+    }));
+
   return (
     <>
       {modalnews && (
-        <div className="modal">
-          <section className="modal-main rounded-4">
-            <div className="p-3 py-4 bg-light">
-              <div className="d-flex justify-content-between align-items-center">
-                <p className="fw-bold mb-0">Upload Blog</p>
+        <div className="modal" style={{ zIndex: 1000 }}>
+          <div className="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header ps-5">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Upload Blog
+                </h1>
                 <button
                   className="btn bg-white btn-outline-danger p-1 py-0"
                   onClick={() => {
@@ -245,10 +253,13 @@ export default function UploadBlog() {
                   </svg>
                 </button>
               </div>
-              <div className="py-3 mt-2">
+              <div class="modal-body px-5">
                 <div className="row row-cols-1 gy-4">
                   <div className="col-8">
-                    <div className="form-floating w-100">
+                    <div className=" w-100">
+                      <label htmlFor="news_title" className="form-label">
+                        Blog Title <span className="text-danger">*</span>
+                      </label>
                       <input
                         type="text"
                         className="form-control"
@@ -256,27 +267,15 @@ export default function UploadBlog() {
                         value={newsdata.news_title}
                         onChange={(e) => handleChange(e)}
                       />
-                      <label htmlFor="news_title">
-                        Blog Title <span className="text-danger">*</span>
-                      </label>
                     </div>
                   </div>
-                  {/* <div className="col-4">
-                    <div className="form-floating w-100">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="news_link"
-                        value={newsdata.news_link}
-                        onChange={(e) => handleChange(e)}
-                      />
-                      <label htmlFor="news_link">
-                        Blog Link <span className="text-danger">*</span>
-                      </label>
-                    </div>
-                  </div> */}
+
                   <div className="col-4">
-                    <div className="form-floating w-100">
+                    <div className="w-100">
+                      <label htmlFor="city" className="form-label">
+                        City <span className="text-danger">*</span>
+                      </label>
+
                       <select
                         className="form-select"
                         id="city"
@@ -300,118 +299,60 @@ export default function UploadBlog() {
                             </option>
                           ))}
                       </select>
-                      <label htmlFor="city">
-                        City <span className="text-danger">*</span>
-                      </label>
                     </div>
-                  </div>
-                  <div className="col-4">
-                    <div className="w-100">
-                      {isEdit && (
-                        <img
-                          src={newsdata.news_thumbnail}
-                          alt=""
-                          className="img-fluid"
-                        />
-                      )}
-                      <label htmlFor="image">
-                        {!isEdit && (
-                          <>
-                            Blog Thumbnail{" "}
-                            <span className="text-danger">*</span>
-                          </>
-                        )}
-                        {isEdit && (
-                          <>
-                            Blog Thumbnail{" "}
-                            <span className="text-danger">*</span>
-                          </>
-                        )}
-                      </label>
-                      <input
-                        type="file"
-                        className="form-control py-3"
-                        id="news_thumbnail"
-                        onChange={(e) => {
-                          handleImageChange(e);
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <p className="fw-bold ms-2 mb-1 mt-2">
-                      Blog Detail <span className="text-danger">*</span>{" "}
-                    </p>
-                    <ReactQuill
-                      theme="snow"
-                      value={newsdata.news_description}
-                      style={{ height: "250px" }}
-                      modules={{
-                        toolbar: [
-                          [{ header: "1" }, { header: "2" }, { font: [] }],
-                          [{ size: [] }],
-                          [
-                            "bold",
-                            "italic",
-                            "underline",
-                            "strike",
-                            "blockquote",
-                          ],
-                          [
-                            { list: "ordered" },
-                            { list: "bullet" },
-                            { indent: "-1" },
-                            { indent: "+1" },
-                          ],
-                          ["link", "image", "video"],
-                          ["clean"],
-                        ],
-                        clipboard: {
-                          // toggle to add extra line breaks when pasting HTML:
-                          matchVisual: false,
-                        },
-                      }}
-                      formats={[
-                        "header",
-                        "bold",
-                        "italic",
-                        "underline",
-                        "strike",
-                        "blockquote",
-                        "list",
-                        "bullet",
-                        "link",
-                        "image",
-                        "video",
-                      ]}
-                      onChange={(newText) =>
-                        setNewsData((prevState) => ({
-                          ...prevState,
-                          ["news_description"]: newText,
-                        }))
-                      }
-                    />
                   </div>
                 </div>
+
+                <div className="w-100 thumbnail mt-4">
+                  {isEdit && (
+                    <img
+                      src={newsdata.news_thumbnail}
+                      alt=""
+                      className="img-fluid"
+                    />
+                  )}
+                  <label htmlFor="image" className="form-label">
+                    Blog Thumbnail <span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="file"
+                    className="form-control py-3"
+                    id="news_thumbnail"
+                    onChange={(e) => {
+                      handleImageChange(e);
+                    }}
+                  />
+                </div>
+
+                <div className="blogs-detail mt-4">
+                  <label className="form-label fw-bold">
+                    Blog Detail <span className="text-danger">*</span>{" "}
+                  </label>
+                  <TinyTextEditor
+                    value={newsdata.news_description}
+                    onChange={handleBlogDescChange}
+                  />
+                </div>
               </div>
-              {!isEdit && (
-                <button
-                  className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"
-                  onClick={(e) => handleCreateNews(e)}
-                >
-                  Submit
-                </button>
-              )}
-              {isEdit && (
-                <button
-                  className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"
-                  onClick={(e) => handleUpdateNews(e)}
-                >
-                  Update Now
-                </button>
-              )}
+              <div class="modal-footer px-5">
+                {!isEdit ? (
+                  <button
+                    className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"
+                    onClick={(e) => handleCreateNews(e)}
+                  >
+                    Create
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"
+                    onClick={(e) => handleUpdateNews(e)}
+                  >
+                    Update
+                  </button>
+                )}
+              </div>
             </div>
-          </section>
+          </div>
         </div>
       )}
       <div className="py-4 w-100 ">

@@ -6,8 +6,6 @@ import swal from "sweetalert";
 import NewsTable from "@/components/NewsTable";
 import TinyTextEditor from "@/components/TinyTextEditor";
 
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-
 export default function UploadBlog() {
   let stat = {
     id: 1,
@@ -159,7 +157,6 @@ export default function UploadBlog() {
     axios
       .delete(`https://api.dolphy.ca/api/news/${id}/`)
       .then((res) => {
-        console.log(res);
         setRefetcch(!refetch);
       })
       .catch((err) => {
@@ -171,7 +168,6 @@ export default function UploadBlog() {
     axios
       .get("https://api.dolphy.ca/api/news/")
       .then((res) => {
-        console.log(res.data.results);
         setNews(res.data);
       })
       .catch((err) => {
@@ -181,7 +177,6 @@ export default function UploadBlog() {
     axios
       .get("https://api.dolphy.ca/api/city/")
       .then((res) => {
-        console.log(res.data.results);
         setCities(res.data.results);
       })
       .catch((err) => {
@@ -217,20 +212,21 @@ export default function UploadBlog() {
     setNewsData(newData);
   };
 
-  const handleBlogDescChange = (newText) =>
+  const handleBlogDescChange = (newText) => {
     setNewsData((prevState) => ({
       ...prevState,
       ["news_description"]: newText,
     }));
+  };
 
   return (
     <>
       {modalnews && (
         <div className="modal" style={{ zIndex: 1000 }}>
           <div className="modal-dialog modal-xl modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header ps-5">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            <div className="modal-content">
+              <div className="modal-header ps-5">
+                <h1 className="modal-title fs-5" id="staticBackdropLabel">
                   Upload Blog
                 </h1>
                 <button
@@ -253,7 +249,7 @@ export default function UploadBlog() {
                   </svg>
                 </button>
               </div>
-              <div class="modal-body px-5">
+              <div className="modal-body px-5">
                 <div className="row row-cols-1 gy-4">
                   <div className="col-8">
                     <div className=" w-100">
@@ -334,7 +330,7 @@ export default function UploadBlog() {
                   />
                 </div>
               </div>
-              <div class="modal-footer px-5">
+              <div className="modal-footer px-5">
                 {!isEdit ? (
                   <button
                     className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"

@@ -26,7 +26,7 @@ export default function TinyTextEditor({ value, onChange }) {
           ),
       }}
       value={value}
-      onChange={onChange}
+      onEditorChange={(value) => onChange(value)}
     />
   );
 }

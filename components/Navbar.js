@@ -60,7 +60,7 @@ const Navbar = ({ cities }) => {
           />
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-start align-items-md-center">
+          <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center align-items-md-center">
             <li className="nav-item dropdown dropdown-fullwidth">
               <button
                 className="nav-link dropdown-toggle align-items-center d-flex shadow-lg fw-500 text-dark me-3 px-2"

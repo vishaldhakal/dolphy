@@ -1855,6 +1855,9 @@ color: #2c2c2c !important;
     border-radius: 0 !important;
     border-radius: 99px !important;
   }
+  .ww .react-autosuggest__input::placeholder{
+    font-size: 1rem !important;
+  }
 }
 
 @media (min-width: 576px) {

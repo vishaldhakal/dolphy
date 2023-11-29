@@ -121,13 +121,6 @@ export default async function Home({ params }) {
         <strong>
           The price of the homes or unit could change. Please contact the real
           estate agent{" "}
-          <a
-            href="#mycontact"
-            className="text-primary text-decoration-underline"
-          >
-            here
-          </a>{" "}
-          to get more information
         </strong>
       ),
     },
@@ -272,7 +265,7 @@ export default async function Home({ params }) {
               </div>
               <div className="col col-md-4 ps-md-2 pt-5 pt-md-0">
                 <div className="py-4 py-md-0"></div>
-                <div className="side-fix-contact mt-mine pe-0" id="mycontact">
+                <div className="side-fix-contact mt-mine pe-0">
                   <div className="text-center">
                     <img
                       alt="Register Now Text Design"
@@ -318,6 +311,7 @@ export default async function Home({ params }) {
               </div>
             </div>
           </div>
+          <div id="mycontact"></div>
           <div className="pt-5 mt-5"></div>
           <div className="py-5 my-5 d-none d-md-block">
             <div className="container-fluid">

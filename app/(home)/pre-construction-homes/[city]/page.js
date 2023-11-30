@@ -73,7 +73,7 @@ export default async function Home({ params }) {
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
               {`New Construction Homes in ${CapitalizeFirst(
                 params.city
-              )} ( 2023 )`}
+              )} ( Selling Now )`}
             </h1>
             <p className="text-dark text-center text-md-start">
               {`${data.preconstructions.length} New Pre construction Detached,
@@ -90,11 +90,14 @@ export default async function Home({ params }) {
             </p>
           </div>
           <div className="d-flex overflow-hidden">
+            <Link href={"/"} className="btn btn-light link-black me-2 mb-3">
+              Home
+            </Link>
             {cities &&
               cities.map((item) => (
                 <Link
                   href={"/pre-construction-homes/" + item.slug}
-                  className="btn btn-light link-black me-3 mb-3"
+                  className="btn btn-light link-black me-2 mb-3"
                 >
                   {item.name}
                 </Link>

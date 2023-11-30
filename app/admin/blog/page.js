@@ -333,14 +333,14 @@ export default function UploadBlog() {
               <div className="modal-footer px-5">
                 {!isEdit ? (
                   <button
-                    className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"
+                    className="btn btn-success d-flex justify-content-center w-100 btn-lg"
                     onClick={(e) => handleCreateNews(e)}
                   >
                     Create
                   </button>
                 ) : (
                   <button
-                    className="btn btn-success mt-5 d-flex justify-content-center w-100 btn-lg"
+                    className="btn btn-success d-flex justify-content-center w-100 btn-lg"
                     onClick={(e) => handleUpdateNews(e)}
                   >
                     Update

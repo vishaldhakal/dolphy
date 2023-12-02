@@ -24,12 +24,12 @@ const CityTable = ({ cities, handleEdit, handleDelete }) => {
                       Edit
                     </button>
                     <span className="mx-2"></span>
-                    <button
+                    {/* <button
                       className="btn btn-sm btn-outline-danger"
                       onClick={(e) => handleDelete(e, city.id)}
                     >
                       Delete
-                    </button>
+                    </button> */}
                   </td>
                 </td>
               </tr>

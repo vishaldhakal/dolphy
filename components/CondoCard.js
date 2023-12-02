@@ -22,6 +22,21 @@ export default function CondoCard(props) {
     }
   }
 
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   return (
     <>
       <div className="card border-0 shadow-lg rounded-mine my-3 my-md-0 condocard">
@@ -78,8 +93,12 @@ export default function CondoCard(props) {
             </h4>
             <p className="mb-0 project-address-card">{props.project_address}</p>
             <p className="card-secondary-title mb-0">
-              {props.project_type} in {props.city.name} | Updated{" "}
-              {daysCount(props.last_updated)}
+              {props.project_type} in {props.city.name} |{" "}
+              {`Updated on: ${
+                months[new Date(props.last_updated).getMonth()]
+              } ${new Date(props.last_updated).getDate()}, ${new Date(
+                props.last_updated
+              ).getFullYear()}`}
             </p>
           </div>
         </Link>

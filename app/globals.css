@@ -1762,6 +1762,9 @@ button:focus:not(:focus-visible) {
 .max-w-mine{
   max-width: 1000px !important;
 }
+.bigg:hover{
+  box-shadow: 10px 1px 10px 0px rgba(0, 0, 0, 0.2) !important;
+}
 
 @media (max-width: 800px) {
   /* .p-sticky-top{

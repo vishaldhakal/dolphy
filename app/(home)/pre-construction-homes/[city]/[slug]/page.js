@@ -202,22 +202,21 @@ export default async function Home({ params }) {
                       <div className="mb-1">
                         <span scope="col">Project status : {data.status}</span>
                       </div>
+                      <div className="mb-1">
+                        <span className="me-2 fw-mine2 mb-2 fs-mine3">
+                          Project Location:
+                        </span>
+                        <span scope="col">
+                          {data.project_address}, {data.city.name}
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div className="my-2"></div>
                   <div className="features">
-                    <div className="mb-5 mt-4">
+                    <div className="mb-5 mt-5">
                       <div className="rounded-mine">
-                        <div>
-                          <div className="mb-1">
-                            <span className="me-2 fw-mine2 mb-2 fs-mine3">
-                              Project Location:
-                            </span>
-                            <span scope="col">
-                              {data.project_address}, {data.city.name}
-                            </span>
-                          </div>
-                        </div>
+                        <div></div>
                       </div>
                     </div>
                     <div className="py-5 pt-3">

@@ -46,7 +46,7 @@ export default async function Builders() {
       <div className="pt-4 position-relative">
         <div className="container-fluid">
           <div className="py-4 pt-5 text-center">
-            <h1 className="main-title mb-4 fs-1">
+            <h1 className="main-title mb-4 fs-big">
               Leading Home Builders in Canada
             </h1>
             <div className="row row-cols-1 row-cols-md-3">

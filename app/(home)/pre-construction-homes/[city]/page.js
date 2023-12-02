@@ -38,6 +38,16 @@ const CapitalizeFirst = (city) => {
   return city.charAt(0).toUpperCase() + city.slice(1);
 };
 
+const retImage = (data) => {
+  if (data.length > 0) {
+    if (data[0].image.length > 0 && data[0].image[0].image) {
+      return `https://api.dolphy.ca${data[0].image[0].image}`;
+    }
+  } else {
+    return "/social/gta.webp";
+  }
+};
+
 export async function generateMetadata({ params }, parent) {
   let city = CapitalizeFirst(params.city);
   const data = await getData(params.city);
@@ -47,11 +57,10 @@ export async function generateMetadata({ params }, parent) {
       canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/`,
     },
     title: data.preconstructions.length + " Preconstruction Homes in " + city,
-    description:
-      "Search our selection of pre construction homes for sale in " +
-      city +
-      ". Our ever-changing portfolio of pre constructions brings you closer to your ideal homes in the growing city of " +
-      city,
+    openGraph: {
+      images: retImage(data.preconstructions),
+    },
+    description: `${city} pre construction TownHomes, Detached & Condos. Check out ${data.preconstructions.length}+ new construction homes on Dolphy. Floor plans & pricing updated for new construction homes in ${city}`,
   };
 }
 

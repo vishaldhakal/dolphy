@@ -43,12 +43,11 @@ export async function generateMetadata({ params }, parent) {
     alternates: {
       canonical: `https://dolphy.ca/pre-construction-homes/`,
     },
-    title: " Preconstruction Homes in " + city,
-    description:
-      "Search our selection of pre construction homes for sale in " +
-      city +
-      ". Our ever-changing portfolio of pre constructions brings you closer to your ideal homes in the growing city of " +
-      city,
+    openGraph: {
+      images: "/social/precon.webp",
+    },
+    title: `Be First to Move Into Canada's Most Exciting New Construction Neighborhoods`,
+    description: `Lock in pricing and incentives on model homes available for a limited time. Act now before inventory fills up in Canada's most in-demand locales. With prices still accessible compared to resales, find your perfect fit.`,
   };
 }
 

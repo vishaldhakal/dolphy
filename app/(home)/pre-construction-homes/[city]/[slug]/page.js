@@ -37,6 +37,15 @@ async function getRelatedData(city) {
 
   return res.json();
 }
+
+const retImage = (data) => {
+  if (data.image.length > 0) {
+    return `https://api.dolphy.ca${data.image[0].image}`;
+  } else {
+    return "/social/gta.webp";
+  }
+};
+
 export async function generateMetadata({ params }, parent) {
   const data = await getData(params.slug);
 
@@ -44,6 +53,9 @@ export async function generateMetadata({ params }, parent) {
     ...parent,
     alternates: {
       canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/${params.slug}`,
+    },
+    openGraph: {
+      images: retImage(data),
     },
     title:
       data.project_name +

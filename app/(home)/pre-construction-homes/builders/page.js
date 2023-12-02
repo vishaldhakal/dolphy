@@ -30,9 +30,11 @@ export async function generateMetadata({ params }, parent) {
     alternates: {
       canonical: `https://dolphy.ca/pre-construction-homes/builders/`,
     },
-    title: data.count + " Preconstruction Homes Builders in Dolphy",
-    description:
-      "Search our selection of pre construction home builders in Dolphy. Our ever-changing portfolio of pre constructions brings you closer to your ideal homes",
+    openGraph: {
+      images: "/social/dolphy-builders.jpg",
+    },
+    title: `Discover Dolphy's Premier Selection of Over ${data.count}+ Preconstruction Home Builders`,
+    description: `From industry veteran builders to up-and-coming talent, Dolphy's ${data.count}+ partnered builders offeryears of experience along with creative vision and attentive service.`,
   };
 }
 

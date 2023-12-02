@@ -86,12 +86,10 @@ export default function SideContactForm(props) {
                 onChange={(e) => handleChange(e)}
                 required
               >
-                <option value="No" selected>
-                  No
-                </option>
+                <option value="No">No</option>
                 <option value="Yes">Yes</option>
               </select>
-              <label for="floatingSelect">
+              <label htmlFor="floatingSelect">
                 Are you a realtor or working with a realtor?{" "}
               </label>
             </div>

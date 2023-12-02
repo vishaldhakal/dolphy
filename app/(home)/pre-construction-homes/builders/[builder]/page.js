@@ -25,12 +25,24 @@ const CapitalizeFirst = (city) => {
   return repp.charAt(0).toUpperCase() + repp.slice(1);
 };
 
+const retImage = (data) => {
+  if (data.image) {
+    return `https://api.dolphy.ca${data.image}`;
+  } else {
+    return "/social/dolphy-builders.jpg";
+  }
+};
+
 export async function generateMetadata({ params }, parent) {
   let city = CapitalizeFirst(params.builder);
+  const all_data = await getData(params.builder);
   return {
     ...parent,
     alternates: {
       canonical: `https://dolphy.ca/pre-construction-homes/builders/${params.builder}/`,
+    },
+    openGraph: {
+      images: retImage(all_data.developer),
     },
     title:
       city + "- New home developer and builder | Communities & Developments",

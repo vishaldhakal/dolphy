@@ -14,7 +14,7 @@ export const metadata = {
   },
   title: "Dolphy - Leading New Construction  Homes Platform in Canada",
   description:
-    "Dolphy is your top destination for pre-construction condos in Canada. 1000+ Pre construction townhomes, detached & condos available at Dolphy.ca.",
+    "Dolphy is your top destination for pre-construction homes marketplace in Canada. 1000+ Pre construction townhomes, detached & condos available at Dolphy.ca.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -24,6 +24,9 @@ export const metadata = {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
+  },
+  openGraph: {
+    images: "/dolphin.jpg",
   },
   robots: {
     index: true,

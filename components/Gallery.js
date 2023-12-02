@@ -1,6 +1,6 @@
 "use client";
 import LightGallery from "lightgallery/react";
-
+import Link from "next/link";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
@@ -33,11 +33,12 @@ export default function Gallery(props) {
         {newImages(props.images)
           ?.slice(0, 7)
           .map((image, no) => (
-            <a
+            <Link
               href={`${image.image}`}
               className={
                 "position-relative g-item grid-item" + parseInt(no + 1)
               }
+              key={no}
             >
               <img
                 alt={`${props.project_name} located at ${
@@ -46,7 +47,7 @@ export default function Gallery(props) {
                 className="img-fluid w-100 h-100 rounded-mine"
                 src={`${image.image}`}
               />
-            </a>
+            </Link>
           ))}
       </LightGallery>
     </div>

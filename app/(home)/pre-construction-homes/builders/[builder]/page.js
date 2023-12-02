@@ -73,8 +73,8 @@ export default async function BuilderSingle({ params }) {
               <div className="col-md-2"></div>
               <div className="col-md-8">
                 <p className="text-dark text-center">
-                  {data.length} New Pre construction Detached, Townhomes, or
-                  Condos for sale by {CapitalizeFirst(params.builder)}
+                  Check out currently Selling, Upcoming or Past Communities by
+                  3bridges properties
                   <br />
                   Check out plans, pricing, availability for preconstruction
                   homes by {CapitalizeFirst(params.builder)}

@@ -401,7 +401,7 @@ export default async function Home() {
                 />
               </div>
               <h2 className="fw-mine text-center px-md-4 fs-4">
-                Contact us today
+                Contact Dolphy Team Today
               </h2>
               <div className="row row-cols-1 row-cols-md-3 mt-3">
                 <div className="col-md-3"></div>

@@ -5,6 +5,7 @@ import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 import Link from "next/link";
 import CondoCard from "@/components/CondoCard";
+import SearchBar from "@/components/SearchBar";
 
 async function getData(city) {
   const res = await fetch(
@@ -65,59 +66,31 @@ export default async function Home({ params }) {
     <>
       <FixedContactButton></FixedContactButton>
       <div className="pt-4 position-relative">
-        {/* <div className="container-fluid">
-          <div className="pb-4">
-            <h1 className="main-title text-center text-md-start">
-              {`New Construction Homes in Alberta ( 2023 )`}
+        <div className="row row-cols-1 row-cols-md-1 align-items-center">
+          <div className="col">
+            <div className="py-md-4"></div>
+            <h1 className="main-title text-center fs-3 fw-bold fs-gta pt-5 my-4">
+              Pre Construction Projects in <br /> Toronto and Calgary
             </h1>
-            <p className="text-dark text-center text-md-start">
-              {`New Preconstruction Townhomes, detached & condos for
-              sale in Alberta | Check out plans, pricing, availability
-              for pre construction homes in Alberta`}
+            <h2 className="text-green mt-4 text-center">
+              Register Today For VIP First Access
+            </h2>
+            <p className="text-green mb-4 text-center">
+              Get excluisive first access to floor plans and the best pricing
             </p>
+            <div className="pb-5 d-flex justify-content-center">
+              <button className="btn btn-lg rounded-pill registernoebtn">
+                Register Now
+              </button>
+            </div>
+            <div className="d-flex flex-column align-items-center justify-content-center">
+              <div className="pb-1 ww">
+                <SearchBar cities={cities} />
+              </div>
+            </div>
           </div>
-        </div> */}
-        {/* <div className="bg-white pt-3 pb-3 p-sticky-top ">
-          <div className="container-fluid d-flex gap-2 flex-column flex-md-row justify-content-center justify-content-md-start align-items-start align-items-md-center fw-normal">
-            <h4 className="fs-6 fw-bold text-mine">
-              Hey Dolphy! I am looking for
-            </h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              All
-              <img
-                src="/dropdown.svg"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              Home Types
-              <img
-                src="/dropdown.svg"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-            <h4 className="fs-6 fw-bold text-mine">under</h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              All price range
-              <img
-                src="/dropdown.svg"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-            <h4 className="fs-6 fw-bold text-mine">completed by</h4>
-            <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-              All
-              <img
-                src="/dropdown.svg"
-                alt="dropdown icon"
-                className="img-fluid dropdown-icon ms-1"
-              />
-            </h4>
-          </div>
-        </div> */}
+        </div>
+        <div className="py-5 my-3"></div>
         <div className="container-fluid">
           <div className="mb-5">
             <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">

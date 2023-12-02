@@ -11,13 +11,14 @@ const Footer = ({ cities }) => {
             </Link>
             <p></p>
             <p>
-              Dolphy.ca, your top destination for pre-construction condos in
-              Canada. 1000+ Pre construction townhomes, detached & condos
-              available at Dolphy.ca. The content of the pages of this website
-              is for your general information, reference only. We are not liable
-              for the use or misuse of the site's information. Prices, sizes,
-              specifications, and promotions of the condos are subject to change
-              by the builder without notice. E&OE
+              Dolphy.ca, your top destination for pre construction
+              detached,semi-detached, towmhomes and condos in Canada. 1000+ Pre
+              construction townhomes, detached & condos available at Dolphy.ca.
+              The content of the pages of this website is for your general
+              information, reference only. We are not liable for the use or
+              misuse of the site's information. Prices, sizes, specifications,
+              and promotions of the projects are subject to change by the
+              builder without notice.
             </p>
             <div className="social-links d-flex mt-4">
               <Link href="#" className="me-2" target="_blank">

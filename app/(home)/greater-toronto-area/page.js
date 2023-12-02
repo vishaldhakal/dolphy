@@ -2,6 +2,7 @@ import Link from "next/link";
 import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
+import SearchBar from "@/components/SearchBar";
 
 async function getData() {
   const res = await fetch(
@@ -15,6 +16,17 @@ async function getData() {
     notFound();
   }
 
+  return res.json();
+}
+
+async function getCities() {
+  const res = await fetch("https://api.dolphy.ca/api/all-city", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
   return res.json();
 }
 
@@ -35,48 +47,32 @@ export async function generateMetadata({ params }, parent) {
 
 export default async function Home() {
   const data = await getData();
+  let cities = await getCities();
   return (
     <>
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-2 align-items-center">
+        <div className="row row-cols-1 row-cols-md-1 align-items-center">
           <div className="col">
-            <h1 className="main-title fs-3 text-mine fw-bold">
-              Dolphy - Your own New Construction Homes Partner in Greater
-              Toronto Area
+            <div className="py-md-4"></div>
+            <h1 className="main-title text-center fs-3 fw-bold fs-gta pt-5 my-4">
+              Pre Construction Projects in <br /> Greater Toronto Area
             </h1>
-            <hr />
-            <div>
-              <Link
-                className="link-black"
-                href={"/pre-construction-homes/toronto/"}
-              >
-                <h5 className="mb-2 fw-mine fs-4 mb-3">
-                  Explore Top Selling Projects in Toronto
-                </h5>
-              </Link>
-              <ul className="list-unstyled">
-                {data.preconstructions &&
-                  data.preconstructions.map((item) => (
-                    <li key={item.id} className="mb-3">
-                      <Link
-                        href={`/pre-construction-homes/${item.city.slug}/${item.slug}`}
-                        className="link-black"
-                        target="_blank"
-                      >
-                        {item.project_name}
-                        <i className="bi bi-arrow-right ms-2"></i>
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
+            <h2 className="text-green mt-4 text-center">
+              Register Today For VIP First Access
+            </h2>
+            <p className="text-green mb-4 text-center">
+              Get excluisive first access to floor plans and the best pricing
+            </p>
+            <div className="pb-5 d-flex justify-content-center">
+              <button className="btn btn-lg rounded-pill registernoebtn">
+                Register Now
+              </button>
             </div>
-          </div>
-          <div className="col d-flex align-items-center pt-5 pt-md-0">
-            <img
-              src="/gta-hero.png"
-              alt="New construction homes in greater toronto area at dolphy"
-              className="img-fluid"
-            />
+            <div className="d-flex flex-column align-items-center justify-content-center">
+              <div className="pb-1 ww">
+                <SearchBar cities={cities} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1076,6 +1076,15 @@ font-size: 5.5rem !important;
 font-weight: 800 !important;
 color: #2c2c2c !important;
 }
+.fs-gta{
+font-size: 4rem !important;
+font-weight: 800 !important;
+color: #2c2c2c !important;
+}
+.registernoebtn{
+  background-color: red !important;
+  color: white !important;
+}
 .fs-big a{
 color: #2c2c2c !important;
 }
@@ -1776,6 +1785,11 @@ button:focus:not(:focus-visible) {
   }
 .fs-big{
 font-size: 2rem !important;
+font-weight: 800 !important;
+color: #2c2c2c !important;
+}
+.fs-gta{
+font-size: 1.7rem !important;
 font-weight: 800 !important;
 color: #2c2c2c !important;
 }

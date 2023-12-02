@@ -38,7 +38,7 @@ export default function DeveloperCard(props) {
               {props.name}
             </h3>
             {/* <h4 className="mb-2 cardd-subtitle">{props.website_link}</h4> */}
-            <p className="mb-0 project-address-card">{props.details}</p>
+            {/* <p className="mb-0 project-address-card">{props.details}</p> */}
             {/* <p className="card-secondary-title mb-0">{props.phone}</p> */}
           </div>
         </Link>

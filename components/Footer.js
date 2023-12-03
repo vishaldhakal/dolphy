@@ -11,14 +11,12 @@ const Footer = ({ cities }) => {
             </Link>
             <p></p>
             <p>
-              Dolphy.ca, your top destination for pre construction
-              detached,semi-detached, towmhomes and condos in Canada. 1000+ Pre
-              construction townhomes, detached & condos available at Dolphy.ca.
-              The content of the pages of this website is for your general
-              information, reference only. We are not liable for the use or
-              misuse of the site's information. Prices, sizes, specifications,
-              and promotions of the projects are subject to change by the
-              builder without notice.
+              Dolphy.ca provides up-to-date information on over 1,000 pre
+              construction homes across Canada, including detached,
+              semi-detached, townhomes and condominiums. Prices, sizes,
+              offerings and promotions are set by builders and subject to change
+              without notice. Dolphy.ca content is for reference only. We do not
+              guarantee accuracy of third-party information.
             </p>
             <div className="social-links d-flex mt-4">
               <Link href="#" className="me-2" target="_blank">
@@ -45,13 +43,13 @@ const Footer = ({ cities }) => {
           </div>
 
           <div className="col-12 col-lg-4 col-6 footer-links">
-            <h4>New Construction Homes in Calgary</h4>
-            <ul>
+            <h4>Popular Cities in Dolphy</h4>
+            <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
               {cities &&
                 cities.map((city) => (
                   <li key={city.id} className="footerlinks">
                     <Link href={`/pre-construction-homes/${city.slug}`}>
-                      <span>New construction homes in {city.name}</span>
+                      <span>{city.name}</span>
                     </Link>
                   </li>
                 ))}

@@ -92,8 +92,8 @@ export default async function BuilderSingle({ params }) {
               </div>
               <div className="py-5 my-4"></div>
               <div className="row row-cols-1 row-cols-md-3">
-                <div className="col-md-3"></div>
-                <div className="col-md-6">
+                <div className="col-md-2"></div>
+                <div className="col-md-8">
                   <h2 className="main-title text-center mb-4">
                     Projects by {CapitalizeFirst(params.builder)}
                   </h2>
@@ -113,7 +113,7 @@ export default async function BuilderSingle({ params }) {
                       ))}
                   </div>
                 </div>
-                <div className="col-md-3"></div>
+                <div className="col-md-2"></div>
               </div>
             </div>
           </div>

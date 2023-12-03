@@ -10,7 +10,9 @@ import Link from "next/link";
 
 async function getData(city) {
   const res = await fetch(
-    "https://api.dolphy.ca/api/preconstructions-city/" + city,
+    "https://api.dolphy.ca/api/preconstructions-city/" +
+      city +
+      "?page_size=200",
     {
       next: { revalidate: 10 },
     }
@@ -289,19 +291,21 @@ export default async function Home({ params }) {
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
-          <div className="py-5">
-            {data.city && (
-              <div className="container" id="make-img-responsive">
-                <div className="row row-cols-1">
-                  <div
-                    className="col-12 mt-mine px-3"
-                    dangerouslySetInnerHTML={{
-                      __html: data.city.details,
-                    }}
-                  ></div>
+          <div className="d-flex justify-content-center">
+            <div className="py-5 max-w-mine">
+              {data.city && (
+                <div className="container" id="make-img-responsive">
+                  <div className="row row-cols-1">
+                    <div
+                      className="col-12 mt-mine px-3"
+                      dangerouslySetInnerHTML={{
+                        __html: data.city.details,
+                      }}
+                    ></div>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

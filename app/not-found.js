@@ -47,7 +47,7 @@ export default async function NotFound() {
           </Link>
           <p className="fw-bold fs-line mx-2 mt-1 mb-0">
             <img
-              src="mapleleaf.svg"
+              src="/mapleleaf.svg"
               alt="maple leaf divider"
               className="img-fluid maple-leaf"
             />

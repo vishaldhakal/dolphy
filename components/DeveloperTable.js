@@ -18,7 +18,7 @@ const DeveloperTable = ({ developers, handleEdit, handleDelete }) => {
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{developer.name}</td>
-                <td>{developer.image}</td>
+                <td className="text-limit">{developer.image}</td>
                 <td>{developer.phone}</td>
                 <td>{developer.website_link}</td>
                 <td>

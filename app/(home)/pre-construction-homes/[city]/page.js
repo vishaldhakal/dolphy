@@ -192,6 +192,19 @@ export default async function Home({ params }) {
           </h2>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
+              filteredprojects("Planning Phase").map((item) => (
+                <div className="col" key={item.id}>
+                  <script
+                    key={item.slug}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify(PreconSchema(item)),
+                    }}
+                  />
+                  <CondoCard {...item} />
+                </div>
+              ))}
+            {data.preconstructions &&
               filteredprojects("Upcoming").map((item) => (
                 <div className="col" key={item.id}>
                   <script

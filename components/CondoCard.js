@@ -75,6 +75,9 @@ export default function CondoCard(props) {
           {props.status == "Selling" && (
             <span className="mmmmm p-1 px-2">Selling Now</span>
           )}
+          {props.status == "Planning Phase" && (
+            <span className="mmmmm bg-yellow p-1 px-2">Planning Phase</span>
+          )}
           {props.occupancy && (
             <span className="shadow-lg p-1 px-2 abs2">
               Completion {props.occupancy}

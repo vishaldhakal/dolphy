@@ -6,6 +6,7 @@ const DeveloperTable = ({ developers, handleEdit, handleDelete }) => {
           <tr className="bg-dark text-white">
             <th scope="col">S.N</th>
             <th scope="col">Developer Name</th>
+            <th scope="col">Image</th>
             <th scope="col">Phone</th>
             <th scope="col">Website Link</th>
             <th scope="col">Action</th>
@@ -17,6 +18,7 @@ const DeveloperTable = ({ developers, handleEdit, handleDelete }) => {
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{developer.name}</td>
+                <td>{developer.image}</td>
                 <td>{developer.phone}</td>
                 <td>{developer.website_link}</td>
                 <td>

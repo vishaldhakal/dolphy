@@ -14,12 +14,7 @@ export default function DeveloperCardDetail(props) {
               alt={`${props.name} builders logo`}
             />
           ) : (
-            <img
-              loading="lazy"
-              src="/noimage.webp"
-              className="img-fluid"
-              alt={`no image available for ${props.name}`}
-            />
+            <></>
           )}
         </div>
         <div className="mt-4"></div>

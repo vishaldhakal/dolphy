@@ -81,42 +81,36 @@ export default async function Home({ params }) {
         </div>
         <div className="py-5 my-3"></div>
         <div className="container-fluid">
-          {all_data &&
-            all_data.length > 0 &&
-            all_data.map((item) => (
-              <div className="mb-5">
-                <div className="d-flex flex-column justify-content-center flex-column align-items-center mb-5">
-                  <h2 className="main-title text-center text-md-start">
-                    {`New Construction Homes in ${item.name} ( 2023 )`}
-                  </h2>
+          <div className="row row-cols-2 row-cols-md-6 gy-3">
+            {all_data &&
+              all_data.length > 0 &&
+              all_data.map((item) => (
+                <div className="col">
                   <Link
                     href={"/pre-construction-homes/" + item.slug}
-                    className="mt-1 text-mine"
+                    className="link-black"
                   >
-                    All communities in {item.name}
-                    <i className="bi bi-arrow-right-short"></i>
+                    <h4 className="fs-m fw-bold text-center">{item.name}</h4>
                   </Link>
-                </div>
-                <div className="container-fluid2">
-                  <div className="row row-cols-2 row-cols-md-6 row-cols-lg-6 gy-4 gx-2">
-                    {item.preconstructions &&
-                      item.preconstructions.map((precon) => (
-                        <div className="col" key={precon.id}>
+                  <div className="maxhh">
+                    <div className="d-flex justify-content-center flex-column align-items-center">
+                      {item.preconstructions &&
+                        item.preconstructions.map((precon, no) => (
                           <Link
                             href={`/pre-construction-homes/${item.slug}/${precon.slug}`}
-                            className="link-black fs-small"
+                            className="mb-0 fs-small"
                             target="_blank"
                           >
                             {precon.project_name}
                           </Link>
-                        </div>
-                      ))}
+                        ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
 
-          <div className="container-fluid2">
+          <div className="mt-5 pt-5">
             <h3 className="fs-2">
               <strong>Explore more citites </strong>
             </h3>

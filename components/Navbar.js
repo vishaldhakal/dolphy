@@ -6,8 +6,14 @@ import SearchBar from "./SearchBar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Navbar = ({ cities }) => {
+const Navbar = ({ cities, dropdown_cities }) => {
   const [cityname, setCityname] = useState("");
+
+  const filteredprojects = (value) => {
+    return dropdown_cities.filter((city) => {
+      return value.includes(city.name);
+    });
+  };
 
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white py-3 py-md-2 shadow-navbar mb-3">
@@ -80,141 +86,38 @@ const Navbar = ({ cities }) => {
                 data-bs-popper="static"
               >
                 <div className="row p-3 pt-2 dopp">
-                  <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <Link
-                      className="link-black"
-                      href={"/pre-construction-homes/toronto/"}
-                    >
-                      <h5 className="mb-2 fw-mine fs-4">Toronto</h5>
-                    </Link>
-                    <ul className="list-unstyled">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Alfie Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Temple Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Temple Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Maison Wellesley Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          400 Front Street Condos
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <Link
-                      className="link-black"
-                      href={"/pre-construction-homes/calgary/"}
-                    >
-                      <h5 className="mb-2 fw-mine fs-4">Calgary</h5>
-                    </Link>
-                    <ul className="list-unstyled">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Myne Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Cornerview Towns
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Novella 2 Townhomes
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Highgate Condos
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <Link
-                      className="link-black"
-                      href={"/pre-construction-homes/brampton/"}
-                    >
-                      <h5 className="mb-2 fw-mine fs-4">Brampton</h5>
-                    </Link>
-                    <ul className="list-unstyled">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Honeystone House
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Bramalea Square Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Bodhi Towns
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Arbor West Homes
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Boutin Tower
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-12 col-sm-6 col-md-3 mb-3">
-                    <Link
-                      className="link-black"
-                      href={"/pre-construction-homes/mississauga/"}
-                    >
-                      <h5 className="mb-2 fw-mine fs-4">Mississauga</h5>
-                    </Link>
-                    <ul className="list-unstyled">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Whitehorn Wood Towns
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          M6 Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          The Southland Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          MW Condos
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Canopy Towers 2
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  {dropdown_cities &&
+                    filteredprojects([
+                      "Toronto",
+                      "Calgary",
+                      "Mississauga",
+                      "Brampton",
+                    ]).map((city, no) => (
+                      <div className="col-12 col-sm-6 col-md-3 mb-3" key={no}>
+                        <Link
+                          className="link-black"
+                          href={`/pre-construction-homes/${city.slug}/`}
+                        >
+                          <h5 className="mb-2 fw-mine fs-4">{city.name}</h5>
+                        </Link>
+                        <ul className="list-unstyled">
+                          {city.preconstructions &&
+                            city.preconstructions.length > 0 &&
+                            city.preconstructions
+                              .slice(0, 5)
+                              .map((project, no) => (
+                                <li key={no}>
+                                  <Link
+                                    className="dropdown-item link-black text-limit"
+                                    href={`/pre-construction-homes/${city.slug}/${project.slug}`}
+                                  >
+                                    {project.project_name}
+                                  </Link>
+                                </li>
+                              ))}
+                        </ul>
+                      </div>
+                    ))}
                   <div className="col-12">
                     <div
                       className="alert alert-success bg-lightyellow alert-dismissible fade show mt-2 mb-0 rounded-3 d-flex justify-content-sm-between align-items-sm-center flex-column flex-sm-row justify-content-start align-items-start gap-3"

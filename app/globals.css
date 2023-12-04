@@ -1268,7 +1268,14 @@ color: #2c2c2c !important;
 }
 .fs-small {
   font-size: 0.9rem !important;
-  color: #003274;
+  color: #003274 !important;
+}
+.maxhh{
+  max-height: 500px !important;
+  overflow: scroll;
+}
+.maxhh::-webkit-scrollbar {
+  display: none;
 }
 .fs-vsmall {
   font-size: 0.8rem !important;
@@ -1770,6 +1777,9 @@ button:focus:not(:focus-visible) {
 }
 .max-w-mine{
   max-width: 1000px !important;
+}
+.overflow-m a{
+  max-width: 20px !important;
 }
 .bigg:hover{
   box-shadow: 10px 1px 10px 0px rgba(0, 0, 0, 0.2) !important;

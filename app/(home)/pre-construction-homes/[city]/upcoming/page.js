@@ -12,7 +12,7 @@ async function getData(city) {
   const res = await fetch(
     "https://api.dolphy.ca/api/preconstructions-city/" +
       city +
-      "?page_size=200",
+      "?status=Upcoming&page_size=200",
     {
       next: { revalidate: 10 },
     }
@@ -58,11 +58,14 @@ export async function generateMetadata({ params }, parent) {
     alternates: {
       canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/`,
     },
-    title: data.preconstructions.length + " Preconstruction Homes in " + city,
+    title:
+      data.preconstructions.length +
+      " Upcoming Preconstruction Homes in " +
+      city,
     openGraph: {
       images: retImage(data.preconstructions),
     },
-    description: `${city} pre construction TownHomes, Detached & Condos. Check out ${data.preconstructions.length}+ new construction homes on Dolphy. Floor plans & pricing updated for new construction homes in ${city}`,
+    description: `${city} upcoming pre construction TownHomes, Detached & Condos. Check out ${data.preconstructions.length}+ upcoming new construction homes on Dolphy. Floor plans & pricing updated for upcoming new construction homes in ${city}`,
   };
 }
 
@@ -82,52 +85,25 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="pb-1">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
-              {`New Construction Homes in ${CapitalizeFirst(
+              {`Upcoming New Construction Homes in ${CapitalizeFirst(
                 params.city
-              )} ( Selling Now )`}
+              )} ( Coming Soon )`}
             </h1>
-            <p className="text-dark text-center text-md-start mb-0">
-              {`${data.preconstructions.length} New Pre construction Detached,
-              Townhomes and Condos for sale in ${CapitalizeFirst(
+            <p className="text-dark text-center text-md-start">
+              {`${
+                data.preconstructions.length
+              } Upcoming Pre construction Detached,
+              Townhomes and Condos in ${CapitalizeFirst(
                 params.city
               )} (Updated ${
                 new Date().getMonth() +
+                1 +
                 "-" +
                 new Date().getDate() +
                 "-" +
                 new Date().getFullYear()
               })`}
             </p>
-          </div>
-          <div className="d-flex mb-4 mt-2 gap-2">
-            <div>
-              <Link
-                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`/pre-construction-homes/${params.city}/upcoming`}
-              >
-                Upcoming in {CapitalizeFirst(params.city)}
-              </Link>
-              <Link
-                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`#`}
-              >
-                {CapitalizeFirst(params.city)} Townhomes
-              </Link>
-            </div>
-            <div>
-              <Link
-                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`#`}
-              >
-                {CapitalizeFirst(params.city)} Detached Homes
-              </Link>
-              <Link
-                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`#`}
-              >
-                {CapitalizeFirst(params.city)} Condos
-              </Link>
-            </div>
           </div>
           <div className="d-flex overflow-hidden">
             <Link href={"/"} className="btn btn-light link-black me-2 mb-3">
@@ -195,7 +171,7 @@ export default async function Home({ params }) {
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              filteredprojects("Selling").map((item) => (
+              data.preconstructions.map((item) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -209,70 +185,7 @@ export default async function Home({ params }) {
               ))}
           </div>
           <div className="pt-5 mt-5"></div>
-          <div className="pt-5"></div>
-          <h2 className="fw-bold fs-3 mb-4">
-            {filteredprojects("Upcoming").length > 0 ? (
-              `Launching Soon - New Construction Projects in ${CapitalizeFirst(
-                data.city.name
-              )}`
-            ) : (
-              <></>
-            )}
-          </h2>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.preconstructions &&
-              filteredprojects("Planning Phase").map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <CondoCard {...item} />
-                </div>
-              ))}
-            {data.preconstructions &&
-              filteredprojects("Upcoming").map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <CondoCard {...item} />
-                </div>
-              ))}
-          </div>
-          <div className="pt-5 mt-5"></div>
-          <div className="pt-5"></div>
-          <h2 className="fw-bold fs-3 mb-4 text-red">
-            {filteredprojects("Sold out").length > 0 ? (
-              <i>{`Past Communities in ${CapitalizeFirst(
-                data.city.name
-              )} - Sold out`}</i>
-            ) : (
-              <></>
-            )}
-          </h2>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-6 gy-4 gx-3 gx-lg-2">
-            {data.preconstructions &&
-              filteredprojects("Sold out").map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <CondoCard {...item} />
-                </div>
-              ))}
-          </div>
+
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
           <DolphyAdvantage></DolphyAdvantage>

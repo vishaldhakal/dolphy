@@ -1266,6 +1266,10 @@ color: #2c2c2c !important;
 .fs-m {
   font-size: 1.1rem !important;
 }
+.fw-m{
+  font-weight: 500;
+  padding: 0.2rem auto !important;
+}
 .fs-small {
   font-size: 0.9rem !important;
   color: #003274 !important;

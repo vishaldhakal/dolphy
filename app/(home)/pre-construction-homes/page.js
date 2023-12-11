@@ -55,11 +55,11 @@ export default async function Home({ params }) {
     <>
       <FixedContactButton></FixedContactButton>
       <div className="pt-4 position-relative">
-        <div className="row row-cols-1 row-cols-md-1 align-items-center">
+        <div className="row row-cols-1 row-cols-md-1 align-items-center mx-0">
           <div className="col">
             <div className="py-md-4"></div>
             <h1 className="main-title text-center fs-3 fw-bold fs-gta pt-5 my-4">
-              Pre Construction Projects in <br /> Canada
+              List of Pre Construction Projects in <br /> Canada
             </h1>
             <h2 className="text-green mt-4 text-center">
               Register Today For VIP First Access
@@ -81,7 +81,7 @@ export default async function Home({ params }) {
         </div>
         <div className="py-5 my-3"></div>
         <div className="container-fluid">
-          <div className="row row-cols-2 row-cols-md-6 gy-3">
+          <div className="row row-cols-1 row-cols-md-1 gy-4">
             {all_data &&
               all_data.length > 0 &&
               all_data.map((item) => (
@@ -90,15 +90,15 @@ export default async function Home({ params }) {
                     href={"/pre-construction-homes/" + item.slug}
                     className="link-black"
                   >
-                    <h4 className="fs-m fw-bold text-center">{item.name}</h4>
+                    <h4 className="fs-m fw-bold">{item.name}</h4>
                   </Link>
                   <div className="maxhh">
-                    <div className="d-flex justify-content-center flex-column align-items-center">
+                    <div className="row row-cols-5">
                       {item.preconstructions &&
                         item.preconstructions.map((precon, no) => (
                           <Link
                             href={`/pre-construction-homes/${item.slug}/${precon.slug}`}
-                            className="mb-0 fs-small"
+                            className="mb-0 fs-small col"
                             target="_blank"
                           >
                             {precon.project_name}

@@ -1282,10 +1282,10 @@ color: #2c2c2c !important;
   font-size: 1rem !important;
   color: #003274 !important;
 }
-.maxhh{
+/* .maxhh{
   max-height: 500px !important;
   overflow: scroll;
-}
+} */
 .maxhh::-webkit-scrollbar {
   display: none;
 }

@@ -59,7 +59,7 @@ export default async function Home({ params }) {
           <div className="col">
             <div className="py-md-4"></div>
             <h1 className="main-title text-center fs-3 fw-bold fs-gta pt-5 my-4">
-              Pre Construction Projects in <br /> Toronto and Calgary
+              Pre Construction Projects in <br /> Canada
             </h1>
             <h2 className="text-green mt-4 text-center">
               Register Today For VIP First Access

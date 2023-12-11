@@ -96,13 +96,17 @@ const Navbar = ({ cities, dropdown_cities }) => {
                       "Burlington",
                       "Kitchener",
                       "Hamilton",
+                      "Oakville",
+                      "Milton",
+                      "Niagara",
+                      "Vaughan",
                     ]).map((city, no) => (
                       <div className="col-12 col-sm-6 col-md-3 mb-4" key={no}>
                         <Link
                           className="link-black"
                           href={`/pre-construction-homes/${city.slug}/`}
                         >
-                          <h5 className="mb-1 fw-mine fs-small fs-4">
+                          <h5 className="mb-1 fw-mine fs-smaller fs-4">
                             {city.name}
                           </h5>
                         </Link>
@@ -124,43 +128,15 @@ const Navbar = ({ cities, dropdown_cities }) => {
                         </ul>
                       </div>
                     ))}
+                  <hr />
                   <div className="col-12">
-                    <div
-                      className="alert alert-success bg-lightyellow alert-dismissible fade show mt-2 mb-0 rounded-3 d-flex justify-content-sm-between align-items-sm-center flex-column flex-sm-row justify-content-start align-items-start gap-3"
-                      role="alert"
+                    <Link
+                      className="btn btn-white link-black fw-bold p-0"
+                      href={"/pre-construction-homes/"}
                     >
-                      <div>
-                        <div className="my-2 my-sm-0 d-flex text-dark align-items-center gap-2">
-                          <img
-                            src="/COA-agent-pic.jpg"
-                            alt="agent pic"
-                            className="img-fluid img-call-height-dropdown"
-                          />
-                          <div className="d-flex flex-column justify-content-start align-items-start">
-                            <p className="mb-0 fw-bold">
-                              Looking for New Construction Homes in Calgary ?
-                            </p>
-                            <p className="fs-small mb-0">
-                              Call us at
-                              <Link
-                                href={"telto:(587) 887-2572"}
-                                className="me-2 ms-1"
-                              >
-                                (587) 887-2572
-                              </Link>
-                              to speak with our friendly new homes advisor.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <Link
-                        className="btn btn-white link-black"
-                        href={"/pre-construction-homes/"}
-                      >
-                        Explore all projects
-                        <i className="bi bi-arrow-right-short"></i>
-                      </Link>
-                    </div>
+                      List of all cities and pre construction homes in Canada
+                      <i className="bi bi-arrow-right ms-2"></i>
+                    </Link>
                   </div>
                 </div>
               </div>

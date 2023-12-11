@@ -79,13 +79,15 @@ const SearchBar = (props) => {
   }, [props.defaultVal]);
 
   const CapitalizeFirst = (city) => {
-    return city.charAt(0).toUpperCase() + city.slice(1);
+    if (city) {
+      return city.charAt(0).toUpperCase() + city.slice(1);
+    } else {
+      return "";
+    }
   };
   // Option props
   const inputProps = {
-    placeholder:
-      CapitalizeFirst(pathname.split("/")[2]) ||
-      "Search by city or project name",
+    placeholder: CapitalizeFirst(pathname.split("/")[2]) || "Search by city",
     value,
     onChange,
   };

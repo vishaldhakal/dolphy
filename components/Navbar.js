@@ -4,7 +4,6 @@ import SearchBar from "./SearchBar";
 
 //LIB
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const Navbar = ({ cities, dropdown_cities }) => {
   const [cityname, setCityname] = useState("");
@@ -16,7 +15,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
   };
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3 py-md-2 shadow-navbar mb-3">
+    <nav className="navbar navbar-expand-sm navbar-light bg-white py-3 py-md-2 shadow-navbar mb-3 sticky-top">
       <div className="container-fluid justify-content-start">
         <Link href="/" className="logo">
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />

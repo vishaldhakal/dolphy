@@ -33,10 +33,29 @@ async function getCities() {
   return res.json();
 }
 
+async function getCitiesandProjects() {
+  const res = await fetch("https://api.dolphy.ca/api/all-precons", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
 export default async function Home() {
   const data = await getData("calgary");
   const toronto_data = await getData("toronto");
   let cities = await getCities();
+  let dropdown_cities = await getCitiesandProjects();
+
+  const filteredprojects = (value) => {
+    return dropdown_cities.filter((city) => {
+      return value.includes(city.name);
+    });
+  };
+
   return (
     <>
       <FixedContactButton></FixedContactButton>
@@ -133,9 +152,15 @@ export default async function Home() {
                     North West, Calgary
                   </h4>
                   <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Ambleton
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Crimson Ridge
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Carrington
+                    </Link>
                   </div>
                 </div>
                 <div className="col">
@@ -143,9 +168,15 @@ export default async function Home() {
                     South West, Calgary
                   </h4>
                   <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      West District
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Peaks of Aspen Woods
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Timberstone Ridge
+                    </Link>
                   </div>
                 </div>
                 <div className="col">
@@ -153,9 +184,15 @@ export default async function Home() {
                     North East,Calgary
                   </h4>
                   <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Cornerstone
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Huxley
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Timberstone Ridge
+                    </Link>
                   </div>
                 </div>
                 <div className="col">
@@ -163,9 +200,15 @@ export default async function Home() {
                     South East, Calgary
                   </h4>
                   <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Walden
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Rangeview
+                    </Link>
+                    <Link href={`#`} className="mb-0 fs-small link-black">
+                      Wolf Willow
+                    </Link>
                   </div>
                 </div>
                 <div className="col d-none d-md-block"></div>
@@ -226,131 +269,43 @@ export default async function Home() {
               Greater Toronto Area Communities
             </div>
             <div className="py-3">
-              <div className="row row-cols-2 row-cols-md-6 gy-3">
-                <div className="col d-none d-md-block"></div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/toronto/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Toronto</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/mississauga/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Mississauga</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/pickering/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Pickering</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <h4 className="fs-m fw-bold text-center">
-                    <Link
-                      href={"/pre-construction-homes/cambridge/"}
-                      className="link-black"
-                    >
-                      Cambridge
-                    </Link>{" "}
-                    /{" "}
-                    <Link
-                      href={"/pre-construction-homes/kitchener/"}
-                      className="link-black"
-                    >
-                      Kitchener
-                    </Link>{" "}
-                    /{" "}
-                    <Link
-                      href={"/pre-construction-homes/waterloo/"}
-                      className="link-black"
-                    >
-                      Waterloo
-                    </Link>
-                  </h4>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col d-none d-md-block"></div>
-                <div className="col d-none d-md-block"></div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/milton/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Milton</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/burlington/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Burlington</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/oakville/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Oakville</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col">
-                  <Link
-                    href={"/pre-construction-homes/hamilton/"}
-                    className="link-black"
-                  >
-                    <h4 className="fs-m fw-bold text-center">Hamilton</h4>
-                  </Link>
-                  <div className="d-flex justify-content-center flex-column align-items-center">
-                    <p className="mb-0 fs-small">West District</p>
-                    <p className="mb-0 fs-small">Peaks of Aspen Woods</p>
-                    <p className="mb-0 fs-small">Timberstone Ridge</p>
-                  </div>
-                </div>
-                <div className="col d-none d-md-block"></div>
+              <div className="row row-cols-2 row-cols-md-3 gy-3">
+                {dropdown_cities &&
+                  filteredprojects([
+                    "Toronto",
+                    "Mississauga",
+                    "Brampton",
+                    "Ajax",
+                    "Burlington",
+                    "Kitchener",
+                    "Hamilton",
+                    "Oakville",
+                  ]).map((city, no) => (
+                    <div className="col-12 col-sm-6 col-md-3 mb-4" key={no}>
+                      <Link
+                        className="link-black"
+                        href={`/pre-construction-homes/${city.slug}/`}
+                      >
+                        <h4 className="fs-m fw-bold text-center">
+                          {city.name}
+                        </h4>
+                      </Link>
+                      <div className="d-flex justify-content-center flex-column align-items-center">
+                        {city.preconstructions &&
+                          city.preconstructions.length > 0 &&
+                          city.preconstructions
+                            .slice(0, 5)
+                            .map((project, no) => (
+                              <Link
+                                className="fs-small link-black text-center"
+                                href={`/pre-construction-homes/${city.slug}/${project.slug}`}
+                              >
+                                {project.project_name}
+                              </Link>
+                            ))}
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>

@@ -92,15 +92,21 @@ const Navbar = ({ cities, dropdown_cities }) => {
                       "Calgary",
                       "Mississauga",
                       "Brampton",
+                      "Ajax",
+                      "Burlington",
+                      "Kitchener",
+                      "Hamilton",
                     ]).map((city, no) => (
-                      <div className="col-12 col-sm-6 col-md-3 mb-3" key={no}>
+                      <div className="col-12 col-sm-6 col-md-3 mb-4" key={no}>
                         <Link
                           className="link-black"
                           href={`/pre-construction-homes/${city.slug}/`}
                         >
-                          <h5 className="mb-2 fw-mine fs-4">{city.name}</h5>
+                          <h5 className="mb-1 fw-mine fs-small fs-4">
+                            {city.name}
+                          </h5>
                         </Link>
-                        <ul className="list-unstyled">
+                        <ul className="list-unstyled ll">
                           {city.preconstructions &&
                             city.preconstructions.length > 0 &&
                             city.preconstructions

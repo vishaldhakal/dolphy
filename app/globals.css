@@ -635,7 +635,7 @@ a:hover {
 
 .sidebar-nav .nav-item {
   margin-bottom: 5px;
-  
+
 }
 
 .sidebar-nav .nav-heading {
@@ -1806,7 +1806,8 @@ button:focus:not(:focus-visible) {
   } */
 
   .fs-mine{
-    font-size: 2rem !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 10px !important;
   }
 .fs-big{
 font-size: 2rem !important;
@@ -1883,7 +1884,7 @@ color: #2c2c2c !important;
     border-radius: 7px !important;
   }
   .react-autosuggest__input::placeholder{
-    font-size: 0.5rem !important;
+    font-size: 1rem !important;
   }
   .ww .react-autosuggest__input {
     background-color: #f5f5f5;

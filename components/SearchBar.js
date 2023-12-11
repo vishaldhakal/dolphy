@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Autosuggest from "react-autosuggest";
+import { usePathname } from "next/navigation";
 
 const SearchBar = (props) => {
-  const [value, setValue] = useState("");
+  const pathname = usePathname();
+  const [value, setValue] = useState(pathname.split("/")[2] || "");
   const [suggestions, setSuggestions] = useState([]);
 
   // Collection of data
@@ -76,9 +78,14 @@ const SearchBar = (props) => {
     }
   }, [props.defaultVal]);
 
+  const CapitalizeFirst = (city) => {
+    return city.charAt(0).toUpperCase() + city.slice(1);
+  };
   // Option props
   const inputProps = {
-    placeholder: "Search by city or project name",
+    placeholder:
+      CapitalizeFirst(pathname.split("/")[2]) ||
+      "Search by city or project name",
     value,
     onChange,
   };

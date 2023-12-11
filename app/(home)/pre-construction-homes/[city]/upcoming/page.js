@@ -56,7 +56,7 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/`,
+      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/upcoming/`,
     },
     title:
       data.preconstructions.length +
@@ -104,6 +104,36 @@ export default async function Home({ params }) {
                 new Date().getFullYear()
               })`}
             </p>
+          </div>
+          <div className="d-flex mb-4 mt-2 gap-2">
+            <div>
+              <Link
+                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
+                href={`/pre-construction-homes/${params.city}`}
+              >
+                New Construction in {CapitalizeFirst(params.city)}
+              </Link>
+              <Link
+                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
+                href={`/pre-construction-homes/${params.city}/townhomes/`}
+              >
+                {CapitalizeFirst(params.city)} Townhomes
+              </Link>
+            </div>
+            <div>
+              <Link
+                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
+                href={`/pre-construction-homes/${params.city}/detached/`}
+              >
+                {CapitalizeFirst(params.city)} Detached Homes
+              </Link>
+              <Link
+                className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
+                href={`/pre-construction-homes/${params.city}/condos/`}
+              >
+                {CapitalizeFirst(params.city)} Condos
+              </Link>
+            </div>
           </div>
           <div className="d-flex overflow-hidden">
             <Link href={"/"} className="btn btn-light link-black me-2 mb-3">

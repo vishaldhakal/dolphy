@@ -12,7 +12,7 @@ async function getData(city) {
   const res = await fetch(
     "https://api.dolphy.ca/api/preconstructions-city/" +
       city +
-      "?page_size=200",
+      "?project_type=Detached&page_size=200",
     {
       next: { revalidate: 10 },
     }
@@ -56,13 +56,16 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/`,
+      canonical: `https://dolphy.ca/pre-construction-homes/${params.city}/detached/`,
     },
-    title: data.preconstructions.length + " Preconstruction Homes in " + city,
+    title:
+      data.preconstructions.length +
+      " Preconstruction Detached Homes in " +
+      city,
     openGraph: {
       images: retImage(data.preconstructions),
     },
-    description: `${city} pre construction TownHomes, Detached & Condos. Check out ${data.preconstructions.length}+ new construction homes on Dolphy. Floor plans & pricing updated for new construction homes in ${city}`,
+    description: `${city} upcoming pre construction Detached Homes. Check out ${data.preconstructions.length}+ new construction detached homes on Dolphy. Floor plans & pricing updated for upcoming new construction detached homes in ${city}`,
   };
 }
 
@@ -71,10 +74,6 @@ export default async function Home({ params }) {
   const blogPosts = await fetchBlogPostByCity(params?.city);
   let cities = await getCities();
 
-  const filteredprojects = (value) => {
-    return data.preconstructions.filter((item) => item.status == value);
-  };
-
   return (
     <>
       <FixedContactButton></FixedContactButton>
@@ -82,16 +81,18 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="pb-1">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
-              {`New Construction Homes in ${CapitalizeFirst(
+              {`New Construction Detached Homes in ${CapitalizeFirst(
                 params.city
               )} ( Selling Now )`}
             </h1>
             <p className="text-dark text-center text-md-start">
-              {`${data.preconstructions.length} New Pre construction Detached,
-              Townhomes and Condos for sale in ${CapitalizeFirst(
+              {`${
+                data.preconstructions.length
+              } Pre construction Detached Homes in ${CapitalizeFirst(
                 params.city
               )} (Updated ${
                 new Date().getMonth() +
+                1 +
                 "-" +
                 new Date().getDate() +
                 "-" +
@@ -103,23 +104,23 @@ export default async function Home({ params }) {
             <div>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`/pre-construction-homes/${params.city}/upcoming/`}
+                href={`/pre-construction-homes/${params.city}/`}
               >
-                Upcoming in {CapitalizeFirst(params.city)}
+                New Construction in {CapitalizeFirst(params.city)}
               </Link>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`/pre-construction-homes/${params.city}/townhomes/`}
+                href={`/pre-construction-homes/${params.city}/upcoming/`}
               >
-                {CapitalizeFirst(params.city)} Townhomes
+                Upcoming in {CapitalizeFirst(params.city)}
               </Link>
             </div>
             <div>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
-                href={`/pre-construction-homes/${params.city}/detached/`}
+                href={`/pre-construction-homes/${params.city}/townhomes/`}
               >
-                {CapitalizeFirst(params.city)} Detached Homes
+                {CapitalizeFirst(params.city)} Townhomes
               </Link>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
@@ -144,58 +145,12 @@ export default async function Home({ params }) {
               ))}
           </div>
         </div>
-        {/* <div className="bg-white pt-3 pb-3 p-sticky-top">
-          <div className="container-fluid d-flex gap-2 flex-column align-items-center flex-md-row justify-content-md-start align-items-md-center fw-normal">
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold text-mine">
-                Hey Dolphy! I am looking for
-              </h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                Home Types
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-              <h4 className="fs-6 fw-bold text-mine">under</h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All price range
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold text-mine">completed by</h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-          </div>
-        </div> */}
+
         <div className="container-fluid">
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              filteredprojects("Selling").map((item) => (
+              data.preconstructions.map((item) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -209,70 +164,7 @@ export default async function Home({ params }) {
               ))}
           </div>
           <div className="pt-5 mt-5"></div>
-          <div className="pt-5"></div>
-          <h2 className="fw-bold fs-3 mb-4">
-            {filteredprojects("Upcoming").length > 0 ? (
-              `Launching Soon - New Construction Projects in ${CapitalizeFirst(
-                data.city.name
-              )}`
-            ) : (
-              <></>
-            )}
-          </h2>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
-            {data.preconstructions &&
-              filteredprojects("Planning Phase").map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <CondoCard {...item} />
-                </div>
-              ))}
-            {data.preconstructions &&
-              filteredprojects("Upcoming").map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <CondoCard {...item} />
-                </div>
-              ))}
-          </div>
-          <div className="pt-5 mt-5"></div>
-          <div className="pt-5"></div>
-          <h2 className="fw-bold fs-3 mb-4 text-red">
-            {filteredprojects("Sold out").length > 0 ? (
-              <i>{`Past Communities in ${CapitalizeFirst(
-                data.city.name
-              )} - Sold out`}</i>
-            ) : (
-              <></>
-            )}
-          </h2>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-6 gy-4 gx-3 gx-lg-2">
-            {data.preconstructions &&
-              filteredprojects("Sold out").map((item) => (
-                <div className="col" key={item.id}>
-                  <script
-                    key={item.slug}
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(PreconSchema(item)),
-                    }}
-                  />
-                  <CondoCard {...item} />
-                </div>
-              ))}
-          </div>
+
           <div className="pt-5 mt-5"></div>
           <div className="pt-5 mt-5"></div>
           <DolphyAdvantage></DolphyAdvantage>

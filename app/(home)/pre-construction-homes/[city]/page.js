@@ -104,13 +104,13 @@ export default async function Home({ params }) {
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
                 href={`/pre-construction-homes/${params.city}/upcoming/`}
               >
-                Upcoming in {CapitalizeFirst(params.city)}
+                Upcoming Projects in {CapitalizeFirst(params.city)}
               </Link>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
                 href={`/pre-construction-homes/${params.city}/townhomes/`}
               >
-                {CapitalizeFirst(params.city)} Townhomes
+                New Townhomes {CapitalizeFirst(params.city)}
               </Link>
             </div>
             <div>
@@ -118,13 +118,13 @@ export default async function Home({ params }) {
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
                 href={`/pre-construction-homes/${params.city}/detached/`}
               >
-                {CapitalizeFirst(params.city)} Detached Homes
+                New Detached Homes {CapitalizeFirst(params.city)}
               </Link>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
                 href={`/pre-construction-homes/${params.city}/condos/`}
               >
-                {CapitalizeFirst(params.city)} Condos
+                New Condos {CapitalizeFirst(params.city)}
               </Link>
             </div>
           </div>

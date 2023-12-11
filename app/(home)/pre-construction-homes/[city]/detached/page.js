@@ -79,13 +79,13 @@ export default async function Home({ params }) {
       <FixedContactButton></FixedContactButton>
       <div className="pt-4 position-relative">
         <div className="container-fluid">
-          <div className="pb-1">
+          <div className="pb-0">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
               {`New Construction Detached Homes in ${CapitalizeFirst(
                 params.city
               )} ( Selling Now )`}
             </h1>
-            <p className="text-dark text-center text-md-start">
+            <p className="text-dark text-center text-md-start mb-2">
               {`${
                 data.preconstructions.length
               } Pre construction Detached Homes in ${CapitalizeFirst(
@@ -100,7 +100,7 @@ export default async function Home({ params }) {
               })`}
             </p>
           </div>
-          <div className="d-flex mb-4 mt-2 gap-2">
+          <div className="d-flex mb-4 mt-0 gap-2">
             <div>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
@@ -129,20 +129,6 @@ export default async function Home({ params }) {
                 {CapitalizeFirst(params.city)} Condos
               </Link>
             </div>
-          </div>
-          <div className="d-flex overflow-hidden">
-            <Link href={"/"} className="btn btn-light link-black me-2 mb-3">
-              Home
-            </Link>
-            {cities &&
-              cities.map((item) => (
-                <Link
-                  href={"/pre-construction-homes/" + item.slug}
-                  className="btn btn-light link-black me-2 mb-3"
-                >
-                  {item.name}
-                </Link>
-              ))}
           </div>
         </div>
 

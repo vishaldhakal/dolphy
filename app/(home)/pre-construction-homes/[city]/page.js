@@ -69,7 +69,6 @@ export async function generateMetadata({ params }, parent) {
 export default async function Home({ params }) {
   const data = await getData(params.city);
   const blogPosts = await fetchBlogPostByCity(params?.city);
-  let cities = await getCities();
 
   const filteredprojects = (value) => {
     return data.preconstructions.filter((item) => item.status == value);
@@ -80,13 +79,13 @@ export default async function Home({ params }) {
       <FixedContactButton></FixedContactButton>
       <div className="pt-4 position-relative">
         <div className="container-fluid">
-          <div className="pb-1">
+          <div className="pb-0">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
-              {`New Construction Homes in ${CapitalizeFirst(
+              {`Pre Construction New Homes in ${CapitalizeFirst(
                 params.city
               )} ( Selling Now )`}
             </h1>
-            <p className="text-dark text-center text-md-start">
+            <p className="text-dark text-center text-md-start mb-2">
               {`${data.preconstructions.length} New Pre construction Detached,
               Townhomes and Condos for sale in ${CapitalizeFirst(
                 params.city
@@ -99,7 +98,7 @@ export default async function Home({ params }) {
               })`}
             </p>
           </div>
-          <div className="d-flex mb-4 mt-2 gap-2">
+          <div className="d-flex mb-4 mt-0 gap-2">
             <div>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
@@ -129,7 +128,7 @@ export default async function Home({ params }) {
               </Link>
             </div>
           </div>
-          <div className="d-flex overflow-hidden">
+          {/* <div className="d-flex overflow-hidden">
             <Link href={"/"} className="btn btn-light link-black me-2 mb-3">
               Home
             </Link>
@@ -142,55 +141,8 @@ export default async function Home({ params }) {
                   {item.name}
                 </Link>
               ))}
-          </div>
+          </div> */}
         </div>
-        {/* <div className="bg-white pt-3 pb-3 p-sticky-top">
-          <div className="container-fluid d-flex gap-2 flex-column align-items-center flex-md-row justify-content-md-start align-items-md-center fw-normal">
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold text-mine">
-                Hey Dolphy! I am looking for
-              </h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                Home Types
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-              <h4 className="fs-6 fw-bold text-mine">under</h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All price range
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold text-mine">completed by</h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-          </div>
-        </div> */}
         <div className="container-fluid">
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">

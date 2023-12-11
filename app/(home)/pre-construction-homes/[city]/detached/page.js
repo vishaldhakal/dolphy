@@ -100,7 +100,7 @@ export default async function Home({ params }) {
               })`}
             </p>
           </div>
-          <div className="d-flex mb-4 mt-0 gap-2">
+          <div className="d-flex mb-4 mt-0 gap-2 overflow-hidden">
             <div>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
@@ -136,7 +136,7 @@ export default async function Home({ params }) {
           <div className="py-2"></div>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              data.preconstructions.map((item) => (
+              data.preconstructions.map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -145,7 +145,7 @@ export default async function Home({ params }) {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <CondoCard {...item} />
+                  <CondoCard {...item} no={no} />
                 </div>
               ))}
           </div>

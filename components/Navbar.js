@@ -73,7 +73,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
                 aria-haspopup="true"
                 aria-expanded="true"
               >
-                New Projects
+                Cities
                 <img
                   src="/dropdown.svg"
                   alt="dropdown icon"

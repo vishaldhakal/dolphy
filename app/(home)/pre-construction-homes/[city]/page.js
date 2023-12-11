@@ -98,7 +98,7 @@ export default async function Home({ params }) {
               })`}
             </p>
           </div>
-          <div className="d-flex mb-4 mt-0 gap-2">
+          <div className="d-flex mb-4 mt-0 gap-2 overflow-hidden">
             <div>
               <Link
                 className="link-black badge py-2 bg-white shadow-sm text-dark fs-small fw-m"
@@ -145,9 +145,9 @@ export default async function Home({ params }) {
         </div>
         <div className="container-fluid">
           <div className="py-2"></div>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+          <div className="row row-cols-2 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              filteredprojects("Selling").map((item) => (
+              filteredprojects("Selling").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -156,7 +156,7 @@ export default async function Home({ params }) {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <CondoCard {...item} />
+                  <CondoCard {...item} no={no} />
                 </div>
               ))}
           </div>
@@ -173,7 +173,7 @@ export default async function Home({ params }) {
           </h2>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              filteredprojects("Planning Phase").map((item) => (
+              filteredprojects("Planning Phase").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -182,11 +182,11 @@ export default async function Home({ params }) {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <CondoCard {...item} />
+                  <CondoCard {...item} no={no} />
                 </div>
               ))}
             {data.preconstructions &&
-              filteredprojects("Upcoming").map((item) => (
+              filteredprojects("Upcoming").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -195,7 +195,7 @@ export default async function Home({ params }) {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <CondoCard {...item} />
+                  <CondoCard {...item} no={no} />
                 </div>
               ))}
           </div>
@@ -212,7 +212,7 @@ export default async function Home({ params }) {
           </h2>
           <div className="row row-cols-1 row-cols-md-4 row-cols-lg-6 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              filteredprojects("Sold out").map((item) => (
+              filteredprojects("Sold out").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -221,7 +221,7 @@ export default async function Home({ params }) {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <CondoCard {...item} />
+                  <CondoCard {...item} no={no} />
                 </div>
               ))}
           </div>

@@ -7,6 +7,7 @@ import FixedContactButton from "@/components/FixedContactButton";
 import { fetchBlogPostByCity } from "@/api/blogs";
 import BlogCard from "@/components/blogCard";
 import Link from "next/link";
+import EventBanner from "@/components/Banner";
 
 async function getData(city) {
   const res = await fetch(
@@ -136,6 +137,7 @@ export default async function Home({ params }) {
             </div>
           </div>
         </div>
+        <EventBanner></EventBanner>
         {/* <div className="bg-white pt-3 pb-3 p-sticky-top">
           <div className="container-fluid d-flex gap-2 flex-column align-items-center flex-md-row justify-content-md-start align-items-md-center fw-normal">
             <div className="d-flex">

@@ -1,10 +1,8 @@
 import BottomContactForm from "@/components/BottomContactForm";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
-import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 import Link from "next/link";
-import CondoCard from "@/components/CondoCard";
 import SearchBar from "@/components/SearchBar";
 
 async function getData(city) {
@@ -93,7 +91,7 @@ export default async function Home({ params }) {
                     <h4 className="fs-m fw-bold">{item.name}</h4>
                   </Link>
                   <div className="maxhh">
-                    <div className="row row-cols-5">
+                    <div className="row row-cols-2 row-cols-md-5">
                       {item.preconstructions &&
                         item.preconstructions.map((precon, no) => (
                           <Link

@@ -272,6 +272,27 @@ export default async function Home({ params }) {
                       </div>
                     </div>
                   </div>
+                  {/* <div className="py-4">
+                    <h2 className="fw-bold fs-4">
+                      <span className="mx-1"></span>
+                      Project Location - {data.project_name}
+                    </h2>
+                    <div>
+                      <div className="bg-white p-1 rounded-mine">
+                        <div className="mx-5 px-5"></div>
+                        <Map
+                          id="ds"
+                          heightt="50vh"
+                          project_address={data.project_address}
+                          name={data.project_name}
+                        ></Map>
+                      </div>
+                    </div>
+                    <p className="small-text2 mb-2 mt-1">
+                      Note : The exact location of the project may be vary from
+                      the address shown here
+                    </p>
+                  </div> */}
                 </div>
               </div>
               <div className="col col-md-4 ps-md-2 pt-5 pt-md-0">

@@ -1997,3 +1997,34 @@ color: #2c2c2c !important;
   color: #008bdb !important;
   background-color: rgb(248, 255, 254) !important;
 }
+.pin2 {
+  position: relative;
+  color: white;
+  padding: 0.3rem;
+  font-size: 0.6rem;
+  background-color: #ff0000 !important;
+  z-index: 99999 !important;
+  transition: padding 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.pin2::before {
+  padding: 0.3rem;
+  background-color: #ff0000;
+  position: absolute;
+  content: "";
+  border-radius: 0% 0% 0% 0;
+  bottom: -5px;
+  left: 10%;
+  transform: translateX(0%) rotate(-45deg);
+  z-index: 999 !important;
+}
+
+.pin2:hover {
+  z-index: 12;
+  box-shadow: rgb(255 255 255) 0px 0px 0px 1px inset;
+}
+
+.pin2:hover::before {
+  background-color: #ff0000 !important;
+}

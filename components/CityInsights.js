@@ -1,22 +1,48 @@
+"use client";
 import React from "react";
-
-//API
-import { fetchCities } from "@/api/blogs";
 
 //LIB
 import Link from "next/link";
 
-const CityInsights = async ({ particularCity }) => {
-  const cities = await fetchCities();
+//ICONS
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
+const CityInsights = ({ particularCity, cities }) => {
   const isActiveCity = (city) => {
     if (!particularCity && city === "all") return true;
     return city.includes(particularCity);
   };
+
+  const slideLeft = () => {
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft - 235;
+  };
+
+  const slideRight = () => {
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft + 235;
+  };
+
   return (
-    <div className="city-insights-container">
-      <h3 className="insights-title">Insights on Particular City</h3>
-      <div className="city-list">
+    <div className="city-insights-container position-relative">
+      {/* <h3 className="insights-title">Insights on Particular City</h3> */}
+      <div className="btns d-flex justify-space-between">
+        <button
+          className="scroll-left position-absolute start-0"
+          title="scroll left"
+          onClick={slideLeft}
+        >
+          <SlArrowLeft />
+        </button>
+        <button
+          className="scroll-right position-absolute end-0"
+          title="scroll right"
+          onClick={slideRight}
+        >
+          <SlArrowRight />
+        </button>
+      </div>
+      <div className="city-list d-flex" id="slider">
         {cities.map((city) => (
           <Link
             href={

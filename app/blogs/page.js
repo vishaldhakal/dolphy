@@ -1,7 +1,7 @@
 import React from "react";
 
 //API
-import { fetchAllBlogPosts } from "@/api/blogs";
+import { fetchAllBlogPosts, fetchCities } from "@/api/blogs";
 
 //COMPONENTS
 import BlogCard from "@/components/blogCard";
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }, parent) {
 
 const Blogs = async () => {
   const blogPosts = await fetchAllBlogPosts();
+  const cities = await fetchCities();
 
   return (
     <div className="pages">
@@ -54,17 +55,20 @@ const Blogs = async () => {
           <div className=" mx-auto">
             <div className="blogs ">
               <div className="row g-4">
-                <div className="col-sm-12 col-lg-8 ">
+                <div className="col-sm-12 col-lg-12 ">
                   <h1 className="main-title text-center text-md-start mb-4">
-                    15+ Insightful blogs in dolphy
+                    The Dolphy Blog : Learn whats happening in your city
                   </h1>
+                  <div className="insights-on-cities">
+                    <CityInsights {...{ cities }} />
+                  </div>
                   <div className="row">
                     {blogPosts.length > 0 ? (
                       <>
                         {blogPosts.map((blog, index) => {
                           return (
                             <div
-                              className="col-sm-12 col-md-6 col-lg-4 mb-4"
+                              className="col-sm-12 col-md-4 col-lg-3 col-xl-2 mb-4"
                               key={index}
                             >
                               <BlogCard blog={blog} />
@@ -80,10 +84,6 @@ const Blogs = async () => {
                       </div>
                     )}
                   </div>
-                </div>
-
-                <div className="col-lg-3 ps-5">
-                  <CityInsights />
                 </div>
               </div>
             </div>

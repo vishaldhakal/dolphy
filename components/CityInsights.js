@@ -32,14 +32,14 @@ const CityInsights = ({ particularCity, cities }) => {
           title="scroll left"
           onClick={slideLeft}
         >
-          <SlArrowLeft />
+          <SlArrowLeft size={16} />
         </button>
         <button
           className="scroll-right position-absolute end-0"
           title="scroll right"
           onClick={slideRight}
         >
-          <SlArrowRight />
+          <SlArrowRight size={16} />
         </button>
       </div>
       <div className="city-list d-flex" id="slider">

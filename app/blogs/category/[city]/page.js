@@ -72,7 +72,7 @@ const CityBlogs = async ({ params }) => {
                         {blogPosts.map((blog, index) => {
                           return (
                             <div
-                              className="col-sm-12 col-md-4 col-lg-3 col-xl-2 mb-4"
+                              className="col-sm-12 col-md-4 col-lg-3 mb-4"
                               key={index}
                             >
                               <BlogCard blog={blog} />

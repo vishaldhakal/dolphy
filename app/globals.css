@@ -1941,7 +1941,7 @@ button:focus:not(:focus-visible) {
 
 .city-insights-container {
   text-align: center;
-  padding: 20px 20px 20px 0;
+  padding: 8px 20px 20px 0;
 }
 
 .insights-title {
@@ -2045,8 +2045,12 @@ button:focus:not(:focus-visible) {
 
 .scroll-left,
 .scroll-right {
-  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
   border: none;
   border-radius: 50%;
-  top: calc(50% - 20px);
+  top: calc(50% - 24px);
 }

@@ -331,7 +331,8 @@ export default async function Home({ params }) {
                     </div>
                     <div className="my-4"></div>
                     <SideContactForm
-                      projects_name={data.project_name}
+                      proj_name={data.project_name}
+                      city={data.city.name}
                       defaultmessage={
                         "Please send me additional information about " +
                         data.project_name +

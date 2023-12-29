@@ -13,7 +13,8 @@ export default function EventBanner() {
     pathname.includes("whitby")
   ) {
     return (
-      <div className="container-fluid mb-md-4 mt-md-3">
+      <>
+        {/* <div className="container-fluid mb-md-4 mt-md-3">
         <Link
           href="https://mo1j6p872s4.typeform.com/to/RKmSiQTb"
           target="_blank"
@@ -24,7 +25,8 @@ export default function EventBanner() {
             className="img-fluid pointer-c"
           />
         </Link>
-      </div>
+      </div> */}
+      </>
     );
   } else {
     return <></>;

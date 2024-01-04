@@ -92,7 +92,7 @@ a:hover {
   transition: 0.3s;
   color: black !important;
 }
-.ll{
+.ll {
   line-height: 1;
 }
 
@@ -635,7 +635,6 @@ a:hover {
 
 .sidebar-nav .nav-item {
   margin-bottom: 5px;
-
 }
 
 .sidebar-nav .nav-heading {
@@ -877,7 +876,7 @@ label {
   font-weight: 700;
   color: #a30000;
 }
-.fs-mine{
+.fs-mine {
   font-size: 2.19rem !important;
 }
 .card-address {
@@ -1076,22 +1075,22 @@ label {
   line-height: 2rem;
 }
 
-.fs-big{
-font-size: 5.5rem !important;
-font-weight: 800 !important;
-color: #2c2c2c !important;
+.fs-big {
+  font-size: 5.5rem !important;
+  font-weight: 800 !important;
+  color: #2c2c2c !important;
 }
-.fs-gta{
-font-size: 4rem !important;
-font-weight: 800 !important;
-color: #2c2c2c !important;
+.fs-gta {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  color: #2c2c2c !important;
 }
-.registernoebtn{
+.registernoebtn {
   background-color: red !important;
   color: white !important;
 }
-.fs-big a{
-color: #2c2c2c !important;
+.fs-big a {
+  color: #2c2c2c !important;
 }
 
 .fields {
@@ -1333,7 +1332,7 @@ color: #2c2c2c !important;
   background-color: #5bdbff1f !important;
   border-color: #5bdbff1f;
 }
-.bg-lightyellow2{
+.bg-lightyellow2 {
   background-color: #effcff !important;
   border-color: #5bdbff1f;
 }
@@ -1719,7 +1718,7 @@ button:focus:not(:focus-visible) {
     z-index: 9999;
     display: block;
   }
-  .fixcontact2{
+  .fixcontact2 {
     display: none;
   }
 }
@@ -1777,23 +1776,23 @@ button:focus:not(:focus-visible) {
   object-position: center;
   border-radius: 7px;
 }
-.builder-logo-detail{
+.builder-logo-detail {
   position: absolute;
-    top: -8%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 10px;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
 }
-.builder-logo-detail img{
+.builder-logo-detail img {
   height: 100px;
 }
-.max-w-mine{
+.max-w-mine {
   max-width: 1000px !important;
 }
-.overflow-m a{
+.overflow-m a {
   max-width: 20px !important;
 }
-.bigg:hover{
+.bigg:hover {
   box-shadow: 10px 1px 10px 0px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -1802,21 +1801,20 @@ button:focus:not(:focus-visible) {
     position: relative;
   } */
 
-  .fs-mine{
+  .fs-mine {
     font-size: 1.7rem !important;
     margin-bottom: 10px !important;
   }
-.fs-big{
-font-size: 2rem !important;
-font-weight: 800 !important;
-color: #2c2c2c !important;
-}
-.fs-gta{
-font-size: 1.7rem !important;
-font-weight: 800 !important;
-color: #2c2c2c !important;
-}
-
+  .fs-big {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #2c2c2c !important;
+  }
+  .fs-gta {
+    font-size: 1.7rem !important;
+    font-weight: 800 !important;
+    color: #2c2c2c !important;
+  }
 
   .dropdown-fullwidth {
     position: static !important;
@@ -1880,7 +1878,7 @@ color: #2c2c2c !important;
     width: 180px !important;
     border-radius: 7px !important;
   }
-  .react-autosuggest__input::placeholder{
+  .react-autosuggest__input::placeholder {
     font-size: 1rem !important;
   }
   .ww .react-autosuggest__input {
@@ -1895,7 +1893,7 @@ color: #2c2c2c !important;
     border-radius: 0 !important;
     border-radius: 99px !important;
   }
-  .ww .react-autosuggest__input::placeholder{
+  .ww .react-autosuggest__input::placeholder {
     font-size: 1rem !important;
   }
 }
@@ -1943,7 +1941,7 @@ color: #2c2c2c !important;
 
 .city-insights-container {
   text-align: center;
-  padding: 20px;
+  padding: 8px 20px 20px 0;
 }
 
 .insights-title {
@@ -1953,14 +1951,13 @@ color: #2c2c2c !important;
 }
 
 .city-list {
-  display: grid;
   text-align: center;
-  grid-template-columns: 1fr 1fr;
+  margin-inline: 32px;
 }
 
 .city-item {
   margin: 10px;
-  padding: 8px;
+  padding: 6px 14px;
   /* border: 1px solid #00a1ff; */
   border: 1px solid rgb(218, 220, 224);
   /* border-radius: 8px; */
@@ -1991,7 +1988,7 @@ color: #2c2c2c !important;
   display: block;
   color: inherit;
 }
-.fw-m{
+.fw-m {
   font-weight: 500;
   padding: 0.2rem auto !important;
   color: #008bdb !important;
@@ -2027,4 +2024,33 @@ color: #2c2c2c !important;
 
 .pin2:hover::before {
   background-color: #ff0000 !important;
+}
+
+#slider {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#slider::-webkit-scrollbar {
+  display: none;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-left,
+.scroll-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  top: calc(50% - 24px);
 }

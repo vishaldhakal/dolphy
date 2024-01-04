@@ -1,7 +1,7 @@
 import React from "react";
 
 //API
-import { fetchBlogPostByCity } from "@/api/blogs";
+import { fetchBlogPostByCity, fetchCities } from "@/api/blogs";
 
 //COMPONENT
 import BlogCard from "@/components/blogCard";
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }, parent) {
 
 const CityBlogs = async ({ params }) => {
   const blogPosts = await fetchBlogPostByCity(params?.city);
+  const cities = await fetchCities();
 
   return (
     <div className="pages">
@@ -55,17 +56,23 @@ const CityBlogs = async ({ params }) => {
           <div className=" mx-auto">
             <div className="blogs">
               <div className="row g-4">
-                <div className="col-sm-12 col-lg-8 ">
+                <div className="col-sm-12 col-lg-12">
                   <h1 className="main-title text-center text-md-start mb-4">
-                    15+ Insightful blogs in dolphy
+                    The Dolphy Blog : Learn whats happening in your city
                   </h1>
+                  <div className="insights-on-cities">
+                    <CityInsights
+                      particularCity={params?.city}
+                      {...{ cities }}
+                    />
+                  </div>
                   <div className="row">
                     {blogPosts.length > 0 ? (
                       <>
                         {blogPosts.map((blog, index) => {
                           return (
                             <div
-                              className="col-sm-12 col-md-6 col-lg-4 mb-4"
+                              className="col-sm-12 col-md-4 col-lg-3 mb-4"
                               key={index}
                             >
                               <BlogCard blog={blog} />
@@ -81,10 +88,6 @@ const CityBlogs = async ({ params }) => {
                       </div>
                     )}
                   </div>
-                </div>
-
-                <div className="col-lg-3 ps-5">
-                  <CityInsights particularCity={params?.city} />
                 </div>
               </div>
             </div>

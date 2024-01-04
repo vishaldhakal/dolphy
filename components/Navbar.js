@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 
 //LIB
 import Link from "next/link";
+import SearchSuggest from "./SerachSuggest";
 
 const Navbar = ({ cities, dropdown_cities }) => {
   const [cityname, setCityname] = useState("");
@@ -21,8 +22,9 @@ const Navbar = ({ cities, dropdown_cities }) => {
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
         <div className="input-group input-group-search me-2 me-md-0">
-          <SearchBar changeCity={setCityname} cities={cities} />
-          <Link
+          {/* <SearchBar changeCity={setCityname} cities={cities} /> */}
+          <SearchSuggest cities={cities} />
+          {/* <Link
             href={"/pre-construction-homes/" + cityname.toLowerCase()}
             className="d-none d-md-inline"
           >
@@ -45,7 +47,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
                 ></path>
               </svg>
             </button>
-          </Link>
+          </Link> */}
         </div>
         <button
           className="navbar-toggler d-lg-none ms-auto"

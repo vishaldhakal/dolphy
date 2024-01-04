@@ -1796,10 +1796,16 @@ button:focus:not(:focus-visible) {
   box-shadow: 10px 1px 10px 0px rgba(0, 0, 0, 0.2) !important;
 }
 
+.muuuu{
+  width: 320px;
+  }
 @media (max-width: 800px) {
   /* .p-sticky-top{
     position: relative;
   } */
+.muuuu{
+  width: 200px;
+  }
 
   .fs-mine {
     font-size: 1.7rem !important;

@@ -1799,10 +1799,23 @@ button:focus:not(:focus-visible) {
 .muuuu{
   width: 320px;
   }
+.muuuuu{
+    width: 850px;
+    margin-bottom: 2rem !important;
+}
+.muuuuu input{
+  height: 4rem !important;
+}
+.zzz{
+  z-index: 99999 !important;
+}
 @media (max-width: 800px) {
   /* .p-sticky-top{
     position: relative;
   } */
+  .muuuuu{
+    width: 400px;
+}
 .muuuu{
   width: 200px;
   }

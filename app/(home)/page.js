@@ -3,9 +3,9 @@ import BottomContactForm from "@/components/BottomContactForm";
 import CondoCard from "@/components/CondoCard";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
-import SearchBar from "@/components/SearchBar";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
+import MainSearch from "@/components/MainSearch";
 
 async function getData(city) {
   const res = await fetch(
@@ -68,9 +68,10 @@ export default async function Home() {
               alt="dolphy logo icon"
               className="img-fluid icon-img"
             />
-            <div className="pb-1 ww">
-              <SearchBar cities={cities} />
-            </div>
+            {/* <div className="pb-1 ww">
+              
+            </div> */}
+            <MainSearch cities={cities} />
           </div>
           <h4 className="text-center fs-md-2 fw-bold mb-0">
             Canada’s Leading New Homes Advisor

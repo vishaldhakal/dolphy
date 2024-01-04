@@ -3,7 +3,7 @@ import React from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { useRouter } from "next/navigation";
 
-function SearchSuggest(props) {
+function MainSearch(props) {
   const route = useRouter();
   // note: the id field is mandatory
   const items = props.cities;
@@ -39,9 +39,9 @@ function SearchSuggest(props) {
   };
 
   return (
-    <div className="App">
+    <div className="App zzz">
       <header className="App-header">
-        <div className="muuuu">
+        <div className="muuuuu">
           <ReactSearchAutocomplete
             items={items}
             onSearch={handleOnSearch}
@@ -53,6 +53,7 @@ function SearchSuggest(props) {
               boxShadow: "none",
               backgroundColor: "#f5f5f5",
               border: "none",
+              borderRadius: "29px",
             }}
             showIcon={false}
             autoFocus
@@ -64,4 +65,4 @@ function SearchSuggest(props) {
   );
 }
 
-export default SearchSuggest;
+export default MainSearch;

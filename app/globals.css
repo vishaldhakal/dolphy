@@ -2073,3 +2073,6 @@ button:focus:not(:focus-visible) {
   border-radius: 50%;
   top: calc(50% - 24px);
 }
+.text-green{
+  color: #00832e !important;
+}

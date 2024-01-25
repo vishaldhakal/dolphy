@@ -1,7 +1,7 @@
 import axios from "axios";
 import swal from "sweetalert";
 
-function ContactFormSubmit(msgdata, setSubmitbtn, setCredentials) {
+async function ContactFormSubmit(msgdata, setSubmitbtn, setCredentials) {
   let baseUrl = "https://api.dolphy.ca";
   setSubmitbtn("Submitting...");
   let form_data = new FormData();
@@ -13,36 +13,30 @@ function ContactFormSubmit(msgdata, setSubmitbtn, setCredentials) {
   form_data.append("proj_name", msgdata.proj_name);
   form_data.append("cityy", msgdata.city);
   let url = `${baseUrl}/api/contact-form-submission/`;
-  axios
-    .post(url, form_data, {
+  try {
+    await axios.post(url, form_data, {
       headers: {
         "content-type": "multipart/form-data",
       },
       mode: "no-cors",
-    })
-    .then(() => {
-      setSubmitbtn("Sucessfully Submitted");
-      setTimeout(() => {
-        setSubmitbtn("Contact Now");
-      }, 2000);
-      swal(
-        `Thank You, ${msgdata.name}`,
-        "Please expect an email or call from us shortly",
-        "success"
-      );
-      setCredentials({
-        ...msgdata,
-        name: "",
-        phone: "",
-        email: "",
-        message: "",
-      });
-    })
-    .catch((errr) => {
-      console.log(errr);
-      setSubmitbtn("Contact Now");
-      swal("Message Failed", "Cannot send your message", "error");
     });
+    setSubmitbtn("Sucessfully Submitted");
+    setTimeout(() => {
+      setSubmitbtn("Contact Now");
+    }, 1000);
+    setCredentials({
+      ...msgdata,
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  } catch (errr) {
+    console.log(errr);
+    setSubmitbtn("Contact Now");
+    swal("Message Failed", "Cannot send your message", "error");
+    throw new Error(errr);
+  }
 }
 
 export default ContactFormSubmit;

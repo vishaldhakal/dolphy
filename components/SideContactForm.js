@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import ContactFormSubmit from "./ContactFormSubmit";
+import { useRouter } from "next/navigation";
 
 export default function SideContactForm(props) {
+  const router = useRouter();
   const [submitbtn, setSubmitbtn] = useState("Contact now");
   const [credentials, setCredentials] = useState({
     name: "",
@@ -24,7 +26,9 @@ export default function SideContactForm(props) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(credentials);
-    ContactFormSubmit(credentials, setSubmitbtn, setCredentials);
+    ContactFormSubmit(credentials, setSubmitbtn, setCredentials)
+      .then((res) => router.push("/thank-you"))
+      .catch((err) => console.log(err));
   };
   return (
     <form

@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import ContactFormSubmit from "./ContactFormSubmit";
+import { useRouter } from "next/navigation";
 
 export default function BottomContactForm(props) {
   const [submitbtn, setSubmitbtn] = useState("Send a message");
+  const router = useRouter();
   const [credentials, setCredentials] = useState({
     name: "",
     phone: "",
@@ -23,7 +25,9 @@ export default function BottomContactForm(props) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(credentials);
-    ContactFormSubmit(credentials, setSubmitbtn, setCredentials);
+    ContactFormSubmit(credentials, setSubmitbtn, setCredentials)
+      .then((res) => router.push("/thank-you"))
+      .catch((err) => console.log(err));
   };
   return (
     <form

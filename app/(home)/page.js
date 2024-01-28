@@ -74,19 +74,19 @@ export default async function Home() {
             <MainSearch cities={cities} />
           </div>
           <h4 className="text-center fs-md-2 fw-bold mb-0">
-            Canada’s Leading New Homes Advisor
+            Calgary's Top Pre Construction Homes Platform
           </h4>
           <p className="text-center fs-small fs-md-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
-          <div className="py-1 py-md-3 d-flex justify-content-center">
-            <Link
+
+          {/* <Link
               href={"/pre-construction-homes/calgary/"}
               className="fw-bold fs-top city-title position-relative mb-4 p-0"
             >
               Calgary
-            </Link>
-            <p className="fw-bold fs-line mx-2 mt-1 mb-0">
+            </Link> */}
+          {/* <p className="fw-bold fs-line mx-2 mt-1 mb-0">
               <img
                 src="mapleleaf.svg"
                 alt="maple leaf divider"
@@ -98,8 +98,8 @@ export default async function Home() {
               className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
             >
               Toronto
-            </Link>
-          </div>
+            </Link> */}
+
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>
           <div className="d-flex align-items-center justify-content-center">
@@ -229,7 +229,7 @@ export default async function Home() {
           <div className="pt-5"></div>
           <div className="py-2"></div>
           <div className="py-5 my-2"></div>
-          <div className="d-flex align-items-center justify-content-center">
+          {/* <div className="d-flex align-items-center justify-content-center">
             <h2 className="fw-mine ccent-line fs-big fs-1">
               <Link href={"/greater-toronto-area/"} className="link-black">
                 Toronto
@@ -309,7 +309,7 @@ export default async function Home() {
                   ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="py-3 py-md-5">
           <div className="my-5 py-5">

@@ -69,7 +69,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav ms-auto mt-2 mt-lg-0 align-items-center align-items-md-center">
             <li className="nav-item dropdown dropdown-fullwidth">
-              <button
+              {/* <button
                 className="nav-link dropdown-toggle align-items-center d-flex shadow-lg fw-500 text-dark me-3 px-2"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
@@ -81,7 +81,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
                   alt="dropdown icon"
                   className="img-fluid dropdown-nav-icon ms-1"
                 />
-              </button>
+              </button> */}
               <div
                 className="dropdown-menu dropdown-menu-end border-0 show"
                 data-bs-popper="static"

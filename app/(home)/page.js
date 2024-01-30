@@ -68,9 +68,6 @@ export default async function Home() {
               alt="dolphy logo icon"
               className="img-fluid icon-img"
             />
-            {/* <div className="pb-1 ww">
-              
-            </div> */}
             <MainSearch cities={cities} />
           </div>
           <h4 className="text-center fs-md-2 fw-bold mb-0">
@@ -79,26 +76,6 @@ export default async function Home() {
           <p className="text-center fs-small fs-md-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
-
-          {/* <Link
-              href={"/pre-construction-homes/calgary/"}
-              className="fw-bold fs-top city-title position-relative mb-4 p-0"
-            >
-              Calgary
-            </Link> */}
-          {/* <p className="fw-bold fs-line mx-2 mt-1 mb-0">
-              <img
-                src="mapleleaf.svg"
-                alt="maple leaf divider"
-                className="img-fluid maple-leaf"
-              />
-            </p>
-            <Link
-              href={"/greater-toronto-area/"}
-              className="fw-bold fs-top city-title position-relative mb-0 p-0 m-0"
-            >
-              Toronto
-            </Link> */}
 
           <div className="py-2"></div>
           <div className="py-2 py-md-5 my-2"></div>

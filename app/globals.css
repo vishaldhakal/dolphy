@@ -1816,6 +1816,10 @@ button:focus:not(:focus-visible) {
   .muuuuu{
     width: 400px;
 }
+.text-inside {
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+}
 .muuuu{
   width: 200px;
   }

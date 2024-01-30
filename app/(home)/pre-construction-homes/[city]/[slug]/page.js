@@ -221,8 +221,7 @@ export default async function Home({ params }) {
                     </div>
                     <div className="py-5 pt-3">
                       <h2 className="fw-bold fs-3">
-                        Information about {data.project_name} in{" "}
-                        {data.city.name}
+                        About {data.project_name} in {data.city.name}
                       </h2>
                       <div className="text-start mb-1 text-inside">
                         <div

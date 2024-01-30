@@ -78,11 +78,9 @@ export default function CondoCard(props) {
           {props.status == "Planning Phase" && (
             <span className="mmmmm bg-yellow p-1 px-2">Planning Phase</span>
           )}
-          {props.occupancy && (
-            <span className="shadow-lg p-1 px-2 abs2">
-              Completion {props.occupancy}
-            </span>
-          )}
+          <span className="px-2 abs2">
+            {props.no + 1 ? props.no + 1 + " " : " "}
+          </span>
         </div>
         <Link
           href={`/pre-construction-homes/${props.city.slug}/${props.slug}`}
@@ -90,10 +88,7 @@ export default function CondoCard(props) {
           target="_blank"
         >
           <div className="card-content pt-2">
-            <h3 className="mb-1 cardd-title text-dark">
-              {props.no + 1 ? props.no + 1 + ". " : " "}
-              {props.project_name}
-            </h3>
+            <h3 className="mb-1 cardd-title text-dark">{props.project_name}</h3>
             <h4 className="mb-2 cardd-subtitle">
               {checkPricing(props.price_starting_from)}
             </h4>

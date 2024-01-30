@@ -905,12 +905,15 @@ label {
 }
 .abs2 {
   position: absolute;
-  top: 5px;
+  top: 0px;
   left: 5px;
-  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  /* box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2); */
+  /* background-color: white; */
   border-radius: 5px;
-  font-size: 0.8rem;
+  text-shadow: 3px 4px #000000;
+  color: white;
+  font-weight: 900 !important;
+  font-size: 3rem;
 }
 
 .g-item {
@@ -1207,6 +1210,7 @@ label {
   padding: 1rem;
   border-radius: 5px;
 }
+
 .btn-success {
   color: white !important;
 }
@@ -2079,4 +2083,10 @@ button:focus:not(:focus-visible) {
 }
 .text-green{
   color: #00832e !important;
+}
+.badge {
+  background-color: #ffffff;
+  color: #006c97;
+  padding: 1rem;
+  border-radius: 5px;
 }

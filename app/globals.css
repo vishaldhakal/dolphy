@@ -2018,8 +2018,11 @@ button:focus:not(:focus-visible) {
 .fw-m {
   font-weight: 500;
   padding: 0.2rem auto !important;
+  margin-right: 0.4rem;
+  box-shadow: none !important;
   color: #008bdb !important;
-  background-color: rgb(248, 255, 254) !important;
+  border: 1px solid #91c2de !important;
+  background-color: rgb(255, 255, 255) !important;
 }
 .pin2 {
   position: relative;
@@ -2083,10 +2086,4 @@ button:focus:not(:focus-visible) {
 }
 .text-green{
   color: #00832e !important;
-}
-.badge {
-  background-color: #ffffff;
-  color: #006c97;
-  padding: 1rem;
-  border-radius: 5px;
 }

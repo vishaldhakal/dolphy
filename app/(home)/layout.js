@@ -29,7 +29,7 @@ export default async function RootLayout({ children }) {
   let dropdown_cities = await getCitiesandProjects();
   return (
     <>
-      <FixedContact></FixedContact>
+      {/* <FixedContact></FixedContact> */}
       <Navbar cities={cities} dropdown_cities={dropdown_cities}></Navbar>
       {children}
       <Footer cities={cities}></Footer>

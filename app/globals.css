@@ -1233,8 +1233,8 @@ label {
   font-weight: 700;
 }
 .text-inside {
-  font-size: 1.1rem;
-  line-height: 2.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65rem;
 }
 .btn-outline-dark {
   color: black !important;

@@ -94,7 +94,9 @@ export default function CondoCard(props) {
             </h4>
             <p className="mb-0 project-address-card">{props.project_address}</p>
             <p className="card-secondary-title mb-0">
-              {props.project_type} in {props.city.name} |{" "}
+              {props.project_type} | Completion {props.occupancy}
+            </p>
+            <p className="card-secondary-title2 mb-0">
               {`Updated on: ${
                 months[new Date(props.last_updated).getMonth()]
               } ${new Date(props.last_updated).getDate()}, ${new Date(

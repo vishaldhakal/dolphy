@@ -874,7 +874,7 @@ label {
 .cardd-subtitle {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #00a1ff;
+  color: #a30000;
 }
 .fs-mine {
   font-size: 2.19rem !important;
@@ -1063,6 +1063,11 @@ label {
 .card-secondary-title {
   font-size: 0.8rem !important;
   margin-top: 0.3rem;
+  color: #585858;
+}
+.card-secondary-title2 {
+  font-size: 0.8rem !important;
+  margin-top: 0.1rem;
   color: #585858;
 }
 .navbar-nav .nav-item .nav-link {
@@ -2020,8 +2025,8 @@ button:focus:not(:focus-visible) {
   padding: 0.2rem auto !important;
   margin-right: 0.4rem;
   box-shadow: none !important;
-  color: #008bdb !important;
-  border: 1px solid #91c2de !important;
+  color: #3e3e3e !important;
+  border: 1px solid #dfdfdf !important;
   background-color: rgb(255, 255, 255) !important;
 }
 .pin2 {

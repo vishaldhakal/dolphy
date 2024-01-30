@@ -102,9 +102,9 @@ export default async function Home() {
               <i className="bi bi-arrow-right-short"></i>
             </Link>
           </div>
-          <div className="row row-cols-1 row-cols-md-4 row-cols-lg-5 gy-4 gx-3 gx-lg-2">
+          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
-              data.preconstructions.slice(0, 5).map((item) => (
+              data.preconstructions.slice(0, 6).map((item) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}

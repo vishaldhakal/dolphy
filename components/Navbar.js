@@ -144,6 +144,14 @@ const Navbar = ({ cities, dropdown_cities }) => {
             </li>
             <li className="nav-item">
               <Link
+                href={"/pre-construction-homes/calgary/"}
+                className="nav-link"
+              >
+                Calgary's Top Preconstruction
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 href={"/pre-construction-homes/builders/"}
                 className="nav-link"
               >

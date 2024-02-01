@@ -82,12 +82,14 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="pb-0">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
-              {`Pre Construction New Homes in ${CapitalizeFirst(
+              {`${
+                data.preconstructions.length
+              }+ Active Pre Construction & New Homes in ${CapitalizeFirst(
                 params.city
               )} ( Selling Now )`}
             </h1>
             <p className="text-dark text-center text-md-start mb-2">
-              {`${data.preconstructions.length} New Pre construction Detached,
+              {`${data.preconstructions.length}+ New Pre construction Detached,
               Townhomes and Condos for sale in ${CapitalizeFirst(
                 params.city
               )} (Updated ${

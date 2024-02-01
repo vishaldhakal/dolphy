@@ -8,6 +8,7 @@ import { fetchBlogPostByCity } from "@/api/blogs";
 import BlogCard from "@/components/blogCard";
 import Link from "next/link";
 import EventBanner from "@/components/Banner";
+import { format } from "date-fns";
 
 async function getData(city) {
   const res = await fetch(
@@ -79,7 +80,9 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="pb-0">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
-              {`New Construction Condos in ${CapitalizeFirst(
+              {`${
+                data.preconstructions.length
+              }+ Active  New Construction Condos in ${CapitalizeFirst(
                 params.city
               )} ( Selling Now )`}
             </h1>
@@ -95,7 +98,7 @@ export default async function Home({ params }) {
                 new Date().getDate() +
                 "-" +
                 new Date().getFullYear()
-              })`}
+              } ${format(new Date(), "MMM")})`}
             </p>
           </div>
           <div className="d-flex mb-4 mt-0 gap-2 overflow-hidden">

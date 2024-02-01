@@ -86,7 +86,9 @@ export default async function Home({ params }) {
         <div className="container-fluid">
           <div className="pb-0">
             <h1 className="main-title text-center text-md-start fs-mine mb-0">
-              {`Upcoming New Construction Homes in ${CapitalizeFirst(
+              {`${
+                data.preconstructions.length
+              }+ Active Upcoming New Construction Homes in ${CapitalizeFirst(
                 params.city
               )} ( Coming Soon )`}
             </h1>

@@ -176,9 +176,9 @@ export default async function Home({ params }) {
             project_name={data.project_name}
             project_address={data.project_address}
           ></Gallery>
-          <div className="container px-2 px-sm-0 pt-5 mt-4">
+          <div className="container px-2 px-sm-0 pt-5 pt-md-1 mt-4 mt-md-0">
             <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 justify-content-between">
-              <div className="col col-md-6">
+              <div className="col col-md-8">
                 <div className="screenshot">
                   <div className="row row-cols-1 row-cols-sm-2">
                     <div className="col-sm-12">

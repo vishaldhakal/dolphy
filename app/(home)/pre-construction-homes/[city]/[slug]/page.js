@@ -294,6 +294,7 @@ export default async function Home({ params }) {
                   </div> */}
                 </div>
               </div>
+              <div id="mycontact"></div>
               <div className="col col-md-4 ps-md-2 pt-5 pt-md-0">
                 <div className="py-4 py-md-0"></div>
                 <div className="side-fix-contact mt-mine pe-0">
@@ -343,48 +344,48 @@ export default async function Home({ params }) {
               </div>
             </div>
           </div>
-          <div id="mycontact"></div>
-          <div className="pt-5 mt-5"></div>
-          <div className="py-5 my-5 d-none d-md-block">
-            <div className="container-fluid">
-              <div className="row justify-content-center">
-                <img
-                  src="/contact-bottom-2.png"
-                  alt="dce"
-                  className="img-fluid w-25 w-smm-50 mb-3"
-                />
-              </div>
-              <h2 className="fw-mine text-center px-md-4 fs-4">
-                Contact Dolphy Team Today
-              </h2>
-              <div className="row row-cols-1 row-cols-md-3 mt-3">
-                <div className="col-md-3"></div>
-                <div className="col-md-6">
-                  <BottomContactForm
-                    proj_name={data.project_name}
-                    city="Project Detail Page"
-                  ></BottomContactForm>
+          <div>
+            <div className="py-5 my-5 d-none d-md-block">
+              <div className="container-fluid">
+                <div className="row justify-content-center">
+                  <img
+                    src="/contact-bottom-2.png"
+                    alt="dce"
+                    className="img-fluid w-25 w-smm-50 mb-3"
+                  />
                 </div>
-                <div className="col-md-3"></div>
+                <h2 className="fw-mine text-center px-md-4 fs-4">
+                  Contact Dolphy Team Today
+                </h2>
+                <div className="row row-cols-1 row-cols-md-3 mt-3">
+                  <div className="col-md-3"></div>
+                  <div className="col-md-6">
+                    <BottomContactForm
+                      proj_name={data.project_name}
+                      city="Project Detail Page"
+                    ></BottomContactForm>
+                  </div>
+                  <div className="col-md-3"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="pt-5 mt-5"></div>
-          <div className="container-fluid px-md-4 pt-md-5 mt-4">
-            <section>
-              <div className="d-flex flex-column justify-content-center align-items-center pb-md-4">
-                <h3 className="main-title mb-3 mt-2 mb-md-5 text-center d-flex flex-column d-md-block">
-                  Frequently Asked Questions About{" "}
-                  <u className="ms-2">{data.project_name}</u>
-                </h3>
-                <div className="col-12 col-md-7">
-                  <Accordion accdata={accordionData}></Accordion>
+            <div className="pt-5 mt-5"></div>
+            <div className="container-fluid px-md-4 pt-md-5 mt-4">
+              <section>
+                <div className="d-flex flex-column justify-content-center align-items-center pb-md-4">
+                  <h3 className="main-title mb-3 mt-2 mb-md-5 text-center d-flex flex-column d-md-block">
+                    Frequently Asked Questions About{" "}
+                    <u className="ms-2">{data.project_name}</u>
+                  </h3>
+                  <div className="col-12 col-md-7">
+                    <Accordion accdata={accordionData}></Accordion>
+                  </div>
                 </div>
-              </div>
 
-              <div className="my-3"></div>
-            </section>
-            <div className="py-4"></div>
+                <div className="my-3"></div>
+              </section>
+              <div className="py-4"></div>
+            </div>
           </div>
           <div className="py-5 my-5"></div>
           <div>

@@ -35,7 +35,12 @@ export default function DeveloperCardDetail(props) {
               <b className="ms-1">Phone number not available</b>
             </>
           )} */}
-          <p className="mb-0 pt-3 text-center">{props.details}</p>
+          <div
+            className="iframe-container mb-0 pt-3 text-center"
+            dangerouslySetInnerHTML={{
+              __html: props.details,
+            }}
+          ></div>
         </div>
       </div>
     </>

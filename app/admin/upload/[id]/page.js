@@ -512,6 +512,7 @@ export default function Update({ params }) {
                     >
                       <option value="Selling">Selling</option>
                       <option value="Upcoming">Upcoming</option>
+                      <option value="Archived">Archived</option>
                       <option value="Sold out">Sold out</option>
                       <option value="Planning Phase">Planning Phase</option>
                     </select>

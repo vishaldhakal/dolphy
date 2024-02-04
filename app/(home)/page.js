@@ -3,6 +3,7 @@ import BottomContactForm from "@/components/BottomContactForm";
 import CondoCard from "@/components/CondoCard";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
+import InstagramPost from "@/components/InstagramPost";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 import MainSearch from "@/components/MainSearch";
@@ -312,6 +313,11 @@ export default async function Home() {
         <div className="container-fluid2">
           <DolphyAdvantage></DolphyAdvantage>
           <div className="py-md-5"></div>
+          <div className="py-md-5">
+            <div className="py-3 d-flex justify-content-center">
+              <InstagramPost></InstagramPost>
+            </div>
+          </div>
           <div className="py-5">
             <h3 className="fs-2 text-mine fw-bold text-center mb-0">
               We bring you home from credible builders

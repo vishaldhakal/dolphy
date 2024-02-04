@@ -2092,3 +2092,20 @@ button:focus:not(:focus-visible) {
 .text-green{
   color: #00832e !important;
 }
+.blurr{
+  filter: blur(2px);
+}
+.lock{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.lockicon{
+  height: 60px;
+  width: 60px;
+  filter:saturate(50%);
+}
+.op{
+  opacity: 1;
+}

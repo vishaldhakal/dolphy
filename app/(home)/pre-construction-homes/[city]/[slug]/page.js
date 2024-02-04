@@ -9,7 +9,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
-import ModalPriceList from "@/components/ModalPriceList";
 import FloorPlans from "@/components/FloorPlans";
 
 async function getData(slug) {
@@ -241,12 +240,11 @@ export default async function Home({ params }) {
                       ? `See Available Floor Plans for ${data.project_name}`
                       : `Floor Plans Coming Soon`}
                   </h2>
-                  <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3 blurr">
+                  <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3">
                     {data.floorplan && data.floorplan.length > 0 && (
                       <FloorPlans images={data.floorplan}></FloorPlans>
                     )}
                   </div>
-                  <ModalPriceList></ModalPriceList>
                 </div>
                 <div className="py-3 my-5">
                   <h2 className="fw-bold fs-4 pb-3">

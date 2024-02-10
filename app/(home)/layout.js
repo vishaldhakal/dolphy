@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FixedContact from "@/components/FixedContact";
+import FixedWhatsapp from "@/components/FixedWhatsapp";
 
 async function getCities() {
   const res = await fetch("https://api.dolphy.ca/api/all-city", {
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }) {
   return (
     <>
       {/* <FixedContact></FixedContact> */}
+      <FixedWhatsapp></FixedWhatsapp>
       <Navbar cities={cities} dropdown_cities={dropdown_cities}></Navbar>
       {children}
       <Footer cities={cities}></Footer>

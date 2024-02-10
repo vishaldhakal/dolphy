@@ -1720,8 +1720,8 @@ button:focus:not(:focus-visible) {
   .fixcontact {
     bottom: 12px;
     width: 54%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10%;
+    transform: translateX(-10%);
     border-radius: 9px;
     position: fixed;
     z-index: 9999;
@@ -1818,12 +1818,26 @@ button:focus:not(:focus-visible) {
 .zzz{
   z-index: 99999 !important;
 }
+.fixed-whatsapp{
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 80px;
+  z-index: 99999999 !important;
+}
 @media (max-width: 800px) {
   /* .p-sticky-top{
     position: relative;
   } */
   .muuuuu{
     width: 400px;
+}
+.fixed-whatsapp{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 70px;
+  z-index: 99999999 !important;
 }
 .text-inside {
   font-size: 0.8rem;

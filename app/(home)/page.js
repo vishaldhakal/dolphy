@@ -7,6 +7,7 @@ import InstagramPost from "@/components/InstagramPost";
 import PreconSchema from "@/components/PreconSchema";
 import FixedContactButton from "@/components/FixedContactButton";
 import MainSearch from "@/components/MainSearch";
+import CondoCardHome from "@/components/CondoCardHome";
 
 async function getData(city) {
   const res = await fetch(
@@ -114,7 +115,7 @@ export default async function Home() {
                       __html: JSON.stringify(PreconSchema(item)),
                     }}
                   />
-                  <CondoCard {...item} />
+                  <CondoCardHome {...item} />
                 </div>
               ))}
           </div>

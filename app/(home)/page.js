@@ -1,6 +1,7 @@
 import Link from "next/link";
 import BottomContactForm from "@/components/BottomContactForm";
 import CondoCard from "@/components/CondoCard";
+import CalgaryCardHome from "@/components/CalgaryCardHome";
 import { notFound } from "next/navigation";
 import DolphyAdvantage from "@/components/DolphyAdvantage";
 import InstagramPost from "@/components/InstagramPost";
@@ -61,10 +62,10 @@ export default async function Home() {
   return (
     <>
       <FixedContactButton></FixedContactButton>
-      <div className="py-5"></div>
+      <div className="py-3"></div>
       <div className="pt-3">
         <div className="container-fluid2">
-          <div className="d-flex flex-column align-items-center justify-content-center">
+          {/* <div className="d-flex flex-column align-items-center justify-content-center">
             <img
               src="/dolphin.png"
               alt="dolphy logo icon"
@@ -78,9 +79,7 @@ export default async function Home() {
           <p className="text-center fs-small fs-md-5 mt-2 fw-less mt-md-0">
             A platform for everyone, no matter where you come from
           </p>
-
-          <div className="py-2"></div>
-          <div className="py-2 py-md-5 my-2"></div>
+ */}
           <div className="d-flex align-items-center justify-content-center">
             <h2 className="fw-mine ccent-line fs-big fs-1">
               <Link
@@ -104,7 +103,7 @@ export default async function Home() {
               <i className="bi bi-arrow-right-short"></i>
             </Link>
           </div>
-          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 gy-4 gx-3 gx-lg-3">
+          {/* <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 gy-4 gx-3 gx-lg-3">
             {data.preconstructions &&
               data.preconstructions.slice(0, 6).map((item) => (
                 <div className="col" key={item.id}>
@@ -118,7 +117,8 @@ export default async function Home() {
                   <CondoCardHome {...item} />
                 </div>
               ))}
-          </div>
+          </div> */}
+          <CalgaryCardHome></CalgaryCardHome>
           <div className="pt-5 mt-5"></div>
           <div>
             <div className="text-center fw-bold fs-3 text-mine">

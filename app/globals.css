@@ -2123,3 +2123,48 @@ button:focus:not(:focus-visible) {
 .op{
   opacity: 1;
 }
+.shdwc {
+  box-shadow: -3px -2px 10px 1px #d2d2d2;
+}
+
+.b1{
+  background-image: url("/homep/3.png") !important;
+}
+.b2{
+  background-image: url("/homep/2.png") !important;
+}
+.b3{
+  background-image: url("/homep/1.png") !important;
+}
+.b4{
+  background-image: url("/homep/4.png") !important;
+}
+.bg-homem {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  height: 550px !important;
+}
+.lastp{
+  font-size: 14px;
+    color: #444444;
+    margin: auto 7px;
+    line-height: 1.88em;
+}
+.btn-smm{
+  background-color: white;
+  border: 1px solid black;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 0 !important;
+}
+.btn-smm:hover , .btn-smm:active , .btn-smm:focus{
+  background-color: rgb(0, 0, 0);
+  border: 1px solid black;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 0 !important;
+  transition: background-color 0.2s ease-in-out;
+}
+.bg-homem img{
+  filter: brightness(0);
+  scale: 1.7;
+}

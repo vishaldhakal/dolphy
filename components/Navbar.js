@@ -23,7 +23,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
         </Link>
         <div className="input-group input-group-search me-2 me-md-0">
           {/* <SearchBar changeCity={setCityname} cities={cities} /> */}
-          <SearchSuggest cities={cities} />
+          {/* <SearchSuggest cities={cities} /> */}
           {/* <Link
             href={"/pre-construction-homes/" + cityname.toLowerCase()}
             className="d-none d-md-inline"

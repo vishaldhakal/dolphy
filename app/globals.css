@@ -2140,11 +2140,18 @@ button:focus:not(:focus-visible) {
   background-image: url("/homep/4.png") !important;
 }
 .bg-homem {
-  background-position: center !important;
+  background-position: bottom !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   height: 550px !important;
 }
+/* mobile version */
+@media (max-width: 800px) {
+  .bg-homem {
+    height: 450px !important;
+  }
+}
+
 .lastp{
   font-size: 14px;
     color: #444444;

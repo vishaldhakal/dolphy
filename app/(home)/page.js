@@ -86,7 +86,7 @@ export default async function Home() {
                 href={"/pre-construction-homes/calgary"}
                 className="link-black"
               >
-                Calgary
+                Top Calgary Projects
               </Link>
             </h2>
           </div>

@@ -18,7 +18,8 @@ const GoogleAnalytics = () => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_TRACKING_ID}');
-            gtag('event', 'conversion', {'send_to': '${GA_TRACKING_ID}/3EwJCI6u0vUYEIKKsLIo'});
+            gtag('event', 'conversion', {'send_to': '${GA_TRACKING_ID}/ZHdhCLbgg5QZEMDexKs9','value': '${1.0}',
+            'currency': 'CAD'});
           `,
         }}
       />

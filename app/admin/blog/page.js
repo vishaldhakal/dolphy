@@ -4,7 +4,9 @@ import dynamic from "next/dynamic";
 import axios from "axios";
 import swal from "sweetalert";
 import NewsTable from "@/components/NewsTable";
-import TinyTextEditor from "@/components/TinyTextEditor";
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function UploadBlog() {
   let stat = {
@@ -324,8 +326,42 @@ export default function UploadBlog() {
                   <label className="form-label fw-bold">
                     Blog Detail <span className="text-danger">*</span>{" "}
                   </label>
-                  <TinyTextEditor
+                  <ReactQuill
+                    theme="snow"
                     value={newsdata.news_description}
+                    style={{ height: "200px" }}
+                    modules={{
+                      toolbar: [
+                        [{ header: "1" }, { header: "2" }, { font: [] }],
+                        [{ size: [] }],
+                        ["bold", "italic", "underline", "strike", "blockquote"],
+                        [
+                          { list: "ordered" },
+                          { list: "bullet" },
+                          { indent: "-1" },
+                          { indent: "+1" },
+                        ],
+                        ["link", "image", "video"],
+                        ["clean"],
+                      ],
+                      clipboard: {
+                        // toggle to add extra line breaks when pasting HTML:
+                        matchVisual: false,
+                      },
+                    }}
+                    formats={[
+                      "header",
+                      "bold",
+                      "italic",
+                      "underline",
+                      "strike",
+                      "blockquote",
+                      "list",
+                      "bullet",
+                      "link",
+                      "image",
+                      "video",
+                    ]}
                     onChange={handleBlogDescChange}
                   />
                 </div>

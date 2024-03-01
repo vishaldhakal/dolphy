@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import axios from "axios";
 import swal from "sweetalert";
 import NewsTable from "@/components/NewsTable";
-import dynamic from "next/dynamic";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 

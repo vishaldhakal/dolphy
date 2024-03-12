@@ -2175,3 +2175,8 @@ button:focus:not(:focus-visible) {
   filter: brightness(0);
   scale: 1.7;
 }
+.small-text2 {
+  font-size: 10px;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
+}

@@ -85,11 +85,11 @@ export default async function Home({ params }) {
     return newresult;
   };
 
-  const doTOcheck = (noo) => {
+  /* const doTOcheck = (noo) => {
     if (parseInt(noo) != 0) {
       return "- High $ " + Nformatter(noo, 2);
     }
-  };
+  }; */
 
   const doTOcheck2 = (noo) => {
     if (parseInt(noo) != 0) {

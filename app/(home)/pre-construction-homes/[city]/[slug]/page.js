@@ -315,7 +315,7 @@ export default async function Home({ params }) {
                       </div>
                       <div className="col-8">
                         <h5 className="fw-bold text-center linem fs-4  mb-0">
-                          Send a Message
+                          Register Now
                         </h5>
                         <p className="mb-0 text-center">
                           <Link

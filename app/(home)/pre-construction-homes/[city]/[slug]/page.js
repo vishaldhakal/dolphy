@@ -296,14 +296,14 @@ export default async function Home({ params }) {
               </div>
               <div className="col col-md-4 ps-md-2 pt-5 pt-md-0" id="mycontact">
                 <div className="py-4 py-md-0"></div>
+                <div className="text-center">
+                  <img
+                    alt="Register Now Text Design"
+                    src="/reg.webp"
+                    className="img-fluid mb-3 side-contact-img"
+                  />
+                </div>
                 <div className="side-fix-contact mt-mine pe-0">
-                  <div className="text-center">
-                    <img
-                      alt="Register Now Text Design"
-                      src="/reg.webp"
-                      className="img-fluid mb-3 side-contact-img"
-                    />
-                  </div>
                   <div className="m-1 p-4 py-3 shadow-lg rounded-mine bordt">
                     <div className="row row-cols-2 align-items-start">
                       <div className="col-4">

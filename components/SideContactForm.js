@@ -25,6 +25,7 @@ export default function SideContactForm(props) {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    gtag_report_conversion();
     console.log(credentials);
     ContactFormSubmit(credentials, setSubmitbtn, setCredentials)
       .then((res) => router.push("/thank-you"))

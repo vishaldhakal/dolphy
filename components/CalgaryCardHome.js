@@ -6,21 +6,19 @@ export default function CalgaryCardHome(props) {
         <div className="col">
           <div className="bg-homem b1 shdwc">
             <div className="logo d-flex justify-content-center pt-5">
-              <img
-                src="/homep/new_truman_community_logo_myne.png"
-                alt=""
-                className="img-fluid"
-              />
+              <img src="/clover.svg" alt="" className="img-fluid" />
             </div>
             <p className="text-center lastp pt-4">
-              Comprising two 5-storey structures, Myne Condominiums will feature
-              a total of 217 units
+              Discover Clover Condos, a pre-construction haven where natural
+              elegance meets modern luxury, in a vibrant community.
             </p>
             <div className="d-flex justify-content-center pt-4">
               <Link
                 className="btn btn-smm"
                 target="_blank"
-                href={"/pre-construction-homes/calgary/myne-condos"}
+                href={
+                  "/pre-construction-homes/calgary/clover-condos-in-carrington-by-truman-homes"
+                }
               >
                 Learn More
               </Link>

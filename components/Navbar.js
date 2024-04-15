@@ -1,10 +1,7 @@
 "use client";
 import { useState } from "react";
-import SearchBar from "./SearchBar";
-
-//LIB
 import Link from "next/link";
-import SearchSuggest from "./SerachSuggest";
+import ProjectSearch from "./ProjectSearch";
 
 const Navbar = ({ cities, dropdown_cities }) => {
   const [cityname, setCityname] = useState("");
@@ -22,6 +19,7 @@ const Navbar = ({ cities, dropdown_cities }) => {
           <img src="/logo2.svg" alt="Dolphy logo" className="img-fluid" />
         </Link>
         <div className="input-group input-group-search me-2 me-md-0">
+          <ProjectSearch />
           {/* <SearchBar changeCity={setCityname} cities={cities} /> */}
           {/* <SearchSuggest cities={cities} /> */}
           {/* <Link

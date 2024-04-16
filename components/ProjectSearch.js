@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const SearchWithAutocomplete = () => {
@@ -13,7 +12,6 @@ const SearchWithAutocomplete = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [data, setData] = useState({ cities: [], projects: [] });
   const [isFocused, setIsFocused] = useState(false);
-  const router = useRouter();
 
   const inputRef = useRef(null);
 
@@ -124,7 +122,10 @@ const SearchWithAutocomplete = () => {
                   {searchResults.projects.map((project, index) => (
                     <Link
                       href={
-                        "/pre-construction-homes/" + "abc" + "/" + project.slug
+                        "/pre-construction-homes/" +
+                        project.city.slug +
+                        "/" +
+                        project.slug
                       }
                     >
                       <li

@@ -29,21 +29,21 @@ export default function CalgaryCardHome(props) {
           <div className="bg-homem b2 shdwc">
             <div className="logo d-flex justify-content-center pt-5">
               <img
-                src="/homep/new_truman_community_logo_orson.png"
-                alt=""
+                src="/arabe.png"
                 className="img-fluid"
+                alt="arabella towns"
               />
             </div>
             <p className="text-center lastp pt-4">
-              Orson Condos is set to grace the expanding Wolf Willow Community,
-              nestled next to the picturesque Chaparral Lake Community in
-              Southeast Calgary.
+              Arabella Towns, a new townhome project by Truman Homes, is
+              currently in pre-construction at 100 Street SouthEast & Township
+              Road 244 in Calgary.
             </p>
             <div className="d-flex justify-content-center pt-4">
               <Link
                 className="btn btn-smm"
                 target="_blank"
-                href={"/pre-construction-homes/calgary/orson-condos"}
+                href={"/pre-construction-homes/calgary/arabella-towns"}
               >
                 Learn More
               </Link>
